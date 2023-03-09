@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+  <title>FCAI-CU Add Student</title>
+  <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
+  <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+
+</head>
+
+<body>
+  <nav>
+    <div class="cu-logo">
+      <img src="images/Cairo_University_logo.png" width="60px" height="70px" alt="cu-logo" />
+      <h3>FCAI-CI Student Affairs</h3>
+    </div>
+    <div class="nav-content">
+      <ul type="none">
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="add_student.html">Add Student</a></li>
+        <li><a href="view.html">View Students</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <hr>
+
+  <div>
+    <form action="#" target="_blank"><!--add Action-->
+      <!--max length needed for most inputs-->
+      <!--adjust sizes-->
+
+      <h1>Add a new FCAI-CU Student</h1>
+      <label for="sName">Student Name:</label>
+      <input type="text" id="sName" name="sName" placeholder="Ex: Yousef Eldaly" size="20" required>
+      <label for="sAddress">Student Address:</label>
+      <input type="text" id="sAddress" name="sAddress" size="50" required><br><br>
+
+      <label for="sGender">Gender:</label>
+
+      <input type="radio" id="male" name="gender" value="Male" size="50">
+      <label for="Male">Male</label><!--Add required to gender-->
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="Female">Female</label>
+
+
+      <label for="sNationality">Student Nationality:</label>
+      <input type="text" id="sNationality" name="sNationality" required><br><br>
+
+      <label for="sNationalID">National ID:</label>
+      <input type="text" id="sNationalID" name="sNationalID" required>
+      <label for="sDOB">Date of birth:</label>
+      <input type="month" id="sDOB" name="sDOB" placeholder="dd/mm/yy" required><br><br>
+
+      <!--Add number patterns-->
+      <label for="sPhoneNumber">Phone Number:</label>
+      <input type="tel" pattern="[0-9]{11}" id="sPhoneNumber" name="sPhoneNumber" required>
+      <label for="sLandline">Landline Number:</label>
+      <input type="tel" pattern="[0-9]{8}" id="sLandline" name="sLandline" required><br><br>
+
+      <label for="sEmail">Email Address:</label>
+      <input type="email" id="sEmail" name="sEmail" required>
+      <label for="sCollegeID">College ID:</label>
+      <input type="text" id="sCollegeID" name="sCollegeID" required><br><br>
+
+      <label for="sLevel">Level:</label>
+      <input type="text" id="sLevel" name="sLevel" required>
+
+      <label for="sDepartment">Department:</label>
+      <select name="sDepartment" id="sDepartment" required>
+        <option value="general">General</option>
+        <option value="cs">Computer science</option>
+        <option value="ai">Artificial intellegence</option>
+        <option value="it">Information system</option>
+        <option value="is">Information technology</option>
+        <option value="ds">Decision support</option>
+      </select>
+
+
+      <label for="sGPA">GPA:</label>
+      <input type="number" id="sGPA" name="sGPA" required min="0" max="4"><br><br>
+
+      <input type="submit" value="Add Student">
+    </form>
+  </div>
+
+  <hr>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">
+      <img src="images/Fcai-logo.png" width="50px" height="50px" alt="logo">
+    </div>
+
+    <div class="footer-content">
+      <ul type="none">
+        <li>Contact Us</li>
+        <li>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+        </li>
+        <li>About Us</li>
+        <li>Help Center</li>
+      </ul>
+    </div>
+    &copy; All Right Reserved, FCAI-CU Students.
+  </footer>
+</body>
+
+</html>

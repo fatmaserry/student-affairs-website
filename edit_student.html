@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
+  <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+  <title>Edit Student Data | FCAI-CU</title>
+
+</head>
+
+<body>
+    <nav>
+      <div class="cu-logo">
+        <img src="images/Cairo_University_logo.png" width="60px" height="70px" alt="cu-logo" />
+        <h3>FCAI-CI Student Affairs</h3>
+      </div>
+      <div class="nav-content">
+        <ul type="none">
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="add_student.html">Add Student</a></li>
+          <li><a href="view.html">View Students</a></li>
+          <li><a href="login.html">Sign Out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr>
+    <header>
+        <h1>Edit Student Data</h1>
+    </header>
+    <form>
+      <label for="name">Student Name</label><br>
+      <input type="text" name="name" value="Karim Adel Ahmed" placeholder="Enter the student name " id="name"> <br> <br>
+
+      <label for="id">College ID </label><br>
+      <input type="text" name="id" value="20211344" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id"> <br>
+      <br>
+
+      <label>Status </label><br>
+      <input type="radio" name="status" id="active" checked>
+      <label for="active">Active</label><br>
+
+      <input type="radio" name="status" id="inactive">
+      <label for="inactive">Inactive</label><br><br>
+
+      <label for="level">Level </label><br>
+      <select name="level" id="level">
+        <option value="level1">Level 1</option>
+        <option value="level2" selected>Level 2</option>
+        <option value="level3">Level 3</option>
+        <option value="level4">Level 4</option>
+      </select><br><br>
+
+
+      <label>Program </label><br>
+      <input type="radio" name="program" id="general" checked>
+      <label for="general">General</label><br>
+
+      <input type="radio" name="program" id="special">
+      <label for="special">Special</label><br><br>
+
+      <label for="dep">Department </label><br>
+      <input type="text" value="General" readonly>
+      <button>
+        <a href="edit_department.html">Assign Department</a>
+      </button><br><br>
+
+      <label for="gpa">GPA </label><br>
+      <input type="number" name="gpa" value="3.48" id="gpa"> <br> <br>
+
+      <label for="add">Student Address </label><br>
+      <input type="text" name="address" value="Nasr St, Maadi" id="add"> <br> <br>
+
+      <label for="num">Phone Number </label><br>
+      <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits" pattern="[0-9]{11}"
+        id="num"> <br> <br>
+
+      <label for="landline">Landline Number </label><br>
+      <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits" pattern="[0-9]{10}"
+        id="landline"> <br> <br>
+
+      <label for="email">Email Address </label><br>
+      <input type="email" name="email" value="karim.adel@gmail.com" id="email"> <br> <br>
+
+      <label for="country">Student Nationalty </label><br>
+      <input type="text" name="nation" value="Egyptian" id="country"> <br> <br>
+
+      <label for="natid">National ID </label><br>
+      <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits" id="natid">
+      <br> <br>
+
+      <label>Gender </label><br>
+      <input type="radio" name="gender" id="male" checked>
+      <label for="male">Male</label> <br>
+
+      <input type="radio" name="gender" id="female">
+      <label for="female">Female</label> <br><br>
+
+      <label for="birthDate">Date of birth </label><br>
+      <input type="date" name="birth" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="birthDate"> <br> <br>
+
+
+
+      <input type="submit" value="Save">
+
+
+    </form>
+
+    <hr>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-logo">
+        <img src="images/Fcai-logo.png" width="50px" height="50px" alt="logo">
+      </div>
+
+      <div class="footer-content">
+        <ul type="none">
+          <li>Contact Us</li>
+          <li>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </li>
+          <li>About Us</li>
+          <li>Help Center</li>
+        </ul>
+      </div>
+      &copy; All Right Reserved, FCAI-CU Students.
+    </footer>
+
+  </body>
+
+</html>
