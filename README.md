@@ -41,5 +41,5 @@ a home page.
 * **Yousef Karam** - [callmejoee](https://github.com/callmejoee)  
 * **Nour Hatem** - not known
 * **Belal Ahmed Eid** - [beboDbale](https://github.com/beboDbale)  
-* **Zeyad Ehab El Naggar** - not known
+* **Zeyad Ehab El Naggar** - [Zeyad-ElNaggar](https://github.com/Zeyad-ElNaggar)
 
