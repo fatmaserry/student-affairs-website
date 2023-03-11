@@ -40,6 +40,6 @@ a home page.
 * **Yousef Magdy Eldaly** - [YousefEldaly](https://github.com/YousefEldaly)  
 * **Yousef Karam** - [callmejoee](https://github.com/callmejoee)  
 * **Nour Hatem** - not known
-* **Belal Ahmed Eid** - [beboDbale] (https://github.com/beboDbale)  
+* **Belal Ahmed Eid** - [beboDbale](https://github.com/beboDbale)  
 * **Zeyad Ehab El Naggar** - not known
 
