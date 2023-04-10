@@ -1,0 +1,120 @@
+.add_student_form {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width:850px;
+  margin: 40px 0;
+}
+
+#submit{
+    background-color: #272626;
+    color: #faf2f7;
+    border: 3px solid transparent;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    height: 58px;
+    font-size: 25px;
+}
+
+#submit:hover{
+  background-color: transparent;
+  border: 3px solid #272626;
+  color: #272626;
+
+}
+
+input {
+  background-color: rgba(57, 57, 57, 0.07);
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 20px 20px 0;
+  width: 100%;
+  height: 45px;
+  cursor: pointer;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+.form-sides{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-leftside{
+  width: 48%;
+}
+
+.form-rightside{
+  width: 48%;
+}
+
+label{
+  display: block;
+}
+
+.add_student_form h1{
+  margin-top: 30px;
+}
+
+.gender-div{
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 20px 0;
+}
+
+.female,
+.male{
+  display: inline;
+}
+
+.male-gender,
+.female-gender{
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+.male-gender{
+  margin-right: 40px;
+}
+
+input[type="radio"]{
+  margin: 20px 5px;
+  margin-left: 0;
+  accent-color: #272626;
+  height: 1rem;
+  width: 1rem;
+
+}
+
+#sDepartment{
+  outline: none;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 20px 20px 0;
+  width: 100%;
+  background-color: rgba(57, 57, 57, 0.07);
+}
+
+select option{
+  border: none;
+  background-color: #faf2f7;
+}
+
+
+
+
+

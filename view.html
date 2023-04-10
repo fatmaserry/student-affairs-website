@@ -7,17 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
     <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
     <title>VIEW | FCAI-CU</title>
 
 </head>
 
 <body>
     <nav>
-        <div class="cu-logo">
-            <img src="images/Cairo_University_logo.png" width="60px" height="70px" alt="cu-logo" />
+        <div class="nav-container">
+          <div class="cu-logo">
+            <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
             <h3>FCAI-CI Student Affairs</h3>
-        </div>
-        <div class="nav-content">
+          </div>
+          <div class="nav-content">
             <ul type="none">
               <li><a href="login.html">Log In</a></li>
               <li><a href="index.html">Home</a></li>
@@ -27,11 +32,12 @@
               <li><a href="login.html">Sign Out</a></li>
             </ul>
           </div>
-    </nav>
-    <hr>
+        </div>
+      </nav>
+
     <div class="container">
         <h1>Students</h1>
-        <table border="1">
+        <table>
             <thead>
                 <th>ID</th>
                 <th>Name</th>
@@ -154,27 +160,32 @@
 
 
     </div>
-    <hr>
-    <footer>
-        <div class="footer-logo">
-            <img src="images/Fcai-logo.png" width="50px" height="50px"alt="logo">
-        </div>
 
-        <div class="footer-content">
-            <ul type="none">
-                <li>Contact Us</li>
-                <li>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                </li>
-                <li>About Us</li>
-                <li>Help Center</li>
-            </ul>
-        </div>
-		&copy; All Right Reserved, FCAI-CU Students.
-	</footer>
+  <!-- Footer -->
+  <footer>
+    <div id="container">
+      <div>
+        <img class="footer-logo" src="images/Fcai-logo.png" alt="logo">
+      </div>
 
+      <div class="footer-content">
+        <ul type="none">
+          <li>Contact Us</li>
+          <li>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </li>
+          <li>About Us</li>
+          <li>Help Center</li>
+        </ul>
+      </div>
+
+
+      <p>&copy; All Right Reserved, FCAI-CU Students.</p>
+
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
     <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <title>Login | FCAI-CU</title>
 
 </head>
@@ -18,10 +22,6 @@
                 class="lilcircle">
         </div>
         <div>
-            <label for="username">Username</label><br>
-            <input id="username" name="username" type="text" required>
-        </div>
-        <div>
             <label for="userid">User ID</label><br>
             <input type="number" id="userid" name="userid" required>
 
@@ -30,32 +30,36 @@
             <label for="password">Password</label><br>
             <input type="password" id="password" name="password" required>
         </div>
-
+        <input type="submit" form="loginform" value="Login">
     </form>
-    <button type="submit" form="loginform" value="submit"><a href="index.html">Login</a></button>
+    
 
-
-    <hr>
     <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <img src="images/Fcai-logo.png" width="50px" height="50px" alt="logo">
-        </div>
+  <!-- Footer -->
+  <footer>
+    <div id="container">
+      <div>
+        <img class="footer-logo" src="images/Fcai-logo.png" alt="logo">
+      </div>
 
-        <div class="footer-content">
-            <ul type="none">
-                <li>Contact Us</li>
-                <li>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                </li>
-                <li>About Us</li>
-                <li>Help Center</li>
-            </ul>
-        </div>
-        &copy; All Right Reserved, FCAI-CU Students.
-    </footer>
+      <div class="footer-content">
+        <ul type="none">
+          <li>Contact Us</li>
+          <li>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </li>
+          <li>About Us</li>
+          <li>Help Center</li>
+        </ul>
+      </div>
+
+
+      <p>&copy; All Right Reserved, FCAI-CU Students.</p>
+
+    </div>
+  </footer>
 </body>
 
 </html>
