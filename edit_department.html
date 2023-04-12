@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
   <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
+  <link href="./stylesheets/editD_style.css" rel="stylesheet">
   <title>Edit Department | FCAI-CU</title>
 </head>
 
@@ -31,31 +32,34 @@
   </nav>
   </div>
 
-  <div class="container">
-
-
+  <div class="student-info">
     <h1>Edit The Department of a student</h1>
     <form>
-      <label for="Name">Student Name: </label>
-      <input type="text" id="Name" value="Mahmoud Osama" readonly>
-      <br><br>
-      <label for="ID">Student ID: </label>
-      <input type="text" id="ID" value="20210399" readonly>
-      <br><br>
-      <label for="GPA">Student GPA: </label>
-      <input type="text" id="GPA" value="2.9" readonly>
-      <br><br>
-      <label for="Department">Student Department: </label>
-      <select name="Department" id="Department">
-        <option value="general">General</option>
-        <option value="cs">Computer science</option>
-        <option value="ai">Artificial intellegence</option>
-        <option value="it">Information system</option>
-        <option value="is">Information technology</option>
-        <option value="ds">Decision support</option>
-      </select>
-      <br><br><br><br>
-      <input type="submit" value="Submit">
+      <div class="left-info"> 
+        <label for="Name">Student Name: </label>
+        <input type="text" id="Name" value="Mahmoud Osama" readonly>
+
+        <label for="ID">Student ID: </label>
+        <input type="text" id="ID" value="20210399" readonly>
+      </div>
+      <div class="right-info">
+        <label for="GPA">Student GPA: </label>
+        <input type="text" id="GPA" value="2.9" readonly>
+    
+        <label for="Department">Student Department: </label>
+        <select name="Department" id="Department">
+          <option value="general">General</option>
+          <option value="cs">Computer science</option>
+          <option value="ai">Artificial intellegence</option>
+          <option value="it">Information system</option>
+          <option value="is">Information technology</option>
+          <option value="ds">Decision support</option>
+        </select>
+      </div>
+      
+      <div class = "Button">
+        <input type="Submit Edit" id="submit_edit" value="Edit">
+      </div>
     </form>
   </div>
 
