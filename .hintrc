@@ -14,9 +14,18 @@
       "default",
       {
         "ignore": [
-          "accent-color"
+          "accent-color",
+          "backdrop-filter"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off",
+    "axe/keyboard": [
+      "default",
+      {
+        "nested-interactive": "off"
+      }
+    ],
+    "button-type": "off"
   }
 }

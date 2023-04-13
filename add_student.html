@@ -8,8 +8,9 @@
   <title>FCAI-CU Add Student</title>
   <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
   <link rel="stylesheet" href="./stylesheets/addS_style.css">
@@ -25,22 +26,29 @@
       </div>
       <div class="nav-content">
         <ul type="none">
-          <li><a href="login.html">Log In</a></li>
+          <!-- <li><a href="login.html">Log In</a></li> -->
           <li><a href="index.html">Home</a></li>
           <li><a href="search.html">Search</a></li>
-          <li><a href="add_student.html">Add Student</a></li>
+          <li><a href="add_student.html" class="add">Add Student</a></li>
           <li><a href="view.html">View Students</a></li>
-          <li><a href="login.html">Sign Out</a></li>
         </ul>
+      </div>
+
+      <div>
+
+        <a href="login.html" class="sign">Sign Out</a>
       </div>
     </div>
   </nav>
 
 
   <div class="container">
-    <div class="add_student_form">
-      <h1>Add a new FCAI-CU Student</h1>
 
+
+    <div class="add_student_form">
+      <div class="header">
+        <h1>Register New Student</h1>
+      </div>
 
       <form action="#" target="_blank">
         <!--add Action-->
@@ -50,8 +58,14 @@
 
         <!-- Name  -->
         <div class="name-div">
-          <label for="sName">Student Name:</label>
-          <input type="text" id="sName" name="sName" placeholder="Ex: Yousef Eldaly" required>
+          <div class="fname">
+            <label for="fname">Student First Name:</label>
+            <input type="text" id="sfname" name="sFname" placeholder="" required>
+          </div>
+          <div class="lname">
+            <label for="lname">Student Last Name:</label>
+            <input type="text" id="slname" name="sLname" placeholder="" required>
+          </div>
         </div>
 
 
@@ -69,7 +83,7 @@
             <label for="sNationality">Student Nationality:</label>
             <input type="text" id="sNationality" name="sNationality" required>
 
-      
+
             <label for="sPhoneNumber">Phone Number:</label>
             <input type="tel" pattern="[0-9]{11}" id="sPhoneNumber" name="sPhoneNumber" required>
 
@@ -82,8 +96,8 @@
 
             <label for="sGPA">GPA:</label>
             <input type="number" id="sGPA" name="sGPA" required step="0.01" min="0" max="4">
-            
-            
+
+
             <label for="sDepartment">Department:</label>
             <select name="sDepartment" id="sDepartment" required>
               <option value="general">General</option>
@@ -100,10 +114,10 @@
 
             <label for="sNationalID">National ID:</label>
             <input type="text" id="sNationalID" name="sNationalID" required> <!--Add number patterns-->
-          
+
 
             <label for="sDOB">Date of birth:</label>
-            <input type="month" id="sDOB" name="sDOB" placeholder="dd/mm/yy" required>
+            <input type="date" id="sDOB" name="sDOB" placeholder="dd/mm/yy" required>
 
             <label for="sLandline">Landline Number:</label>
             <input type="tel" pattern="[0-9]{8}" id="sLandline" name="sLandline" required>
@@ -113,7 +127,7 @@
             <label for="sGender">Gender:</label>
             <div class="gender-div">
               <div class="male-gender">
-                <input type="radio" id="male" name="gender" value="Male" size="50">
+                <input type="radio" id="male" name="gender" value="Male">
                 <label for="male" class="male">Male</label>
               </div>
 
@@ -122,14 +136,18 @@
                 <label for="female" class="female">Female</label>
               </div>
             </div>
-          
+
           </div>
         </div>
-        <input type="submit" id="submit" value="Add Student">
+        <input type="submit" id="add-student" value="Add Student">
       </form>
 
     </div>
   </div>
+
+
+
+
 
   <!-- Footer -->
   <footer>
@@ -138,25 +156,39 @@
         <img class="footer-logo" src="images/Fcai-logo.png" alt="logo">
       </div>
 
-      <div class="footer-content">
+      <div class="footer-content-1">
         <ul type="none">
-          <li>Contact Us</li>
+          <li class="get-in-touch">GET IN TOUCH</li>
+          <li>
+            <i class="fa-sharp fa-solid fa-phone" style="color: #ffffff;"></i>
+            <span>01289209739</span>
+          </li>
+          <li>
+            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+            <span>20220428@stud.fci-cu.edu.eg</span>
+          </li>
           <li>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-whatsapp"></i>
           </li>
-          <li>About Us</li>
-          <li>Help Center</li>
+
         </ul>
       </div>
 
 
-      <p>&copy; All Right Reserved, FCAI-CU Students.</p>
+      <div class="footer-content-2">
+        <p class="about-us">About Us</p>
+        <p>Help Center</p>
+        <p>&copy; All Right Reserved, FCAI-CU Students.</p>
+      </div>
+
 
     </div>
   </footer>
 
+
+  <script src="JavaScript/script.js"></script>
 </body>
 
 </html>
