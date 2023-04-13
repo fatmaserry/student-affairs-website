@@ -7,14 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
   <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+  <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <title>Edit Student Data | FCAI-CU</title>
 
 </head>
 
 <body>
-    <nav>
+
+  <nav>
+    <div class="nav-container">
       <div class="cu-logo">
-        <img src="images/Cairo_University_logo.png" width="60px" height="70px" alt="cu-logo" />
+        <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
         <h3>FCAI-CI Student Affairs</h3>
       </div>
       <div class="nav-content">
@@ -27,11 +33,14 @@
           <li><a href="login.html">Sign Out</a></li>
         </ul>
       </div>
-    </nav>
+  </nav>
+  </div>
 
-    <hr>
+
+
+  <div class="container">
     <header>
-        <h1>Edit Student Data</h1>
+      <h1>Edit Student Data</h1>
     </header>
     <form>
       <label for="name">Student Name</label><br>
@@ -71,7 +80,7 @@
       </button><br><br>
 
       <label for="gpa">GPA </label><br>
-      <input type="number" name="gpa" value="3.48" id="gpa"> <br> <br>
+      <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa"> <br> <br>
 
       <label for="add">Student Address </label><br>
       <input type="text" name="address" value="Nasr St, Maadi" id="add"> <br> <br>
@@ -108,14 +117,14 @@
 
       <input type="submit" value="Save">
 
-
     </form>
+  </div>
 
-    <hr>
-    <!-- Footer -->
-    <footer>
-      <div class="footer-logo">
-        <img src="images/Fcai-logo.png" width="50px" height="50px" alt="logo">
+  <!-- Footer -->
+  <footer>
+    <div id="container">
+      <div>
+        <img class="footer-logo" src="images/Fcai-logo.png" alt="logo">
       </div>
 
       <div class="footer-content">
@@ -130,9 +139,13 @@
           <li>Help Center</li>
         </ul>
       </div>
-      &copy; All Right Reserved, FCAI-CU Students.
-    </footer>
 
-  </body>
+
+      <p>&copy; All Right Reserved, FCAI-CU Students.</p>
+
+    </div>
+  </footer>
+
+</body>
 
 </html>
