@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="./stylesheets/view_style.css">
     <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
     <title>VIEW | FCAI-CU</title>
-
+<script>
+  $(window).on("load resize ", function() {
+  var scrollWidth = $('.view_student_table').width() - $('.view_student_table table').width();
+  $('.view_student_table').css({'padding-right':scrollWidth});
+}).resize();
+</script>
 </head>
 
 <body>
@@ -37,8 +42,9 @@
       </nav>
 
     <div class="container">
-      <div class="view_student_table">
-        <h1>Students</h1>
+      <h1>Students</h1>
+      
+      <div class="view_student_table" style="overflow-y: auto;">
         <table>
             <thead class="table_header">
               <tr>
@@ -54,6 +60,7 @@
               </tr>
             </thead>
 
+            <div class="scroll">
             <tbody>
                 <tr>
                     <!-- First ROW -->
@@ -156,6 +163,7 @@
                     </td>
                 </tr>
             </tbody>
+          </div>
 
         </table>
         <input type="submit" id="save" value="Save">

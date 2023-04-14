@@ -4,19 +4,16 @@ body {
     height: 1000px;
 }
 
-
-.view_student_table h1{
-    text-align: center;
+h1{
+    margin: 20px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.container {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
+
 table {
-    width: 800px;
+    width: 100%;
     border-collapse: collapse;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(39, 38, 38, 0.1);
@@ -33,11 +30,15 @@ td {
     padding: 15px;
     background-color: rgba(250, 242, 247, 0.2);
     color: #272626;
+    border-bottom: 1px solid rgba(39, 38, 38, 0.2);
 }
+
+
 
 
 tbody tr:hover{
     background-color: rgba(39, 38, 38, 0.2);
+    border-bottom: 1px, solid, #272626;
 }
 
 tbody td {
