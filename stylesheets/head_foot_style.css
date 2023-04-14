@@ -78,6 +78,35 @@ footer #container{
 
 }
 
+<<<<<<< Updated upstream
 /* End of NAV + footer */
 
 
+=======
+.fa-brands{
+  margin-bottom: 20px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.footer-content-1 a{
+  text-decoration: none;
+  margin-left: 5px;
+  color: #faf2f7;
+}
+footer i:hover,
+.footer-content-1 span:hover
+.footer-content-1 a:hover{
+  color: #8479E1;
+}
+
+
+.footer-content-1 .get-in-touch
+{
+  font-weight: bold;
+}
+
+
+/* End of NAV + footer */
+
+>>>>>>> Stashed changes
