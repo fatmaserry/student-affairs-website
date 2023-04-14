@@ -1,6 +1,6 @@
 
 body {
-	background: linear-gradient(45deg, #faf2f7, #ebd2ef);
+	background: linear-gradient(45deg, #faf2f7, #f1e5f3);
     height: 1000px;
 }
 
@@ -56,10 +56,6 @@ tbody td:hover::before {
     z-index: -1;
 }
 
-.scrollit{
-    overflow: scroll;
-    height: 100px;
-}
 
 #status {
     background-color: rgba(250, 242, 247, 0.2);
@@ -85,5 +81,3 @@ tbody td:hover::before {
     border: 3px solid #272626;
     color: #272626;
 }
-
-
