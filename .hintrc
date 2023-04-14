@@ -14,27 +14,11 @@
       "default",
       {
         "ignore": [
-          "accent-color"
+          "accent-color",
+          "backdrop-filter"
         ]
       }
     ],
-<<<<<<< Updated upstream
     "no-inline-styles": "off"
-=======
-    "no-inline-styles": "off",
-    "axe/keyboard": [
-      "default",
-      {
-        "nested-interactive": "off"
-      }
-    ],
-    "button-type": "off",
-    "axe/name-role-value": [
-      "default",
-      {
-        "link-name": "off"
-      }
-    ]
->>>>>>> Stashed changes
   }
 }
