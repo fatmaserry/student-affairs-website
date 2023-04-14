@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/view_style.css">
     <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
     <title>VIEW | FCAI-CU</title>
 
@@ -36,9 +37,11 @@
       </nav>
 
     <div class="container">
+      <div class="view_student_table">
         <h1>Students</h1>
         <table>
-            <thead>
+            <thead class="table_header">
+              <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Level</th>
@@ -48,6 +51,7 @@
                 <th>National ID</th>
                 <th>Department</th>
                 <th>Status</th>
+              </tr>
             </thead>
 
             <tbody>
@@ -150,15 +154,15 @@
                             <option value="Inactive">Inactive</option>
                         </select>
                     </td>
-                </tr>
+              </tr>
             </tbody>
 
         </table>
+      
 
 
         <input id="save" type="submit" value="Save">
-
-
+      </div>
     </div>
 
   <!-- Footer -->
