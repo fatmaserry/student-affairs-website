@@ -12,27 +12,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <title>Login | FCAI-CU</title>
+    <link rel="stylesheet" href="stylesheets\login.css">
 
 </head>
 
 <body>
-    <form action="" method="post" class="loginform" id="loginform">
+
+   <form action="" method="post" class="loginform" id="loginform">
+    <h1>Log In</h1>
         <div class="icon">
             <img src="images/Login.png" width="100px" height="100px" alt="login icon"
                 class="lilcircle">
         </div>
-        <div>
-            <label for="userid">User ID</label><br>
-            <input type="number" id="userid" name="userid" required>
+        <div class="inputcontrol"> 
+          <input type="integer" class="input" placeholder=" " id="userid" name="userid" >
+            <label for="userid" class="formlabel">User ID</label>
+            <div class="error"></div>
 
         </div>
-        <div>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" name="password" required>
+        <div class="inputcontrol">
+            <input class="input" placeholder=" " type="password" id="password" name="password" >
+            <label for="password"class="formlabel">Password</label>
+            <div class="error"></div>
         </div>
-        <input type="submit" form="loginform" value="Login">
+        <button type="submit">Log In</button>
     </form>
-    
+ 
 
   <!-- Footer -->
   <footer>
