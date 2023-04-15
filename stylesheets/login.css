@@ -115,7 +115,7 @@ button:hover{
 .inputcontrol.error input{
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid#820000;
+  border-bottom: 2px solid#d00202;
   padding: 5px;
   transition: 0.6s;
   width: 100%;
@@ -123,9 +123,17 @@ button:hover{
 }
 
 .inputcontrol .error {
-  color: #820000;
+  color: #d00202;
   font-size: 10px;
   height: 13px;
+}
+
+.inputcontrol.error .formlabel{
+  color: #d00202;
+}
+
+.inputcontrol.success.formlabel{
+  color:#41644A;
 }
 
 

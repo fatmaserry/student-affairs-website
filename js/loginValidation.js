@@ -1,5 +1,6 @@
 const userid=document.getElementById("userid");
 const password= document.getElementById("password");
+const form= document.getElementById("loginform");
 
 form.addEventListener('submit',e=>{
     e.preventDefault();
@@ -29,12 +30,17 @@ const validateInputs= ()=> {
     const useridvalue=userid.value.trim();
     const passwordvalue=password.value.trim();
 
-    if(useridvalue===''|| !isNaN(useridvalue)){
+    if(useridvalue===''){
         seterror(userid,"Please enter user id");
     }
     else{
+        if(/^\d*\.?\d*$/.test(useridvalue)){
         setsuccess(userid);
     }
+    else{
+        seterror(userid,"enter numbers for user id");
+    }
+}
 
     if(passwordvalue === '') {
         seterror(password, "Password is required");
