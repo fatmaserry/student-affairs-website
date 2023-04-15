@@ -14,7 +14,7 @@ if (localStorage.students != null) {
 //Add Student JS
 class Student {
     constructor(fname, lname, address, id, nationality, nationalityID,
-        phone, landline, email, level, gpa, dep, dob, gender) {
+        phone, landline, email, level, gpa, dep, dob, gender, status) {
         this.fname = fname;
         this.lname = lname;
         this.address = address;
@@ -29,7 +29,7 @@ class Student {
         this.department = dep;
         this.dob = dob;
         this.gender = gender;
-        this.status = "Active";
+        this.status = status;
     }
 }
 
@@ -53,11 +53,11 @@ add_student_button.onclick = (e) => {
     let dep = document.getElementById("department").value;
     let dob = document.getElementById("dob").value;
     let gender = document.querySelector('input[name="gender"]:checked').value;
-
+    let status =  document.querySelector('input[name="status"]:checked').value;
     // Validate Code
 
     const new_student = new Student(fname, lname, address, id, nationality, nationalityID,
-        phone, landline, email, level, gpa, dep, dob, gender);
+        phone, landline, email, level, gpa, dep, dob, gender, status);
 
 
     // push new_student to the main array students
