@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./stylesheets/editS_style.css">
   <title>Edit Student Data | FCAI-CU</title>
 
@@ -22,7 +23,7 @@
     <div class="nav-container">
       <div class="cu-logo">
         <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
-        <h3>FCAI-CI Student Affairs</h3>
+        <h3>FCAI-CU Student Affairs</h3>
       </div>
       <div class="nav-content">
         <ul type="none">
@@ -33,9 +34,7 @@
           <li><a href="view.html">View Students</a></li>
         </ul>
       </div>
-
       <div>
-
         <a href="login.html" class="sign">Sign Out</a>
       </div>
     </div>
@@ -43,117 +42,118 @@
 
 
 
-
   <div class="container">
     <div class="editStudentForm">
-    <header>
-      <h1>Edit Student Data</h1>
-    </header>
-    <form >
+      <header>
+        <h1>Edit Student Data</h1>
+      </header>
+      <form>
 
-      <label for="name">Student Name:</label>
-      <input type="text" name="name" value="Karim Adel Ahmed" placeholder="Enter the student name " id="name">
+        <label for="name">Student Name:</label>
+        <input type="text" name="name" value="Karim Adel Ahmed" placeholder="Enter the student name " id="name">
 
-      <label for="add">Student Address: </label>
-      <input type="text" name="address" value="Nasr St, Maadi" id="add">
+        <label for="add">Student Address: </label>
+        <input type="text" name="address" value="Nasr St, Maadi" id="add">
 
-                      <!--Left Colummn Input -->
-<div class="leftColumn">
-                         <!--Nationality -->
+        <!--Left Colummn Input -->
+        <div class="leftColumn">
+          <!--Nationality -->
 
-  <label for="country">Student Nationalty: </label>
-  <input type="text" name="nation" value="Egyptian" id="country"> 
+          <label for="country">Student Nationalty: </label>
+          <input type="text" name="nation" value="Egyptian" id="country">
 
-                         <!--Phone Number -->
+          <!--Phone Number -->
 
-  <label for="num">Phone Number: </label>
-  <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits" pattern="[0-9]{11}" id="num">
-               
-                          <!--  Email Address -->
+          <label for="num">Phone Number: </label>
+          <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits"
+            pattern="[0-9]{11}" id="num">
 
-  <label for="email">Email Address: </label>
-  <input type="email" name="email" value="karim.adel@gmail.com" id="email">
+          <!--  Email Address -->
 
-
-                <!--  Level -->
-
-  <label for="level">Level: </label>
-  <input type="number" value="2" id="level">
-
-               <!--Status-->
-  <label > Status:</label>
-
-  <div class="active-status">
-  <input type="radio" name="status" id="active" checked>
-  <label class="active" for="active">Active</label>
-  </div>
-
-  <div class="inactive-status">
-  <input type="radio" name="status" id="inactive">
-  <label class="inactive" for="inactive">Inactive</label>
-  </div>
-               
-                <!--  Department -->
-
-  <label for="dep">Department: </label>
-  <input  type="text" value="General" readonly>
-  <button class="assignDep" formaction=".\edit_department.html"> Assign Department  </button>
-
-</div>
-
-            <!--  Right Colimn Input -->
-      <div class="rightColumn">
+          <label for="email">Email Address: </label>
+          <input type="email" name="email" value="karim.adel@gmail.com" id="email">
 
 
-        <!-- National ID -->
+          <!--  Level -->
 
-      <label for="natid">National ID: </label>
-      <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits" id="natid">
+          <label for="level">Level: </label>
+          <input type="number" value="2" id="level">
 
-      <!-- Birth Date -->
+          <!--Status-->
+          <label> Status:</label>
 
-      <label for="birthDate">Date of Birth: </label>
-      <input type="date" name="birth" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="birthDate">
-      
+          <div class="active-status">
+            <input type="radio" name="status" id="active" checked>
+            <label class="active" for="active">Active</label>
+          </div>
 
-      <!--  Landline Number -->
+          <div class="inactive-status">
+            <input type="radio" name="status" id="inactive">
+            <label class="inactive" for="inactive">Inactive</label>
+          </div>
 
-      <label for="landline">Landline Number: </label>
-      <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits" pattern="[0-9]{10}"
-        id="landline">
+          <!--  Department -->
+
+          <label for="dep">Department: </label>
+          <input type="text" value="General" readonly>
+          <button class="assignDep" formaction=".\edit_department.html"> Assign Department </button>
+
+        </div>
+
+        <!--  Right Colimn Input -->
+        <div class="rightColumn">
 
 
-        <!-- College ID -->
+          <!-- National ID -->
 
-      <label for="id">College ID: </label>
-      <input type="text" name="id" value="20211344" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id"> 
-      <br>
+          <label for="natid">National ID: </label>
+          <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits"
+            id="natid">
 
-       <!--  Gender -->
+          <!-- Birth Date -->
 
-       <label>Gender: </label>
-       <div class="male-gender">
-       <input type="radio" name="gender" id="male" checked>
-       <label class="male" for="male">Male</label> 
-      </div>
-       
-      <div class="female-gender">
-       <input type="radio" name="gender" id="female">
-       <label class="female" for="female">Female</label>
-      </div>
+          <label for="birthDate">Date of Birth: </label>
+          <input type="date" name="birth" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="birthDate">
 
-      <!--  GPA -->
 
-  <label for="gpa">GPA </label>
-  <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
+          <!--  Landline Number -->
 
-            <!-- Save-->
+          <label for="landline">Landline Number: </label>
+          <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits"
+            pattern="[0-9]{10}" id="landline">
+
+
+          <!-- College ID -->
+
+          <label for="id">College ID: </label>
+          <input type="text" name="id" value="20211344" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id">
+          <br>
+
+          <!--  Gender -->
+
+          <label>Gender: </label>
+          <div class="male-gender">
+            <input type="radio" name="gender" id="male" checked>
+            <label class="male" for="male">Male</label>
+          </div>
+
+          <div class="female-gender">
+            <input type="radio" name="gender" id="female">
+            <label class="female" for="female">Female</label>
+          </div>
+
+          <!--  GPA -->
+
+          <label for="gpa">GPA </label>
+          <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
+
+          <!-- Save-->
+        </div>
+        <input class="submit" type="submit" value="Save">
+
+      </form>
     </div>
-      <input class="submit" type="submit" value="Save">
-
-    </form>
   </div>
-</div>
 
   <!-- Footer -->
   <footer>
@@ -164,25 +164,22 @@
 
       <div class="footer-content-1">
         <ul type="none">
-          <li class="get-in-touch">GET IN TOUCH</li>
+          <li class="get-in-touch">CONTACT US</li>
           <li>
             <i class="fa-sharp fa-solid fa-phone" style="color: #ffffff;"></i>
-            <span>01289209739</span>
+            <span><a href="tel:01289209739">01289209739</a></span>
           </li>
           <li>
             <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
-            <span>20220428@stud.fci-cu.edu.eg</span>
+            <span><a href="mailto:fatmaserry16@gmail.com">Send Mail</a></span>
           </li>
           <li>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-whatsapp"></i>
           </li>
-
         </ul>
       </div>
-
-
       <div class="footer-content-2">
         <p class="about-us">About Us</p>
         <p>Help Center</p>
@@ -192,6 +189,9 @@
 
     </div>
   </footer>
+
+
+  <script src="js/editS.js"></script>
 
 </body>
 

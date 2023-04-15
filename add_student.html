@@ -41,60 +41,63 @@
 
   <div class="container">
     <div class="add_student_form">
+      <!-- Header of Form -->
       <div class="header">
         <h1>Register New Student</h1>
       </div>
 
-      <form action="#" target="_blank">
-        <!--add Action-->
-        <!--max length needed for most inputs-->
-        <!--adjust sizes-->
-
+      <!-- Form -->
+      <form action="#">
 
         <!-- Name  -->
         <div class="name-div">
           <div class="fname">
             <label for="fname">Student First Name:</label>
-            <input type="text" id="sfname" name="sFname" placeholder="" required>
+            <input type="text" id="fname" name="fname" placeholder="" required>
           </div>
+
           <div class="lname">
             <label for="lname">Student Last Name:</label>
-            <input type="text" id="slname" name="sLname" placeholder="" required>
+            <input type="text" id="lname" name="lname" placeholder="" required>
           </div>
         </div>
 
 
         <!-- Address -->
         <div class="address-div">
-          <label for="sAddress">Student Address:</label>
-          <input type="text" id="sAddress" name="sAddress" required>
+          <label for="address">Student Address:</label>
+          <input type="text" id="address" name="address">
         </div>
 
 
+        <!-- Two Sides below -->
         <div class="form-sides">
-
           <!-- Left side -->
           <div class="form-leftside">
-            <label for="sNationality">Student Nationality:</label>
-            <input type="text" id="sNationality" name="sNationality" required>
 
+            <!-- Nationality -->
+            <label for="nationality">Student Nationality:</label>
+            <input type="text" id="nationality" name="nationality" required>
 
-            <label for="sPhoneNumber">Phone Number:</label>
-            <input type="tel" pattern="[0-9]{11}" id="sPhoneNumber" name="sPhoneNumber" required>
+            <!-- Phone number -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" pattern="[0-9]{11}" id="phone" name="phone" required>
 
-            <label for="sEmail">Email Address:</label>
-            <input type="email" id="sEmail" name="sEmail" required>
+            <!-- Email address -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
 
+            <!-- Level -->
+            <label for="level">Level:</label>
+            <input type="text" id="level" name="level" required>
 
-            <label for="sLevel">Level:</label>
-            <input type="text" id="sLevel" name="sLevel" required>
+            <!-- GPA -->
+            <label for="gpa">GPA:</label>
+            <input type="number" id="gpa" name="gpa" required step="0.01" min="0" max="4">
 
-            <label for="sGPA">GPA:</label>
-            <input type="number" id="sGPA" name="sGPA" required step="0.01" min="0" max="4">
-
-
-            <label for="sDepartment">Department:</label>
-            <select name="sDepartment" id="sDepartment" required>
+            <!-- Department -->
+            <label for="department">Department:</label>
+            <select name="department" id="department" required>
               <option value="general">General</option>
               <option value="cs">Computer science</option>
               <option value="ai">Artificial intellegence</option>
@@ -103,43 +106,53 @@
               <option value="ds">Decision support</option>
             </select>
           </div>
+          <!-- End of left side -->
 
-
+          <!-- Right Side -->
           <div class="form-rightside">
 
-            <label for="sNationalID">National ID:</label>
-            <input type="text" id="sNationalID" name="sNationalID" required> <!--Add number patterns-->
+            <!-- National ID -->
+            <label for="nationalID">National ID:</label>
+            <input type="text" id="nationalID" name="nationalID" required>
+            <!--Add number patterns-->
 
+            <!-- Date of Birth -->
+            <label for="dob">Date of birth:</label>
+            <input type="date" id="dob" name="dob" placeholder="dd/mm/yy" required>
 
-            <label for="sDOB">Date of birth:</label>
-            <input type="date" id="sDOB" name="sDOB" placeholder="dd/mm/yy" required>
+            <!-- Landline number -->
+            <label for="landline">Landline Number:</label>
+            <input type="tel" pattern="[0-9]{8}" id="landline" name="landline" required>
 
-            <label for="sLandline">Landline Number:</label>
-            <input type="tel" pattern="[0-9]{8}" id="sLandline" name="sLandline" required>
-            <label for="sCollegeID">College ID:</label>
-            <input type="text" id="sCollegeID" name="sCollegeID" required>
+            <!-- Student ID -->
+            <label for="id">College ID:</label>
+            <input type="text" id="id" name="id" required>
 
-            <label for="sGender">Gender:</label>
+            <!-- Gender -->
+            <label for="gender">Gender:</label>
             <div class="gender-div">
               <div class="male-gender">
-                <input type="radio" id="male" name="gender" value="Male">
+                <input type="radio" id="male" name="gender" value="male">
                 <label for="male" class="male">Male</label>
               </div>
 
               <div class="female-gender">
-                <input type="radio" id="female" name="gender" value="Female">
+                <input type="radio" id="female" name="gender" value="female">
                 <label for="female" class="female">Female</label>
               </div>
             </div>
 
           </div>
+          <!-- End of right side -->
         </div>
+        <!-- End of sides -->
+
+        <!-- Add Student button -->
         <input type="submit" id="add-student" value="Add Student">
       </form>
 
     </div>
   </div>
-
 
 
   <!-- Footer -->
@@ -178,7 +191,7 @@
   </footer>
 
 
-  <script src="js/script.js"></script>
+  <script src="js/addS.js"></script>
 </body>
 
 </html>
