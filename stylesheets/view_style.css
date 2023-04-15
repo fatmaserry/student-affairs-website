@@ -79,7 +79,6 @@ h1 {
 }
 .view_student_table {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  height: 500px;
   overflow-y: scroll;
   background-color: #fff;
   border-radius: 8px;
