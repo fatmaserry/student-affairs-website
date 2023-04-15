@@ -10,7 +10,33 @@ if (localStorage.students != null) {
     students = [];
 }
 
-// View Student
+
+// View Students
+
+    let table ='';
+    for (let i = 0; i < students.length ; i++) {
+        table += `
+        <tr>
+              <td>${students[i].id}</td>
+              <td>${students[i].fname+" "+students[i].lname}</td>
+              <td>${students[i].level}</td>
+              <td>${students[i].phone_num}</td>
+              <td>${students[i].nationality}</td>
+              <td>${students[i].department}</td>
+              <td>${students[i].status}</td>
+              <td>
+                <button name="popup-edit-status" id="popup">
+                  <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
+                </button>
+              </td>
+            </tr>
+        `;
+    }
+
+    document.getElementById('tbody').innerHTML = table;
+
+
+
 
 // const open_button = document.querySelector("#popup");
 // open_button.onclick = function showStatus(id){
@@ -36,3 +62,5 @@ if (localStorage.students != null) {
 //     data.setItem("students",JSON.stringify)
     
 // }
+
+
