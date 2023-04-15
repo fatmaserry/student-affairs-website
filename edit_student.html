@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheets/editS_style.css">
   <title>Edit Student Data | FCAI-CU</title>
 
 </head>
@@ -44,86 +45,115 @@
 
 
   <div class="container">
+    <div class="editStudentForm">
     <header>
       <h1>Edit Student Data</h1>
     </header>
-    <form>
-      <label for="name">Student Name</label><br>
-      <input type="text" name="name" value="Karim Adel Ahmed" placeholder="Enter the student name " id="name"> <br> <br>
+    <form >
 
-      <label for="id">College ID </label><br>
-      <input type="text" name="id" value="20211344" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id"> <br>
+      <label for="name">Student Name:</label>
+      <input type="text" name="name" value="Karim Adel Ahmed" placeholder="Enter the student name " id="name">
+
+      <label for="add">Student Address: </label>
+      <input type="text" name="address" value="Nasr St, Maadi" id="add">
+
+                      <!--Left Colummn Input -->
+<div class="leftColumn">
+                         <!--Nationality -->
+
+  <label for="country">Student Nationalty: </label>
+  <input type="text" name="nation" value="Egyptian" id="country"> 
+
+                         <!--Phone Number -->
+
+  <label for="num">Phone Number: </label>
+  <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits" pattern="[0-9]{11}" id="num">
+               
+                          <!--  Email Address -->
+
+  <label for="email">Email Address: </label>
+  <input type="email" name="email" value="karim.adel@gmail.com" id="email">
+
+
+                <!--  Level -->
+
+  <label for="level">Level: </label>
+  <input type="number" value="2" id="level">
+
+               <!--Status-->
+  <label > Status:</label>
+
+  <div class="active-status">
+  <input type="radio" name="status" id="active" checked>
+  <label class="active" for="active">Active</label>
+  </div>
+
+  <div class="inactive-status">
+  <input type="radio" name="status" id="inactive">
+  <label class="inactive" for="inactive">Inactive</label>
+  </div>
+               
+                <!--  Department -->
+
+  <label for="dep">Department: </label>
+  <input  type="text" value="General" readonly>
+  <button class="assignDep" formaction=".\edit_department.html"> Assign Department  </button>
+
+</div>
+
+            <!--  Right Colimn Input -->
+      <div class="rightColumn">
+
+
+        <!-- National ID -->
+
+      <label for="natid">National ID: </label>
+      <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits" id="natid">
+
+      <!-- Birth Date -->
+
+      <label for="birthDate">Date of Birth: </label>
+      <input type="date" name="birth" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="birthDate">
+      
+
+      <!--  Landline Number -->
+
+      <label for="landline">Landline Number: </label>
+      <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits" pattern="[0-9]{10}"
+        id="landline">
+
+
+        <!-- College ID -->
+
+      <label for="id">College ID: </label>
+      <input type="text" name="id" value="20211344" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id"> 
       <br>
 
-      <label>Status </label><br>
-      <input type="radio" name="status" id="active" checked>
-      <label for="active">Active</label><br>
+       <!--  Gender -->
 
-      <input type="radio" name="status" id="inactive">
-      <label for="inactive">Inactive</label><br><br>
+       <label>Gender: </label>
+       <div class="male-gender">
+       <input type="radio" name="gender" id="male" checked>
+       <label class="male" for="male">Male</label> 
+      </div>
+       
+      <div class="female-gender">
+       <input type="radio" name="gender" id="female">
+       <label class="female" for="female">Female</label>
+      </div>
 
-      <label for="level">Level </label><br>
-      <select name="level" id="level">
-        <option value="level1">Level 1</option>
-        <option value="level2" selected>Level 2</option>
-        <option value="level3">Level 3</option>
-        <option value="level4">Level 4</option>
-      </select><br><br>
+      <!--  GPA -->
 
+  <label for="gpa">GPA </label>
+  <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
 
-      <label>Program </label><br>
-      <input type="radio" name="program" id="general" checked>
-      <label for="general">General</label><br>
-
-      <input type="radio" name="program" id="special">
-      <label for="special">Special</label><br><br>
-
-      <label for="dep">Department </label><br>
-      <input type="text" value="General" readonly>
-      <button type="submit">
-        <a href="edit_department.html">Assign Department</a>
-      </button><br><br>
-
-      <label for="gpa">GPA </label><br>
-      <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa"> <br> <br>
-
-      <label for="add">Student Address </label><br>
-      <input type="text" name="address" value="Nasr St, Maadi" id="add"> <br> <br>
-
-      <label for="num">Phone Number </label><br>
-      <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits" pattern="[0-9]{11}"
-        id="num"> <br> <br>
-
-      <label for="landline">Landline Number </label><br>
-      <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits" pattern="[0-9]{10}"
-        id="landline"> <br> <br>
-
-      <label for="email">Email Address </label><br>
-      <input type="email" name="email" value="karim.adel@gmail.com" id="email"> <br> <br>
-
-      <label for="country">Student Nationalty </label><br>
-      <input type="text" name="nation" value="Egyptian" id="country"> <br> <br>
-
-      <label for="natid">National ID </label><br>
-      <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits" id="natid">
-      <br> <br>
-
-      <label>Gender </label><br>
-      <input type="radio" name="gender" id="male" checked>
-      <label for="male">Male</label> <br>
-
-      <input type="radio" name="gender" id="female">
-      <label for="female">Female</label> <br><br>
-
-      <label for="birthDate">Date of birth </label><br>
-      <input type="date" name="birth" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="birthDate"> <br> <br>
-
-
-
-      <input type="submit" value="Save">
+            <!-- Save-->
+    </div>
+      <input class="submit" type="submit" value="Save">
 
     </form>
   </div>
+</div>
 
   <!-- Footer -->
   <footer>

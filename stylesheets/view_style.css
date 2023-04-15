@@ -1,0 +1,84 @@
+
+body {
+	background: linear-gradient(45deg, #faf2f7, #f1e5f3);
+    height: 1000px;
+}
+
+h1{
+    margin: 20px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(39, 38, 38, 0.1);
+}
+
+th {
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(39, 38, 38);
+    color: #faf2f7;
+}
+
+td {
+    padding: 15px;
+    background-color: rgba(250, 242, 247, 0.2);
+    color: #272626;
+    border-bottom: 1px solid rgba(39, 38, 38, 0.2);
+}
+
+
+
+
+tbody tr:hover{
+    background-color: rgba(39, 38, 38, 0.2);
+    border-bottom: 1px, solid, #272626;
+}
+
+tbody td {
+    position: relative;
+}
+
+
+tbody td:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(39, 38, 38, 0.2);
+    z-index: -1;
+}
+
+
+#status {
+    background-color: rgba(250, 242, 247, 0.2);
+    color: #272626;
+    border-radius: 6px;
+    border: none;
+}
+
+#save{
+    background-color: #272626;
+    color: #faf2f7;
+    border: 3px solid transparent;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    height: 50px;
+    width: 70px;
+    font-size: 20px;
+}
+
+#save:hover{
+    background-color: transparent;
+    border: 3px solid #272626;
+    color: #272626;
+}

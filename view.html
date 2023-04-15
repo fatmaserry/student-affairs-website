@@ -10,40 +10,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/view_style.css">
     <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
     <title>VIEW | FCAI-CU</title>
-
+<script>
+  $(window).on("load resize ", function() {
+  var scrollWidth = $('.view_student_table').width() - $('.view_student_table table').width();
+  $('.view_student_table').css({'padding-right':scrollWidth});
+}).resize();
+</script>
 </head>
 
 <body>
-  <nav>
-    <div class="nav-container">
-      <div class="cu-logo">
-        <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
-        <h3>FCAI-CI Student Affairs</h3>
-      </div>
-      <div class="nav-content">
-        <ul type="none">
-          <!-- <li><a href="login.html">Log In</a></li> -->
-          <li><a href="index.html">Home</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="add_student.html" class="add">Add Student</a></li>
-          <li><a href="view.html">View Students</a></li>
-        </ul>
-      </div>
-
-      <div>
-
-        <a href="login.html" class="sign">Sign Out</a>
-      </div>
-    </div>
-  </nav>
-
+    <nav>
+        <div class="nav-container">
+          <div class="cu-logo">
+            <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
+            <h3>FCAI-CI Student Affairs</h3>
+          </div>
+          <div class="nav-content">
+            <ul type="none">
+              <li><a href="login.html">Log In</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="search.html">Search</a></li>
+              <li><a href="add_student.html">Add Student</a></li>
+              <li><a href="view.html">View Students</a></li>
+              <li><a href="login.html">Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
     <div class="container">
-        <h1>Students</h1>
+      <h1>Students</h1>
+      
+      <div class="view_student_table" style="overflow-y: auto;">
         <table>
-            <thead>
+            <thead class="table_header">
+              <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Level</th>
@@ -53,8 +57,10 @@
                 <th>National ID</th>
                 <th>Department</th>
                 <th>Status</th>
+              </tr>
             </thead>
 
+            <div class="scroll">
             <tbody>
                 <tr>
                     <!-- First ROW -->
@@ -68,12 +74,11 @@
                     <td>3030102514554</td>
                     <td>General</td>
                     <td>
-                      Active
-                   </td>
-
-                   <td>
-                     <i class="fas fa-edit" style="color: #19b8ad;"></i>
-                   </td>
+                        <select name="status" id="status">
+                            <option value="active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
@@ -86,11 +91,10 @@
                     <td>3030102514555</td>
                     <td>Computer Science</td>
                     <td>
-                       Active
-                    </td>
-
-                    <td>
-                      <i class="fas fa-edit" style="color: #19b8ad;"></i>
+                        <select name="status" id="status">
+                            <option value="active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
                     </td>
                 </tr>
 
@@ -104,7 +108,10 @@
                     <td>3030102514552</td>
                     <td>General</td>
                     <td>
-                      <i class="fas fa-edit" style="color: #19b8ad;"></i>
+                        <select name="status" id="status">
+                            <option value="active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -117,12 +124,11 @@
                     <td>3030102514552</td>
                     <td>General</td>
                     <td>
-                      Active
-                   </td>
-
-                   <td>
-                     <i class="fas fa-edit" style="color: #19b8ad;"></i>
-                   </td>
+                        <select name="status" id="status">
+                            <option value="active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>20210456</td>
@@ -134,12 +140,11 @@
                     <td>3030102514552</td>
                     <td>General</td>
                     <td>
-                      Active
-                   </td>
-
-                   <td>
-                     <i class="fas fa-edit" style="color: #19b8ad;"></i>
-                   </td>
+                        <select name="status" id="status">
+                            <option value="active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>20210456</td>
@@ -151,17 +156,18 @@
                     <td>3030102514552</td>
                     <td>General</td>
                     <td>
-                      <i class="fas fa-edit" style="color: #19b8ad;"></i>
+                        <select name="status" id="status">
+                            <option value="active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
                     </td>
                 </tr>
             </tbody>
+          </div>
 
         </table>
-
-
-        <input id="save" type="submit" value="Save">
-
-
+        <input type="submit" id="save" value="Save">
+      </div>
     </div>
 
   <!-- Footer -->
@@ -171,33 +177,21 @@
         <img class="footer-logo" src="images/Fcai-logo.png" alt="logo">
       </div>
 
-      <div class="footer-content-1">
+      <div class="footer-content">
         <ul type="none">
-          <li class="get-in-touch">GET IN TOUCH</li>
-          <li>
-            <i class="fa-sharp fa-solid fa-phone" style="color: #ffffff;"></i>
-            <span>01289209739</span>
-          </li>
-          <li>
-            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
-            <span>20220428@stud.fci-cu.edu.eg</span>
-          </li>
+          <li>Contact Us</li>
           <li>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-whatsapp"></i>
           </li>
-
+          <li>About Us</li>
+          <li>Help Center</li>
         </ul>
       </div>
 
 
-      <div class="footer-content-2">
-        <p class="about-us">About Us</p>
-        <p>Help Center</p>
-        <p>&copy; All Right Reserved, FCAI-CU Students.</p>
-      </div>
-
+      <p>&copy; All Right Reserved, FCAI-CU Students.</p>
 
     </div>
   </footer>

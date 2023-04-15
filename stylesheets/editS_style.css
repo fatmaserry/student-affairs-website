@@ -1,0 +1,141 @@
+.editStudentForm{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  form{
+    width:850px;
+    margin: 40px 0;
+}
+
+input{
+    background-color: rgba(57, 57, 57, 0.07);
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    margin: 10px 20px 20px 0;
+    height: 45px;
+    cursor: pointer;
+}
+
+input[type="radio"]{
+  margin: 20px 5px;
+  margin-left: 0;
+  accent-color: #272626;
+  height: 1rem;
+  width: 1rem;
+  display: inline;
+
+  }
+
+
+input:focus {
+    border: none;
+    outline: none;
+  }
+
+
+
+
+.leftColumn{
+    float: left;
+    width: 50%;
+    padding-right: 25px;
+}
+
+.rightColumn{
+    float: right;
+    width: 50%;
+}
+
+
+
+
+label{
+ display: block;
+      }  
+
+
+
+a:link {
+    text-decoration: none;
+}
+
+.male-gender,
+.female-gender{
+  display: inline;
+  align-items: center;
+  height: inherit;
+}
+
+.female,
+.male{
+  display: inline;
+}
+
+.male{
+    margin-right: 40px;
+
+}
+
+
+.active-status,
+.inactive-status{
+display: inline;
+align-items: center;
+height: inherit;
+}
+
+.active,
+.inactive{
+    display: inline;
+}
+
+.active{
+    margin-right: 40px;
+}
+
+
+.assignDep{
+    background-color: #272626;
+    color: #faf2f7;
+    border: 3px solid transparent;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    height: 40px;
+    width: 160px;
+    font-size: 16px;
+}
+
+
+.assignDep:hover {
+    background-color: transparent;
+    border: 3px solid #272626;
+    color: #272626;
+    cursor: pointer;
+} 
+
+
+
+
+.submit{
+    background-color:#272626;
+    color: #faf2f7;
+    border: 3px solid transparent;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    height: 58px;
+    font-size: 25px;
+}
+
+.submit:hover{
+    background-color: transparent;
+    border: 3px solid #272626;
+    color: #272626;
+  
+  }
