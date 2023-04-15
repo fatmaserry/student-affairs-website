@@ -15,10 +15,24 @@
       {
         "ignore": [
           "accent-color",
-          "backdrop-filter"
+          "backdrop-filter",
+          "scrollbar-color",
+          "scrollbar-width"
         ]
       }
     ],
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off"
+      }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ]
   }
 }
