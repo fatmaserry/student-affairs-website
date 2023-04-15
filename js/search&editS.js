@@ -36,7 +36,7 @@ function searchStudents(e){
         if(fullName.includes(searchQuery)){
             var tableRow = "<tr><td>" + student.fname+' '+student.lname + "</td><td>" + student.collageID + "</td><td>" + student.level +
             "</td><td>" + student.status + "</td><td><a href='edit_student.html'><img src='images/edit.png' alt='edit data' class='edit-box'></a></td>" + 
-            "<td><button><img src='images/delete.png' alt='delete data' class='delete-box'></button></td></tr>";
+            "<td><button onclick='deleteRow(this)' class='delete-button'><img src='images/delete.png' alt='delete data' class='delete-box'></button></td></tr>";
             var tableBody = document.getElementById("tableBody");
             tableBody.innerHTML += tableRow;
         }
@@ -44,5 +44,30 @@ function searchStudents(e){
 }
 
 
-button = document.getElementById("button");
-button.addEventListener("click", searchStudents);
+searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", searchStudents);
+
+function deleteRow(button){
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+    cells = row.cells;
+    const student = {
+        name:undefined,
+        ID: undefined,
+        Level: undefined,
+        Status: undefined
+    };
+
+    for(var i = 0;i < 4; i++){
+        student[i] = cells[i].textContent;
+    }
+
+    for(var i = 0; i < students.length; i++){
+        if(student[1]==students[i].collageID){
+            students.splice(i,1);
+            break;
+        }
+    }
+    const s = JSON.stringify(students);
+    localStorage.setItem("students", s);
+}
