@@ -1,84 +1,185 @@
+/* body {
+  background: linear-gradient(45deg, #faf2f7, #f1e5f3);
+} */
 
-body {
-	background: linear-gradient(45deg, #faf2f7, #f1e5f3);
-    height: 1000px;
+h1 {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #02033b;
 }
 
-h1{
-    margin: 20px 50px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+/* Old Color of nav and footer */
+/* #272626 DARK Grey*/
+/* #7267CB Light purple */
+
+.popup-content {
+  position: sticky;
+  top: 70;
+  z-index: 10;
+  background-color: #fff;
+  height: 340px;
+  width: 416px;
+  padding: 30px;
+  margin-top: 100px;
+  border-radius: 4px;
 }
 
+.popup-content *{
+  margin-bottom: 17px;
+}
 
+.save-status-div{
+  margin-top: 20px;
+  display: grid;
+  width: 100%;
+  place-content: center;
+}
+
+#save-status{
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  background-color: #ea5455;
+  padding: 5px 20px;
+  color: #fff;
+  border-radius: 6px;
+}
+.fa-circle-xmark {
+  position: absolute;
+  right: -12px;
+  top: -11px;
+  color: #ea5455;
+  font-size: 47px;
+}
+
+.popup {
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  background: rgba(100, 100, 100, 0.6);
+  position: fixed;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 79px;
+  background-color: white;
+  margin-top: 50px;
+  padding: 40px;
+  height: 722px;
+}
+.view_student_table {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  height: 500px;
+  overflow-y: scroll;
+  background-color: #fff;
+  border-radius: 8px;
+}
 table {
-    width: 100%;
-    border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(39, 38, 38, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.fa-pen-to-square {
+  position: absolute;
+  z-index: 3;
+  top: 18%;
+  right: 24%;
+  font-size: 26px;
+  color: #ea5455;
 }
 
 th {
-    padding: 15px;
-    text-align: center;
-    background-color: rgb(39, 38, 38);
-    color: #faf2f7;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background-color: #02033b;
+  color: #faf2f7;
 }
 
 td {
-    padding: 15px;
-    background-color: rgba(250, 242, 247, 0.2);
-    color: #272626;
-    border-bottom: 1px solid rgba(39, 38, 38, 0.2);
+  font-size: 17px;
+  padding: 16px;
+  background-color: rgba(250, 242, 247, 0.2);
+  color: #272626;
+  border-bottom: 1px solid rgba(39, 38, 38, 0.2);
 }
 
-
-
-
-tbody tr:hover{
-    background-color: rgba(39, 38, 38, 0.2);
-    border-bottom: 1px, solid, #272626;
+tbody tr:hover {
+  background-color: rgba(39, 38, 38, 0.2);
+  border-bottom: 1px, solid, #272626;
 }
 
 tbody td {
-    position: relative;
+  position: relative;
 }
-
 
 tbody td:hover::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -9999px;
-    bottom: -9999px;
-    background-color: rgba(39, 38, 38, 0.2);
-    z-index: -1;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(39, 38, 38, 0.2);
 }
-
 
 #status {
-    background-color: rgba(250, 242, 247, 0.2);
-    color: #272626;
-    border-radius: 6px;
-    border: none;
+  background-color: rgba(250, 242, 247, 0.2);
+  color: #272626;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
 }
 
-#save{
-    background-color: #272626;
-    color: #faf2f7;
-    border: 3px solid transparent;
-    margin-top: 30px;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    height: 50px;
-    width: 70px;
-    font-size: 20px;
+#save {
+  background-color: #02033b;
+  color: #faf2f7;
+  border: 3px solid transparent;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  padding: 10px 50px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-#save:hover{
-    background-color: transparent;
-    border: 3px solid #272626;
-    color: #272626;
+#save:hover {
+  background-color: transparent;
+  border: 3px solid #02033b;
+  color: #272626;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.view_student_table {
+  scrollbar-width: thin;
+  scrollbar-color: #03045e #caf0f8;
+}
+
+/* Works on Chrome, Edge, and Safari */
+.view_student_table::-webkit-scrollbar {
+  width: 12px;
+}
+
+.view_student_table::-webkit-scrollbar-track {
+  background: #02033b;
+  border-top-right-radius: 20px;
+}
+
+.view_student_table::-webkit-scrollbar-thumb {
+  background-color: #caf0f8;
+  border-radius: 20px;
 }

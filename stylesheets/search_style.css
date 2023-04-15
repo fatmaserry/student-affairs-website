@@ -4,7 +4,6 @@
     width: 100%;
     min-height: 100vh;
     padding-top: 5%;
-    display:flex;
     align-items: center;
 }
 .search-bar{
@@ -62,10 +61,8 @@ th{
     background-color: black;
     color: white;
     text-align: center;
-    font-weight: 200;
 }
 tr{
-    width: 100%;
     background-color: #fafafa;
 }
 tr:nth-child(even){
