@@ -17,7 +17,8 @@
           "accent-color",
           "backdrop-filter",
           "scrollbar-color",
-          "scrollbar-width"
+          "scrollbar-width",
+          "height: fit-content"
         ]
       }
     ],
