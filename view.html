@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./stylesheets/view_style.css">
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
   <title>VIEW | FCAI-CU</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -41,36 +42,37 @@
 
 
   <div class="container">
-    <div class="popup">
-      <div class="popup-content">
-        <div class="close-button">
+    <div class="popup" id="popup">
+      <div class="popup-content" id="popup-content">
+        <div id="close" class="close-button" onclick="closePopup()">
           <i class="fa-solid fa-circle-xmark"></i>
         </div>
-        <h2>Student Status</h2>
-        <div>
-          Student Name:
-          <span id="student_name_popup"></span>
-        </div>
-        <div>
-          Student ID:
-          <span id="student_id"></span>
-        </div>
-        <div>
-          Student Status:
-          <span id="student_status_popup"></span>
-        </div>
+        <div id="main-pop">
+          <h2>Student Status</h2>
+          <div>
+            Student Name:
+            <span id="student_name_popup"></span>
+          </div>
+          <div>
+            Student ID:
+            <span id="student_id"></span>
+          </div>
+          <div>
+            Student Status:
+            <span id="student_status_popup"></span>
+          </div>
 
 
-        <label for="student-status-popup">Choose Status: </label>
-        <select name="student-status" id="student-status-popup">
-          <option value="Active">Active</option>
-          <option value="Inactive">Active</option>
-        </select>
+          <label for="student-status-popup">Choose Status: </label>
+          <select name="student-status" id="student-status-popup">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
 
-        <div class="save-status-div">
-          <input type="submit" value="Save" id="save-status">
+          <div class="save-status-div">
+            <input type="submit" value="Save" id="save-status">
+          </div>
         </div>
-
       </div>
     </div>
 
@@ -92,7 +94,7 @@
           </thead>
 
           <tbody id="tbody">
-          
+
           </tbody>
         </table>
 
