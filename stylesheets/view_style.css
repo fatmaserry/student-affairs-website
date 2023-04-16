@@ -262,23 +262,25 @@ h1 {
 .back {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5%;
   align-items: center;
-  margin-top: 79px;
-  background-color: white;
-  margin-top: 50px;
-  padding: 40px;
-  height: 722px;
 }
 .view_student_table {
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  overflow-y: scroll;
+  /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); */
   background-color: #fff;
-  border-radius: 8px;
+  width: 80%;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 table {
+  left: 50%;
+  top: 50%;
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
+  box-shadow: 0 2px 15px #000127;
+
 }
 .fa-pen-to-square {
   font-size: 26px;
@@ -301,10 +303,13 @@ th {
   color: #faf2f7;
 }
 
+tbody{
+   background-color: rgba(250, 242, 247, 0.2);
+   overflow: hidden;
+}
 td {
-  font-size: 17px;
+  font-size: 20px;
   padding: 16px;
-  background-color: rgba(250, 242, 247, 0.2);
   color: #272626;
   border-bottom: 1px solid rgba(39, 38, 38, 0.2);
 }
@@ -323,8 +328,8 @@ tbody td:hover::before {
   position: absolute;
   left: 0;
   right: 0;
-  top: -9999px;
-  bottom: -9999px;
+  top: 0;
+  bottom: 0;
   background-color: rgba(39, 38, 38, 0.2);
 }
 
@@ -369,7 +374,6 @@ tr:nth-child(even) {
 
 .view_student_table::-webkit-scrollbar-track {
   background: #02033b;
-  border-top-right-radius: 20px;
 }
 
 .view_student_table::-webkit-scrollbar-thumb {

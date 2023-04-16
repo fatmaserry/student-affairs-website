@@ -114,7 +114,8 @@ input[type="radio"] {
   width: 1rem;
 }
 
-#department {
+#department,
+#level {
   outline: none;
   padding: 10px;
   border-radius: 8px;

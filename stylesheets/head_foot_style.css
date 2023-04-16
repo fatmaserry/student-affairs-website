@@ -185,3 +185,10 @@ footer #container {
 
 
 /* End of NAV + footer */
+
+/* Media Query */
+@media only screen 
+  and (max-width: 480px) { 
+    
+  
+} 
