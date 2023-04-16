@@ -24,7 +24,16 @@ function searchStudents(e){
     for(var i = 0; i < students.length; i++){
         var student = students[i];
         var fullName = student.fname.toLowerCase()+' '+student.lname.toLowerCase();
-        if(fullName.includes(searchQuery)){
+        var matching = true;
+        // if(searchQuery.length==0)matching=false;
+        for(var j = 0; j < searchQuery.length; j++){
+            if(searchQuery[j] != fullName[j]) {
+                matching = false;
+                break;
+            }
+        }
+        // <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
+        if(matching){
             var tableRow = "<tr><td>" + student.fname+' '+student.lname + "</td><td>" + student.id + "</td><td>" + student.level +
             "</td><td>" + student.status + 
             `</td><td><a href='edit_student.html?id=${student.id}' class='edit-student'><img src='images/edit.png' alt='edit data' class='edit-box'></a></td>` + 
@@ -106,6 +115,7 @@ function reloadData(){
         form.inactive.checked = true;
     }
     form.dep.value = studentData['department'];
+    document.getElementById("depart").readOnly = true;
     form.birthDate.value = studentData['dob'];
     form.landline.value = studentData['landline'];
     form.id.value = studentData['id'];
