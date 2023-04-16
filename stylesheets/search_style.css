@@ -14,7 +14,7 @@
     padding-top: 10px;
 }
 .search-bar input {
-    border: 3px  solid black;
+    border: 3px  solid #000127;
     border-radius: 50px;
     flex:1;
     padding: 20px 20px;
@@ -28,7 +28,7 @@
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    background: black;
+    background: #000127;
     cursor: pointer;
 }
 .table-box{
@@ -39,6 +39,7 @@
     height: 20px;
 }
 caption {
+    color:#000127;
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -49,7 +50,7 @@ table{
     width: 100%; 
     border-collapse: collapse;
     border-spacing: 0;
-    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    box-shadow: 0 2px 15px #000127;
     border-radius: 12px 12px 0 0;
 }
 td {
@@ -58,7 +59,7 @@ td {
 }
 th{
     padding: 15px 20px;
-    background-color: black;
+    background-color: #000127;
     color: white;
     text-align: center;
 }

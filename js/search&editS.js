@@ -28,7 +28,7 @@ function searchStudents(e){
             var tableRow = "<tr><td>" + student.fname+' '+student.lname + "</td><td>" + student.id + "</td><td>" + student.level +
             "</td><td>" + student.status + 
             `</td><td><a href='edit_student.html?id=${student.id}' class='edit-student'><img src='images/edit.png' alt='edit data' class='edit-box'></a></td>` + 
-            "<td><button onclick='deleteRow(this)' class='delete-button'><img src='images/delete.png' alt='delete data' class='delete-box'></button></td></tr>";
+            `<td><button onclick='if(confirm("Are you sure you want to delete ${student.fname} ${ student.lname}?"))deleteRow(this);' class='delete-button'><img src='images/delete.png' alt='delete data' class='delete-box'></button></td></tr>`;
             var tableBody = document.getElementById("tableBody");
             tableBody.innerHTML += tableRow;
         }
@@ -40,6 +40,7 @@ searchButton = document.getElementById("searchButton");
 if(searchButton)searchButton.addEventListener("click", searchStudents);
 
 function deleteRow(button){
+
     var row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
     cells = row.cells;
@@ -88,7 +89,6 @@ function storeData(){
             studentData['status'] = students[i]['status'];
         }
     }
-    console.log(studentData);
 }
 
 function reloadData(){
@@ -99,22 +99,22 @@ function reloadData(){
     form.num.value = studentData['phone_num'];
     form.email.value = studentData['email'];
     form.level.value = studentData['level'];
+    if(studentData['status']=='Active'){
+        form.active.checked = true;
+    }
+    else{
+        form.inactive.checked = true;
+    }
     form.dep.value = studentData['department'];
     form.birthDate.value = studentData['dob'];
     form.landline.value = studentData['landline'];
     form.id.value = studentData['id'];
     form.natid.value = studentData['nationalityID'];
-    form.GPA.value = studentData['gpa'];
+    form.gpa.value = studentData['gpa'];
     if(studentData['gender']=='male'){
         form.male.checked = true;
     }
     else{
         form.female.checked = true;
-    }
-    if(studentData['status']=='active'){
-        form.active.checked = true;
-    }
-    else{
-        form.inactive.checked = true;
     }
 }
