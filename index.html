@@ -14,10 +14,33 @@
   <title>Home Page | FCAI-CU</title>
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
   <link rel="stylesheet" href="./stylesheets/index_style.css">
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <style>
+    .swiper {
+      width: 90%;
+      height: 400px;
+      margin: 40px auto;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 450px;
+    }
+    .swiper-button-next{
+      color:rgb(211, 208, 208);
+
+    } 
+    .swiper-button-prev{
+      color:rgb(211, 208, 208);
+
+    } 
+  </style>
+
 </head>
 
 <body>
@@ -42,19 +65,37 @@
     </div>
   </nav>
 
-
-  <div class="container">
-    <div class="main-fcai">
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide" id="cuhistory">
+      <div class="with-backdrop"></div>
+      <div class="content">
+        <h1>University History</h1>
+      <article>
+        Founded in 1908 by a committee of private citizens with royal patronage in 1908 and became a state institution under King Fuad I in 1925.<br>
+        It was renamed a after the 1952 Egyptian Revolution.Its early founding and location made it a model for later universities throughout the Arab world. It was taken over as a state university in 1925 and became Cairo University in 1954.
+        Significant contributions were made by Princess Fatma Ismail. In the early 1900s, she donated land to the university as a part of her fundraising campaign for the establishment of Egypt's first formal university
+        It is the second oldest institution of higher education in Egypt 
+      </article>
+      <a href="">Learn More</a>
+    </div>
+    </div>
+    <div class="swiper-slide" id="fcaislide">
+      <div class="with-backdrop"></div>
+      <div class="content">
       <div class="main-fcai-imgs">
         <img src="images/Fcai-logo.png" alt="fcai-main-img" />
       </div>
-
+      <div class="title">
+      <h1>
+          Welcome to Faculty of Computer Science <br>and Artificial Intelligence!
+        </h1></div>
+        <div class="article">
       <article>
-        <h1>
-          Welcome to Faculty of Computer Science and Artificial Intelligence!
-        </h1>
-        <p>
-          Computer Science is the academic discipline concerned with computing.
+        Computer Science is the academic discipline concerned with computing.
           The intellectual processes of the discipline combinetheory,
           abstraction, and design. Problems are solved in a distinctive manner,
           with an overall goal of identifying and applying recurring conceptual
@@ -62,8 +103,94 @@
           disciplines, a computer scientist’s perspective offers a unique and
           important voice in a community of learning such as a liberal-arts
           college.
-        </p>
+      </article></div>
+      <a href="">Learn More</a>
+    </div>
+    </div>
+    
+    <div class="swiper-slide" id="cuevent">
+<div class="with-backdrop"></div>
+<div class="content">
+  <h1>Recent Events</h1>
+  <h2>Iftar</h2>
+      <article>
+        Under the auspices of the university administration and the supervision of the college administration, and in cooperation with the Youth Welfare Department, the college students union organizes the largest iftar for students in the history of the college
+The main courtyard of the college is decorated with a Ramadan lantern designed by the college students through the iftar tables of more than five hundred fasting students.
+With fasting meals, Coptic students participate in the celebrated event in an atmosphere of love and fun. Only in guarded Egypt are the two fasts synchronized and those who fast are united in the love of their college.
       </article>
+      <a href="">Learn More</a>
+    </div>
+    </div>
+    <div class="swiper-slide" id="cunow">
+    <div class="with-backdrop"></div>
+    <div class="content">
+      <h1>Cairo University Today</h1>
+      <article>
+        <p> currently enrolls approximately 155,000 students in 20 faculties and 3 institutions.
+        It counts three Nobel Laureates among its graduates and is one of the 50 largest institutions of higher education in the world by enrollment.
+        Cairo University is usually ranked among the down universities in Egypt, and one of the top universities in Africa.
+        </p>
+        <h2>World Rank</h2>
+        <p>
+        In QS ranking 2021, Cairo University was ranked the 2nd in Egypt and the 6th across Africa, and it was rated 561-570 worldwide.
+        
+        In the ARWU 2020 ranking, the university was ranked 1st in Egypt. It was rated 401-500 worldwide.
+        
+        According to the Center for World University Rankings (CWUR) 2020–21, the university was ranked 1st in Egypt, and the 558th worldwide.
+      </p>
+        <h2>Nobel laureates</h2>
+        <p>
+      Naguib Mahfouz, Nobel Prize for Literature in 1988 <br>
+      Yasser Arafat, Nobel Peace Prize in 1994 <br>
+      Mohamed ElBaradei, Nobel Peace Prize in 2005
+    </p>
+    </article>
+    <a href="">Learn More</a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+       
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+      </script>
+
+
+</div>
+  <div class="container">
+    <div class="main-fcai">
+      
     </div>
 
 

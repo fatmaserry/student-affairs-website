@@ -1,5 +1,5 @@
 :root {
-  --nav_main_color: #000127;
+  --nav_main_color: #000129;
   --nav_second_color:  #D3E0EA;
 }
 
@@ -14,12 +14,12 @@
 }
 
 body {
-  /* background: linear-gradient(45deg, #F6F5F5, #D3E0EA); */
+  background: linear-gradient(45deg, #e0dede, #c8c9ff);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  background-image: url("../images/Cairo-University.png");
+ /* background-image: url("../images/Cairo-University.png");*/
   backdrop-filter: blur(5px);
   background-position: center;
   background-repeat: no-repeat;
