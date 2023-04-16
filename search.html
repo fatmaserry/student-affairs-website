@@ -44,15 +44,15 @@
         <h1>Search for a Student</h1>
         <div>
             <form action="" method="" class="search-bar">
-                <input type="text" placeholder="Enter student name">
+                <input type="text" placeholder="Enter student name" id="searchInput">
                 <!-- <input type="submit" value="Search"> -->
-                <button type="submit"><img src="images/search.png" alt=""></button>
+                <button type="submit" id="searchButton"><img src="images/search.png" alt=""></button>
             </form>
         </div>
 
 
         <div class="table-box">
-            <table>
+            <table id="studentsTable">
                 <caption>Students Data</caption>
                 <thead>
                     <th>Name</th>
@@ -62,7 +62,10 @@
                     <th>Data</th>
                     <th>Delete</th>
                 </thead>
-                <tbody>
+                <tbody id="tableBody">
+
+                </tbody>
+                <!-- <tbody>
                     <tr>
                         <td>Karim Adel Ahmed</td>
                         <td>20211344</td>
@@ -141,7 +144,6 @@
                         <td>Active</td>
                         <td>
                             <a href="edit_student.html">
-                                <!-- <i class="fas fa-edit"></i> -->
                                 <img src="images/edit.png" alt="edit data" class="edit-box">
                             </a>
                         </td>
@@ -151,8 +153,7 @@
                             </a>
                         </td>
                     </tr>
-
-                </tbody>
+                </tbody> -->
             </table>
         </div>
 
@@ -196,7 +197,7 @@
     </footer>
 
 
-    <script src="js/search.js"></script>
+    <script src="js/search&editS.js"></script>
 </body>
 
 </html>
