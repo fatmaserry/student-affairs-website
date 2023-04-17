@@ -25,12 +25,12 @@ backdrop-filter: blur(4px);
   margin: 15px;
   padding: 5px;
   color: #272626;
-  border-bottom: 6px solid #8479E1;
+  border-bottom: 6px solid #000129;
   transition: all 0.3s ease-out;
 }
 
 #loginform h1:hover{
-  background-color: #8479E1;
+  background-color: #000129;
   color: #f1eded;
   letter-spacing: 2px;
   transition: all 0.5s ease;
@@ -45,7 +45,7 @@ backdrop-filter: blur(4px);
 .input{
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #8479E1;
+  border-bottom: 2px solid #000129;
   padding: 5px;
   transition: 0.6s;
   width: 100%;
@@ -58,7 +58,7 @@ backdrop-filter: blur(4px);
 }
 
 button{
-  background-color: #8479E1;
+  background-color: #000129;
   color: #faf2f7;
   border: 3px solid transparent;
   transition: all 0.3s ease;
@@ -81,7 +81,7 @@ button:hover{
   display:block;
   position:absolute;
   font-size: 14px;
-  color:#8479E1;
+  color:#000129;
   transition:0.3s ease;
 }
 .lilcircle{

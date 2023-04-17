@@ -29,6 +29,7 @@ if(localStorage.getItem(String(useridvalue))== null){
 else{
     setsuccess(userid);
     if(localStorage.getItem(String(useridvalue))!=passwordvalue){
+        console.log("correctid");
         seterror(password,"Please enter correct password");
     }
     else{
