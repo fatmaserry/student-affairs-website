@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./stylesheets/editS_style.css">
   <title>Edit Student Data | FCAI-CU</title>
   <script src="js/search_editS_editD.js"></script>
-  <script src="js/editS.js"></script>
+  </script>
 </head>
 
 <body>
@@ -136,8 +136,13 @@
             <!--  Department -->
             <div class="field">
             <label for="dep">Department: </label>
+<<<<<<< HEAD
             <input type="text" name="dep" id="dep-input" value="General" readonly>
             <button class="assignDep" id="edit-dep-button" formaction=".\edit_department.html"> Assign Department </button>
+=======
+            <input type="text" name="dep" value="General" readonly>
+            <button class="assignDep" formaction=".\edit_department.html"> Assign Department </button>
+>>>>>>> parent of fcdc1eb (edit student css html)
             </div>
 
           </div>
@@ -174,11 +179,24 @@
 
 
             <!--  Gender -->
-          <label id="gender-label">Gender: </label>
-          <div class="gender-div">
-            <span id="gender"></span>
+          <label>Gender: </label>
+          <div class="field">
+          <div class="male-gender">
+            <input type="radio" name="gender" id="male" checked>
+            <label class="male" for="male">Male</label>
           </div>
-          
+
+          <div class="female-gender">
+            <input type="radio" name="gender" id="female">
+            <label class="female" for="female">Female</label>
+          </div>
+          </div>
+
+
+            
+
+
+
             <!-- Save-->
           </div>
         </div>
@@ -224,7 +242,7 @@
   </footer>
 
 
-  <script>
+  <script src="js/editS.js">
     storeData();
     reloadData();
     storeNewData();
