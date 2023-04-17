@@ -184,6 +184,15 @@ input:focus.invalid {
   box-sizing: border-box;
 }
 
+.id-div{
+  display: flex;
+  width: 100%;
+}
 #id-prefix{
-  width: 50px;
+  width: 44px;
+  margin-right: 1px;
+}
+
+#id{
+  margin-right: 0;
 }
