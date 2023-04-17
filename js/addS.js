@@ -30,7 +30,7 @@ const idPrefix = document.getElementById("id-prefix");
 const id = document.getElementById("id");
 let studentId;
 const idError = id.nextElementSibling;
-const idRegExp = /^([0-9]{5})$/;
+const idRegExp = /^([0-9]{6})$/;
 
 const nationalID = document.getElementById("nationalID");
 const nationalIdError = nationalID.nextElementSibling;
