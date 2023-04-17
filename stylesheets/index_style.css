@@ -5,9 +5,7 @@
     box-sizing: border-box;
     align-self: auto;
 }
-body{
-    background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-}
+
 a:link { text-decoration: none; }
 
 
@@ -24,25 +22,27 @@ a:active { text-decoration: none; }
 .content{
     width:45%;
     height: 100%;
-   background-color: #000129;
-   text-align: left;
-   font-size: 14px;
-   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   font-weight: 100;
-   text-shadow: 1px 1px #090909;
-   overflow: auto;
-
+    background-color: #000129;
+    text-align: left;
+    font-size: 14px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    text-shadow: 1px 1px #090909;
+    overflow: auto;
+    padding: 2.5em;
+    display: flex;
+    flex-wrap: wrap;
 }
 .content a{
 color: #faf2f7;
-  border-bottom: 3px solid #faf2f7;
   transition: all 0.3s ease;
   height: 35px;
   font-size: 16px;
   width: fit-content;
-  margin:20px;
   background-color: transparent;
+  border-bottom: 3px solid #faf2f7;
   margin: 10px 10px;
+  padding:10px 10px;
 }
 .content article{
 margin:20px 10px;
@@ -50,16 +50,19 @@ padding: 10px 10px;
 }
 
 .content a:hover{
-  background-color:#e4e4e4 ;
+    margin:0px 0px;
+    padding:0px 0px;
+    background-color:#e4e4e4 ;
   border: 3px solid #e4e4e4;
   color: #000129;
   text-shadow: 0px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
 }
 .content h1{
-color:#faf2f7;;
-transition: all 0.3s ease-out;
-margin: 20px 10px;
+    color:#faf2f7;
+    transition: all 0.3s ease-out;
+    margin: 10px 10px;
 }
 .content h1:hover{
     width:fit-content;
@@ -126,8 +129,7 @@ margin: 20px 10px;
 #fcaislide .content{
     display: flex;
     flex-wrap: wrap;
-    align-content: \;
-    align-items: unset;
+    
     justify-content: flex-start;
 }
 #fcaislide .main-fcai-imgs{
@@ -136,6 +138,7 @@ margin: 20px 10px;
 #fcaislide h1{
     font-size: 17px;
     width: fit-content;
+    flex-shrink: 2;
    
 }
 #fcaislide .article{
@@ -156,3 +159,112 @@ margin: 20px 10px;
     color: #faf2f7;
     text-shadow: 1px 1px #090909;
 }
+
+.departments-fcai{
+    display: flex;
+    justify-content: space-around;
+    height: 300px;
+    width: 100%;
+    
+}
+
+#depts{
+    margin: 50px 50px;
+    padding: 10px;
+    color:#faf2f7;
+    transition: all 0.3s ease-out;
+    
+}
+#depts:hover{
+    width:fit-content;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+}
+
+.AI,.CS,.IS,.IT,.OR{
+    background-size: 100% 100%;
+    width:17%;
+}
+
+.CS{
+    background-image: url(../images/computer_science.png);
+    
+}  
+.IT{
+    background-image: url(../images/information_technology.png);
+    
+}  
+.OR{
+    background-image: url(../images/decision_support.png);
+    
+}  
+.IS{
+    background-image: url(../images/information_system.png);
+    
+} 
+.AI{
+    background-image: url(../images/artificial_intellegence.png);
+    
+}
+
+.departments-fcai h4{
+    color:#faf2f7;
+    transition: all 0.3s ease-out;
+    margin: 10px 10px;
+}
+.departments-fcai h4:hover{
+    width:fit-content;
+    letter-spacing: 2px;
+  transition: all 0.5s ease;
+  border-bottom: 3px solid #faf2f7;;
+}
+
+.departments-fcai .cardcontent{
+    display:hidden;
+    color:transparent
+}
+
+.departments-fcai .cardcontent:hover{
+transform:translateY(-50px);
+background-color: #000129;
+text-align: left;
+    font-size: 14px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    text-shadow: 1px 1px #090909;
+    color: #faf2f7;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.departments-fcai .cardcontent p{
+    margin:10px 10px;
+    padding:10px 10px;
+}
+
+.departments-fcai .cardcontent:hover a{
+    color: #faf2f7;
+    border-bottom: 3px solid #faf2f7;
+    transition: all 0.3s ease;
+    height: 35px;
+    font-size: 16px;
+    width: fit-content;
+    background-color: transparent;
+    margin: 10px 10px;
+    
+}
+.departments-fcai .cardcontent a{
+    display:hidden;
+    color:transparent
+}
+
+.departments-fcai .cardcontent a:hover{
+    background-color:#e4e4e4 ;
+    border: 3px solid #e4e4e4;
+    color: #000129;
+    text-shadow: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
