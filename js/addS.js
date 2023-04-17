@@ -139,20 +139,22 @@ level.addEventListener("input", () => {
 id.addEventListener("input", () => {
   const isValidId = idRegExp.test(id.value);
   studentId = idPrefix.value + id.value;
-
-  if (isValidId) {
-    setNoError(id);
-  } else {
-    id.className = "invalid";
-  }
-
+  let isRepeatedId = false;
   students.forEach((student) => {
     if (student.id == studentId) {
-      id.className = "invalid";
-      idError.textContent = "This ID already Exists";
-      idError.className = "error";
+      isRepeatedId = true;
     }
   });
+
+  if (!isValidId) {
+    id.className = "invalid";
+  } else if (isRepeatedId) {
+    id.className = "invalid";
+    idError.textContent = "This ID already Exists";
+    idError.className = "error";
+  } else {
+    setNoError(id);
+  }
 });
 
 gpa.addEventListener("input", () => {
