@@ -35,7 +35,7 @@ function searchStudents(e){
         // <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
         if(matching){
             var tableRow = "<tr><td>" + student.fname+' '+student.lname + "</td><td>" + student.id + "</td><td>" + student.level +
-            "</td><td>" + student.status + 
+            "</td><td>" + student.status_of_student + 
             `</td><td><a href='edit_student.html?id=${student.id}' class='edit-student'><img src='images/edit.png' alt='edit data' class='edit-box'></a></td>` + 
             `<td><button onclick='if(confirm("Are you sure you want to delete ${student.fname} ${ student.lname}?"))deleteRow(this);' class='delete-button'><img src='images/delete.png' alt='delete data' class='delete-box'></button></td></tr>`;
             var tableBody = document.getElementById("tableBody");
@@ -73,6 +73,7 @@ function deleteRow(button){
     const s = JSON.stringify(students);
     localStorage.setItem("students", s);
 }
+
 let studentData = {};
 
 function storeData(){
@@ -85,7 +86,7 @@ function storeData(){
             studentData['lname'] = students[i]['lname'];
             studentData['address'] = students[i]['address']
             studentData['id'] = students[i]['id'];
-            studentData['nationalityID'] = students[i]['nationalityID'];
+            studentData['nationalID'] = students[i]['nationalID'];
             studentData['phone'] = students[i]['phone'];
             studentData['landline'] = students[i]['landline'];
             studentData['email'] = students[i]['email'];
@@ -101,9 +102,10 @@ function storeData(){
 
 function reloadData(){
     var form = document.querySelector('form');
-    form.name.value = studentData['fname'] + ' ' + studentData['lname'];
-    form.add.value = studentData['address'];
-    form.num.value = studentData['phone'];
+    form.fname.value = studentData['fname'];
+    form.lname.value = studentData['lname'];
+    form.address.value = studentData['address'];
+    form.phone.value = studentData['phone'];
     form.email.value = studentData['email'];
     form.level.value = studentData['level'];
     if(studentData['status_of_student']=='Active'){
@@ -112,17 +114,34 @@ function reloadData(){
     else{
         form.inactive.checked = true;
     }
+    //document.getElementById("depart").readOnly = true;
     form.dep.value = studentData['department'];
-    document.getElementById("depart").readOnly = true;
-    form.birthDate.value = studentData['dob'];
+    form.dob.value = studentData['dob'];
     form.landline.value = studentData['landline'];
     form.id.value = studentData['id'];
-    form.natid.value = studentData['nationalityID'];
+    form.natid.value = studentData['nationalID'];
     form.gpa.value = studentData['gpa'];
-    if(studentData['gender']=='male'){
-        form.male.checked = true;
+    if(studentData['gender']=='Male'){
+        document.getElementById("gender").innerHTML = 'Male';
     }
     else{
-        form.female.checked = true;
+        document.getElementById("gender").innerHTML = 'Female';
     }
+}
+function storeNewData(){
+    var form = document.querySelector('form');
+    for(var i = 0; i < students.length; i++){
+        if(students[i]['id']==studentData['id']){
+            students[i]['address'] = form.address.value;
+            students[i]['phone'] = form.phone.value;
+            students[i]['landline'] =  form.landline.value;
+            students[i]['email'] = form.email.value;
+            students[i]['level'] = form.level.value;
+            students[i]['gpa']= form.gpa.value;
+            if(form.active.checked)students[i]['status_of_student']= 'Active';
+            else students[i]['status_of_student']= 'Inactive';
+        }
+    }
+    const s = JSON.stringify(students);
+    localStorage.setItem("students", s);
 }
