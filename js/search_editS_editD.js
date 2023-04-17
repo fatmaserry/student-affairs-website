@@ -100,10 +100,11 @@ function storeData(){
     }
 }
 
-
+// CHECK ON DEPARTMENT
 if(studentData['level'] != 3){
     document.getElementById('edit-dep-button').style.display='none';
 }
+
 
 function reloadData(){
     var form = document.querySelector('form');
@@ -152,3 +153,6 @@ function storeNewData(){
 }
 
 
+function assignDepartment(){
+    
+}
