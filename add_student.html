@@ -74,7 +74,7 @@
 
 
         <!-- Address -->
-        <div class="address-div">
+        <div class="field">
           <label for="address">Student Address:</label>
           <input type="text" id="address" name="address">
           <span class="address-error" aria-live="polite"></span>
@@ -86,41 +86,59 @@
           <!-- Left side -->
           <div class="form-leftside">
 
-            <!-- Nationality -->
-            <label for="nationality">Student Nationality:</label>
-            <input type="text" id="nationality" name="nationality">
-            <span class="nationality-error" aria-live="polite"></span>
-
             <!-- Phone number -->
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone">
-            <span class="phone-error" aria-live="polite"></span>
-
+            <div class="field">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone">
+              <span class="phone-error" aria-live="polite"></span>
+            </div>
             <!-- Email address -->
-            <label for="email">Email Address:</label>
-            <input type="text" id="email" name="email">
-            <span class="email-error" aria-live="polite"></span>
-
+            <div class="field">
+              <label for="email">Email Address:</label>
+              <input type="text" id="email" name="email">
+              <span class="email-error" aria-live="polite"></span>
+            </div>
             <!-- Level -->
-            <label for="level">Level:</label>
-            <input type="text" id="level" name="level">
-            <span class="level-error" aria-live="polite"></span>
-
+            <div class="field">
+              <label for="level">Level:</label>
+              <input type="text" id="level" name="level">
+              <span class="level-error" aria-live="polite"></span>
+            </div>
             <!-- GPA -->
-            <label for="gpa">GPA:</label>
-            <input type="text" id="gpa" name="gpa">
-            <span class="gpa-error" aria-live="polite"></span>
-
+            <div class="field">
+              <label for="gpa">GPA:</label>
+              <input type="text" id="gpa" name="gpa">
+              <span class="gpa-error" aria-live="polite"></span>
+            </div>
             <!-- Department -->
-            <label for="department">Department:</label>
-            <select name="department" id="department" required>
-              <option value="General">General</option>
-              <option value="Computer science">Computer science</option>
-              <option value="Artificial intelligence">Artificial intellegence</option>
-              <option value="Information system">Information system</option>
-              <option value="Information technology">Information technology</option>
-              <option value="Decision support">Decision support</option>
-            </select>
+            <div class="field">
+              <label for="department">Department:</label>
+              <select name="department" id="department" required>
+                <option value="General">General</option>
+                <option value="Computer science">Computer science</option>
+                <option value="Artificial intelligence">Artificial intellegence</option>
+                <option value="Information system">Information system</option>
+                <option value="Information technology">Information technology</option>
+                <option value="Decision support">Decision support</option>
+              </select>
+            </div>
+            <!-- Status -->
+            <div id="field">
+              <p for="status">Status:</p>
+              <div class="gender-div">
+                <div class="male-gender">
+                  <input type="radio" id="active" name="status" value="Active">
+                  <label for="active" class="active">Active</label>
+                </div>
+
+                <div class="female-gender">
+                  <input type="radio" id="inactive" name="status" value="Inactive">
+                  <label for="inactive" class="inactive">Inactive</label>
+                </div>
+              </div>
+              <span id="status-error" aria-live="polite"></span>
+            </div>
+            
           </div>
           <!-- End of left side -->
 
@@ -128,57 +146,52 @@
           <div class="form-rightside">
 
             <!-- National ID -->
-            <label for="nationalID">National ID:</label>
-            <input type="text" id="nationalID" name="nationalID">
-            <span class="nationalID-error" aria-live="polite"></span>
-            <!--Add number patterns-->
+            <div class="field">
+              <label for="nationalID">National ID:</label>
+              <input type="text" id="nationalID" name="nationalID">
+              <span class="nationalID-error" aria-live="polite"></span>
+            </div>
 
             <!-- Date of Birth -->
-            <label for="dob">Date of birth:</label>
-            <input type="date" id="dob" name="dob">
-            <span class="dob-error" aria-live="politef"></span>
-
+            <div class="field">
+              <label for="dob">Date of birth:</label>
+              <input type="date" id="dob" name="dob">
+              <span class="dob-error" aria-live="polite"></span>
+            </div>
             <!-- Landline number -->
-            <label for="landline">Landline Number:</label>
-            <input type="tel" id="landline" name="landline">
-            <span class="landline-error" aria-live="polite"></span>
-
+            <div class="field">
+              <label for="landline">Landline Number:</label>
+              <input type="tel" id="landline" name="landline">
+              <span class="landline-error" aria-live="polite"></span>
+            </div>
             <!-- Student ID -->
-            <label for="id">College ID:</label>
-            <input type="text" id="id" name="id" value="202">
-            <span class="id-error" aria-live="polite"></span>
+            <div class="field">
+              <label for="id">College ID:</label>
+              <input type="text" id="id" name="id" value="202">
+              <span class="id-error" aria-live="polite"></span>
+            </div>
 
             <!-- Gender -->
-            <div class="gender-radio">
-            <p for="gender">Gender:</p>
-            <div class="gender-div">
-              <div class="male-gender">
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male" class="male">Male</label>
-                
-              </div>
+            <div class="field">
+              <p for="gender">Gender:</p>
+              <div class="gender-div">
+                <div class="male-gender">
+                  <input type="radio" id="male" name="gender" value="male">
+                  <label for="male" class="male">Male</label>
 
-              <div class="female-gender">
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female" class="female">Female</label>
+                </div>
+
+                <div class="female-gender">
+                  <input type="radio" id="female" name="gender" value="female">
+                  <label for="female" class="female">Female</label>
+                </div>
               </div>
+              <span id="gender-error" aria-live="polite"></span>
             </div>
 
-            <!-- Status -->
-            <label for="status">Status:</label>
-            <div class="gender-div">
-              <div class="male-gender">
-                <input type="radio" id="active" name="status" value="Active">
-                <label for="active" class="active">Active</label>
-              </div>
 
-              <div class="female-gender">
-                <input type="radio" id="inactive" name="status" value="Inactive">
-                <label for="inactive" class="inactive">Inactive</label>
-              </div>
-            </div>
-          </div>
-          <span id="gender-error" aria-live="polite"></span>
+
+
           </div>
           <!-- End of right side -->
         </div>

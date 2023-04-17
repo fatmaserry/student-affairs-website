@@ -91,8 +91,12 @@ label {
   align-items: center;
   height: 20px;
   margin: 20px 0;
+  margin-bottom: 5px;
 }
-
+.field,.fname,
+.lname{
+  height: 112px;
+}
 .female,
 .male {
   display: inline;
@@ -159,7 +163,9 @@ select option {
   }
 }
 
-input.invalid {
+
+input.invalid,
+.invalid{
   border-color: fdd;
   background-color: #fdd;
 }

@@ -22,7 +22,6 @@ function showData() {
               <td>${students[i].fname + " " + students[i].lname}</td>
               <td>${students[i].level}</td>
               <td>${students[i].phone_num}</td>
-              <td>${students[i].nationality}</td>
               <td>${students[i].department}</td>
               <td>${students[i].status}</td>
               <td class="status-edit">

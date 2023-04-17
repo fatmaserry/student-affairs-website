@@ -85,9 +85,8 @@ function storeData(){
             studentData['lname'] = students[i]['lname'];
             studentData['address'] = students[i]['address']
             studentData['id'] = students[i]['id'];
-            studentData['nationality'] = students[i]['nationality'];
             studentData['nationalityID'] = students[i]['nationalityID'];
-            studentData['phone_num'] = students[i]['phone_num'];
+            studentData['phone'] = students[i]['phone'];
             studentData['landline'] = students[i]['landline'];
             studentData['email'] = students[i]['email'];
             studentData['level'] = students[i]['level'];
@@ -104,8 +103,7 @@ function reloadData(){
     var form = document.querySelector('form');
     form.name.value = studentData['fname'] + ' ' + studentData['lname'];
     form.add.value = studentData['address'];
-    form.country.value = studentData['nationality'];
-    form.num.value = studentData['phone_num'];
+    form.num.value = studentData['phone'];
     form.email.value = studentData['email'];
     form.level.value = studentData['level'];
     if(studentData['status']=='Active'){

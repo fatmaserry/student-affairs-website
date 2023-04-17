@@ -13,15 +13,14 @@ if (localStorage.students != null) {
 
 //Add Student JS
 class Student {
-    constructor(fname, lname, address, id, nationality, nationalID,
+    constructor(fname, lname, address, id, nationalID,
         phone, landline, email, level, gpa, dep, dob, gender, status) {
         this.fname = fname;
         this.lname = lname;
         this.address = address;
-        this.id= id;
-        this.nationality = nationality;
+        this.id = id;
         this.nationalID = nationalID;
-        this.phone_num = phone;
+        this.phone = phone;
         this.landline = landline;
         this.email = email;
         this.level = level;
@@ -55,20 +54,19 @@ const id = document.getElementById("id");
 const idError = id.nextElementSibling;
 const idRegExp = /^([0-9]{8})$/
 
-const nationality = document.getElementById("nationality");
-const nationalityError = nationality.nextElementSibling;
+
 
 const nationalID = document.getElementById("nationalID");
 const nationalIdError = nationalID.nextElementSibling;
 const nationalIdRegExp = /^([0-9]{1})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{3})$/;
 
 const phone = document.getElementById("phone");
-phone.placeholder='ex:01113653431';
+phone.placeholder = 'ex:01113653431';
 const phoneError = phone.nextElementSibling;
 const phoneRegExp = /^\+?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
 const landline = document.getElementById("landline");
-landline.placeholder='ex:201113654331'
+landline.placeholder = 'ex:201113654331'
 const landlineError = landline.nextElementSibling;
 const landlineRegExp = /^\+?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
 
@@ -88,14 +86,16 @@ const dob = document.getElementById("dob");
 const dobError = dob.nextElementSibling;
 
 const gender = document.querySelector("input[name='gender']:checked");
+const genderError = document.getElementById("gender-error");
 
-const status = document.querySelector('input[name="status"]:checked');
+const status = document.querySelector("input[name='status']:checked");
+const statusError = document.getElementById("status-error");
 
 
 
 
 
-  // This defines what happens when the user types in the field
+// This defines what happens when the user types in the field
 email.addEventListener("input", () => {
     const isValidEmail = emailRegExp.test(email.value);
 
@@ -107,7 +107,7 @@ email.addEventListener("input", () => {
 });
 
 fname.addEventListener("input", () => {
-    
+
     const isValidFname = nameRegExp.test(fname.value);
 
     if (isValidFname) {
@@ -171,7 +171,7 @@ level.addEventListener("input", () => {
 
 id.addEventListener("input", () => {
     const isValidId = idRegExp.test(id.value);
-    if(isValidId) {
+    if (isValidId) {
         setNoError(id);
     } else {
         id.className = "invalid";
@@ -184,9 +184,9 @@ gpa.addEventListener("input", () => {
     const firstDigitNum = Number(gpa.value[0]);
     const afterDotDigitNum = Number(gpa.value[2]);
     const lastDigitNum = Number(gpa.value[3]);
-    
 
-    if(isValidGpa) {
+
+    if (isValidGpa) {
         setNoError(gpa);
     } else {
         gpa.className = "invalid";
@@ -221,18 +221,12 @@ dob.addEventListener("input", () => {
 });
 
 address.addEventListener("input", () => {
-    if(!isEmpty(address)) {
+    if (!isEmpty(address)) {
         setNoError(address);
     }
     // add elseeeeee!!!!!
 });
 
-nationality.addEventListener("input", () => {
-    if(!isEmpty(nationality)) {
-        setNoError(nationality);
-    }
-
-});
 
 
 
@@ -261,13 +255,13 @@ form.addEventListener("submit", (e) => {
         flag = false;
     }
 
-    if (isEmpty(address)) {
+    if (!isEmpty(address)) {
         flag = false;
     }
-    isEmpty(nationality);
+    
     if (!isEmpty(nationalID)) {
         const isValidnationalId = nationalIdRegExp.test(nationalID.value);
-        
+
         if (!isValidnationalId) {
             nationalID.className = "invalid";
             nationalIdError.textContent = "Not a valid ID ex: 30305032100056 (14 number)";
@@ -306,7 +300,7 @@ form.addEventListener("submit", (e) => {
         flag = false;
     }
 
-    if(!dob.value) {
+    if (!dob.value) {
         dob.className = "invalid";
         dobError.textContent = "Choose a Date Please!";
         dobError.className = "error";
@@ -327,7 +321,7 @@ form.addEventListener("submit", (e) => {
     } else {
         flag = false;
     }
-    
+
 
     if (!isEmpty(level)) {
         const isValidLevel = levelRegExp.test(level.value);
@@ -358,39 +352,51 @@ form.addEventListener("submit", (e) => {
         flag = false;
     }
 
-    if(isEmpty(gpa)) {
+    if (!isEmpty(gpa)) {
         flag = false;
     }
 
-    /*Not Working!!!!!!!!!!!! */
-
-    // gender always = null
-
-    /*if (gender != "Male" && gender != "Female"){
+    
+    if (!document.getElementById('male').checked && !document.getElementById('female').checked) {
         flag = false;
-        const genderError = document.getElementById("gender-radio").nextElementSibling;
         genderError.textContent = "Must Select a Gender!";
         genderError.className = "error";
-    }*/
+    }
+    else {
+        genderError.textContent = "";
+        genderError.className = "error";
+    }
     
-    /*isEmpty(gender);*/
+    
+    
+    const statusDiv = document.getElementById('status-radio');
+    if (!document.getElementById('active').checked && !document.getElementById('inactive').checked) {
+        flag = false;
+        statusError.textContent = "Must Select a Status!";
+        statusError.className = "error";
+        statusDiv.className = "invalid";
+    }
+    else {
+        statusError.textContent = "";
+        statusError.className = "error";
+        statusDiv.className = "valid";
+    }
 
 
 
 
     // validate form before creating 
 
-if (!flag) {
-    return;
-}
+    if (!flag) {
+        return;
+    }
 
     // Validate Code
 
 
 
-    const new_student = new Student(fname.value, lname.value, address.value, id.value,
-        nationality.value, nationalID.value, phone.value, landline.value, email.value,
-        level.value, gpa.value, dep.value, dob.value, gender, status);
+    const new_student = new Student(fname.value, lname.value, address.value, id.value, nationalID.value, phone.value, landline.value, email.value,
+        level.value, gpa.value, dep.value, dob.value, gender.value, status.value);
 
 
     // push new_student to the main array students
@@ -409,7 +415,7 @@ if (!flag) {
 });
 
 
-function isEmpty(field){
+function isEmpty(field) {
     const fieldError = field.nextElementSibling;
     if (field.value.length === 0) {
         field.className = "invalid";
@@ -428,11 +434,13 @@ function validateName(name) {
 
     if (!isValid) {
         name.className = "invalid";
-        nameError.textContent = "Cann't have numbers or special charachters (ex: /, *, &)";
+        nameError.textContent = "No numbers or special charachters(ex:/,*,&)";
         nameError.className = "error";
         return false;
     } else {
-        setNoError();
+        name.className = "valid";
+        nameError.textContent = "";
+        nameError.className = "error";
     }
     return true;
 }
