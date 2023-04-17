@@ -12,28 +12,6 @@ if (localStorage.students != null) {
 
 
 //Add Student JS
-class Student {
-    constructor(fname, lname, address, id, nationalID,
-        phone, landline, email, level, gpa, dep, dob, gender, status) {
-        this.fname = fname;
-        this.lname = lname;
-        this.address = address;
-        this.id = id;
-        this.nationalID = nationalID;
-        this.phone = phone;
-        this.landline = landline;
-        this.email = email;
-        this.level = level;
-        this.gpa = gpa;
-        this.department = dep;
-        this.dob = dob;
-        this.gender = gender;
-        this.status = status;
-    }
-}
-
-
-
 const email = document.getElementById("email");
 const emailError = email.nextElementSibling;
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -85,12 +63,8 @@ const dep = document.getElementById("department");
 const dob = document.getElementById("dob");
 const dobError = dob.nextElementSibling;
 
-const gender = document.querySelector("input[name='gender']:checked");
 const genderError = document.getElementById("gender-error");
-
-const status = document.querySelector("input[name='status']:checked");
 const statusError = document.getElementById("status-error");
-
 
 
 
@@ -227,18 +201,36 @@ address.addEventListener("input", () => {
 });
 
 
-
-
-
+// Class Student Information
+class Student {
+    constructor(fname, lname, address, id, nationalID,
+        phone, landline, email, level, gpa, dep, dob, gender, status) {
+        this.fname = fname;
+        this.lname = lname;
+        this.address = address;
+        this.id = id;
+        this.nationalID = nationalID;
+        this.phone = phone;
+        this.landline = landline;
+        this.email = email;
+        this.level = level;
+        this.gpa = gpa;
+        this.department = dep;
+        this.dob = dob;
+        this.gender = gender;
+        this.status_of_student = status;
+    }
+}
 
 
 // Add Student Button
 /*const add_student_button = document.querySelector("#add-student");
 add_student_button.onsubmit = (e) => {*/
 
-let flag = true;
+
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
+    var flag = true;
     e.preventDefault();
 
 
@@ -368,17 +360,14 @@ form.addEventListener("submit", (e) => {
 
 
 
-    const statusDiv = document.getElementById('status-radio');
     if (!document.getElementById('active').checked && !document.getElementById('inactive').checked) {
         flag = false;
         statusError.textContent = "Must Select a Status!";
         statusError.className = "error";
-        // statusDiv.className = "invalid";
     }
     else {
         statusError.textContent = "";
         statusError.className = "error";
-        // statusDiv.className = "valid";
     }
 
 
@@ -386,12 +375,16 @@ form.addEventListener("submit", (e) => {
 
     // validate form before creating 
 
-    if (!flag) {
-        return;
-    }
+    // if (!flag) {
+    //     return;
+    // }
 
-    const new_student = new Student(fname.value, lname.value, address.value, id.value, nationalID.value, phone.value, landline.value, email.value,
-        level.value, gpa.value, dep.value, dob.value, gender.value, status.value);
+    const gender = document.querySelector('input[name ="gender"]:checked');
+    const status_of_student = document.querySelector('input[name ="status"]:checked');
+    
+    const new_student = new Student(fname.value, lname.value, address.value,
+        id.value, nationalID.value, phone.value, landline.value, email.value,
+        level.value, gpa.value, dep.value, dob.value, gender.value, status_of_student.value);
 
 
     // push new_student to the main array students
@@ -402,9 +395,6 @@ form.addEventListener("submit", (e) => {
 
     // push the array as string to LocalStorage
     localStorage.setItem("students", s);
-
-    /*this.submit();
-    e.currentTarget.submit();*/
 
 
 });
