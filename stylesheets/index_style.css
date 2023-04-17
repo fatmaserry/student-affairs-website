@@ -125,7 +125,6 @@ text-shadow: 1px 1px #090909;
 
 #fcaislide .with-backdrop{
     background-image: url(../images/5c6be7eeb5b68.jpg);
-    background-size: ;
 }
 
 #cunow .content{
@@ -177,7 +176,7 @@ text-shadow: 1px 1px #090909;
 /*styling departments section of page*/
 .departments-fcai{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 300px;
     width: 100%;
     
@@ -200,7 +199,7 @@ text-shadow: 1px 1px #090909;
 /*background images of div of each dept*/
 .AI,.CS,.IS,.IT,.OR{
     background-size: 100% 100%;
-    width:17%;
+    width:19%;
 }
 
 .CS{
@@ -287,3 +286,12 @@ text-align: left;
 }
 
 
+@media only screen and (max-width: 900px) {
+
+    .departments-fcai{
+        flex-direction: column;
+    }
+    .AI,.CS,.IS,.IT,.OR{
+        width: 100%;
+    }
+}

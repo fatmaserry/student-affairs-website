@@ -29,7 +29,7 @@ const addressError = address.nextElementSibling;
 const idPrefix = document.getElementById("id-prefix");
 const id = document.getElementById("id");
 let studentId;
-const idError = id.nextElementSibling;
+const idError = document.getElementById("id-div").nextElementSibling;
 const idRegExp = /^([0-9]{6})$/;
 
 const nationalID = document.getElementById("nationalID");
@@ -138,7 +138,10 @@ level.addEventListener("input", () => {
 
 id.addEventListener("input", () => {
   const isValidId = idRegExp.test(id.value);
+  console.log(idPrefix.value);
+  console.log(id.value);
   studentId = idPrefix.value + id.value;
+  console.log(studentId);
   let isRepeatedId = false;
   students.forEach((student) => {
     if (student.id == studentId) {
@@ -153,7 +156,9 @@ id.addEventListener("input", () => {
     idError.textContent = "This ID already Exists";
     idError.className = "error";
   } else {
-    setNoError(id);
+    id.className = "valid";
+    idError.textContent = "";
+    idError.className = "error";
   }
 });
 
@@ -348,7 +353,12 @@ form.addEventListener("submit", (e) => {
     flag = false;
   }
 
-  if (!isEmpty(id)) {
+  if (id.value.length === 0) {
+    id.className = "invalid";
+    idError.textContent = "Cann't be Empty!";
+    idError.className = "error";
+    flag = false;
+  } else {
     const isValidId = idRegExp.test(id.value);
     let isRepeatedId = false;
     students.forEach((student) => {
@@ -367,10 +377,10 @@ form.addEventListener("submit", (e) => {
       idError.className = "error";
       flag = false;
     } else {
-      setNoError(id);
+      id.className = "valid";
+      idError.textContent = "";
+      idError.className = "error";
     }
-  } else {
-    flag = false;
   }
 
   if (!isEmpty(gpa)) {

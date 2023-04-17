@@ -18,7 +18,8 @@
           "backdrop-filter",
           "scrollbar-color",
           "scrollbar-width",
-          "height: fit-content"
+          "height: fit-content",
+          "width: fit-content"
         ]
       }
     ],
