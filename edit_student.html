@@ -53,12 +53,20 @@
   <div class="container">
     <div class="editStudentForm">
       <header>
-        <h1>Edit Student Data</h1>
+        <h1 class="header">Edit Student Data</h1>
       </header>
       <form>
 
-        <label for="name">Student Name:</label>
-        <input type="text" name="name" value="Karim Adel Ahmed" placeholder="Enter the student name " id="name">
+        <div class="fname">
+          <label for="fname">Student First Name:</label>
+          <input type="text" id="fname" name="fname">
+        </div>
+
+        <div class="lname">
+          <label for="lname">Student Last Name:</label>
+          <input type="text" id="lname" name="lname">
+        </div>
+      
 
         <label for="add">Student Address: </label>
         <input type="text" name="address" value="Nasr St, Maadi" id="add">
@@ -87,18 +95,13 @@
           <label for="level">Level: </label>
           <input type="number" value="2" id="level">
 
-          <!--Status-->
-          <label> Status:</label>
 
-          <div class="active-status">
-            <input type="radio" name="status" id="active" checked>
-            <label class="active" for="active">Active</label>
-          </div>
+           <!--  GPA -->
 
-          <div class="inactive-status">
-            <input type="radio" name="status" id="inactive">
-            <label class="inactive" for="inactive">Inactive</label>
-          </div>
+           <label for="gpa">GPA </label>
+           <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
+
+          
 
           <!--  Department -->
 
@@ -150,10 +153,22 @@
             <label class="female" for="female">Female</label>
           </div>
 
-          <!--  GPA -->
 
-          <label for="gpa">GPA </label>
-          <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
+          <!--Status-->
+
+          <label> Status:</label>
+
+          <div class="active-status">
+            <input type="radio" name="status" id="active" checked>
+            <label class="active" for="active">Active</label>
+          </div>
+
+          <div class="inactive-status">
+            <input type="radio" name="status" id="inactive">
+            <label class="inactive" for="inactive">Inactive</label>
+          </div>
+
+         
 
           <!-- Save-->
         </div>

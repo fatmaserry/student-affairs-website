@@ -1,3 +1,31 @@
+.header{
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    color: #000127;
+    border-bottom: 6px solid #000127;
+    transition: all 0.3s ease-out;
+}
+
+.editStudentForm{
+    width: auto;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #faf2f7f2;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 200px;
+}
+
+.header:hover{
+  border-radius: 8px;
+  background-color: #000127;
+  color: white;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+
 .editStudentForm{
     margin: 20px;
     display: flex;
@@ -39,13 +67,14 @@ input:focus {
 
 
 
-
+.fname,
 .leftColumn{
     float: left;
     width: 50%;
     padding-right: 25px;
 }
 
+.lname,
 .rightColumn{
     float: right;
     width: 50%;
@@ -100,7 +129,7 @@ height: inherit;
 
 
 .assignDep{
-    background-color: #272626;
+    background-color:#000127;
     color: #faf2f7;
     border: 3px solid transparent;
     margin-top: 2px;
@@ -113,9 +142,9 @@ height: inherit;
 
 
 .assignDep:hover {
-    background-color: transparent;
-    border: 3px solid #272626;
-    color: #272626;
+    background-color: #293a7c ;
+    border: 3px solid #293a7c;
+    color:  #faf2f7;
     cursor: pointer;
 } 
 
@@ -123,7 +152,7 @@ height: inherit;
 
 
 .submit{
-    background-color:#272626;
+    background-color: #000127;
     color: #faf2f7;
     border: 3px solid transparent;
     margin-top: 30px;
@@ -134,8 +163,5 @@ height: inherit;
 }
 
 .submit:hover{
-    background-color: transparent;
-    border: 3px solid #272626;
-    color: #272626;
-  
+    background-color: #293a7c;
   }
