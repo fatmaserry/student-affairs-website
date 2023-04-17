@@ -121,7 +121,9 @@
                 <option value="Information technology">Information technology</option>
                 <option value="Decision support">Decision support</option>
               </select>
+              <span id="dep-error" aria-live="polite"></span>
             </div>
+
             <!-- Status -->
             <div id="field">
               <p for="status">Status:</p>
@@ -167,7 +169,8 @@
             <!-- Student ID -->
             <div class="field">
               <label for="id">College ID:</label>
-              <input type="text" id="id" name="id" value="202">
+              <input type="text" id="id-prefix" name="id" value="202" readonly>
+              <input type="text" id="id" name="id">
               <span class="id-error" aria-live="polite"></span>
             </div>
 

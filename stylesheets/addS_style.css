@@ -126,7 +126,7 @@ input[type="radio"] {
   border-radius: 8px;
   border: none;
   font-size: 21px;
-  margin: 10px 20px 20px 0;
+  margin: 10px 20px 10px 0;
   width: 100%;
   background-color: rgba(57, 57, 57, 0.07);
 }
@@ -182,4 +182,8 @@ input:focus.invalid {
   color: #FF0000;
   border-radius: 0 0 5px 5px;
   box-sizing: border-box;
+}
+
+#id-prefix{
+  width: 50px;
 }
