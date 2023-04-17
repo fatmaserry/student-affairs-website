@@ -43,7 +43,7 @@ showData();
 // Edit Button
 
 function saveChange(i, new_status) {
-    students[i].status = new_status;
+    students[i].status_of_student = new_status;
     localStorage.students = JSON.stringify(students);
     saved_message = `
     <div class="sa">
@@ -71,7 +71,7 @@ function showStatus(i) {
     document.getElementById('popup').style.display = 'flex';
     document.getElementById("student_name_popup").innerHTML = students[i].fname + " " + students[i].lname;
     document.getElementById("student_id").innerHTML = students[i].id;
-    document.getElementById("student_status_popup").innerHTML = students[i].status;
+    document.getElementById("student_status_popup").innerHTML = students[i].status_of_student;
 
     save_button = document.querySelector('#save-status')
     save_button.onclick = function () {

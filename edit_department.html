@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
   <link href="./stylesheets/editD_style.css" rel="stylesheet">
   <title>Edit Department | FCAI-CU</title>
+  <script src="js/search_editS_editD.js"></script>
 </head>
 
 <body>
@@ -48,30 +49,33 @@
     <h1>Edit The Department of a student</h1>
     <form id="dep-form">
       <div class="info">
-        <label for="Name">Student Name: </label>
-        <input type="text" id="Name" readonly>
+        <label for="dep-name">Student Name: </label>
+        <input type="text" id="dep-name" readonly>
 
-        <label for="ID">Student ID: </label>
-        <input type="text" id="ID" value="20210399" readonly>
+        <label for="dep-id">Student ID: </label>
+        <input type="text" id="dep-id" readonly>
+
+        <label for="dep-set">Student Department: </label>
+        <input type="text" id="dep-set" readonly>
+
       </div>
       <div class="right-info">
-        <label for="GPA">Student GPA: </label>
-        <input type="text" id="GPA" value="2.9" readonly>
+        <label for="dep-gpa">Student GPA: </label>
+        <input type="text" id="dep-gpa" readonly>
 
-        <label for="Department">Student Department: </label>
-        
-        <select name="Department" id="Department">
-          <option value="general">General</option>
-          <option value="cs">Computer science</option>
-          <option value="ai">Artificial intellegence</option>
-          <option value="it">Information system</option>
-          <option value="is">Information technology</option>
-          <option value="ds">Decision support</option>
+        <label for="Department-set">Choose Department: </label>
+        <select name="Department" id="Department-set">
+          <option value="General">General</option>
+          <option value="Computer science">Computer science</option>
+          <option value="Artificial intellegence">Artificial intellegence</option>
+          <option value="Information system">Information system</option>
+          <option value="Information technology">Information technology</option>
+          <option value="Decision support">Decision support</option>
         </select>
       </div>
 
       <div class="Button">
-        <input type="submit" id="submit-edit" value="Edit">
+        <input type="submit" id="submit-edit" value="Assign" onclick="assignDepartment()">
       </div>
     </form>
   </div>
@@ -115,7 +119,11 @@
   </footer>
 
 
-  <script src="js/editD.js"></script>
+  
+  <script>
+    reloadDataDep();
+    assignDepartment();
+  </script>
 </body>
 
 </html>
