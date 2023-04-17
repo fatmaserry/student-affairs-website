@@ -208,7 +208,6 @@ dob.addEventListener("input", () => {
     const ageDt = new Date(monthDiff);
     const year = ageDt.getUTCFullYear();
     const age = Math.abs(year - 1970);
-    console.log(age);
 
     if (age < 18) {
         dob.className = "invalid";
@@ -258,7 +257,7 @@ form.addEventListener("submit", (e) => {
     if (!isEmpty(address)) {
         flag = false;
     }
-    
+
     if (!isEmpty(nationalID)) {
         const isValidnationalId = nationalIdRegExp.test(nationalID.value);
 
@@ -356,7 +355,7 @@ form.addEventListener("submit", (e) => {
         flag = false;
     }
 
-    
+
     if (!document.getElementById('male').checked && !document.getElementById('female').checked) {
         flag = false;
         genderError.textContent = "Must Select a Gender!";
@@ -366,20 +365,20 @@ form.addEventListener("submit", (e) => {
         genderError.textContent = "";
         genderError.className = "error";
     }
-    
-    
-    
+
+
+
     const statusDiv = document.getElementById('status-radio');
     if (!document.getElementById('active').checked && !document.getElementById('inactive').checked) {
         flag = false;
         statusError.textContent = "Must Select a Status!";
         statusError.className = "error";
-        statusDiv.className = "invalid";
+        // statusDiv.className = "invalid";
     }
     else {
         statusError.textContent = "";
         statusError.className = "error";
-        statusDiv.className = "valid";
+        // statusDiv.className = "valid";
     }
 
 
@@ -390,10 +389,6 @@ form.addEventListener("submit", (e) => {
     if (!flag) {
         return;
     }
-
-    // Validate Code
-
-
 
     const new_student = new Student(fname.value, lname.value, address.value, id.value, nationalID.value, phone.value, landline.value, email.value,
         level.value, gpa.value, dep.value, dob.value, gender.value, status.value);

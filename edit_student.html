@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<nav>
+  <nav>
     <div class="nav-container">
       <div class="cu-logo">
         <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
@@ -55,118 +55,118 @@
       <header>
         <h1 class="header">Edit Student Data</h1>
       </header>
-      <form>
-
-        <div class="fname">
-          <label for="fname">Student First Name:</label>
-          <input type="text" id="fname" name="fname">
-        </div>
-
-        <div class="lname">
-          <label for="lname">Student Last Name:</label>
-          <input type="text" id="lname" name="lname">
-        </div>
       
+      <form>
+        <div class="name-div">
+          <div class="fname">
+            <label for="fname">Student First Name:</label>
+            <input type="text" id="fname" name="fname" readonly>
+          </div>
+
+          <div class="lname">
+            <label for="lname">Student Last Name:</label>
+            <input type="text" id="lname" name="lname" readonly>
+          </div>
+        </div>
+
 
         <label for="add">Student Address: </label>
         <input type="text" name="address" value="Nasr St, Maadi" id="add">
 
-        <!--Left Colummn Input -->
-        <div class="leftColumn">
 
-          <!--Phone Number -->
+        <div class="form-sides">
+          <!--Left Colummn Input -->
+          <div class="leftColumn">
+            <!--Phone Number -->
 
-          <label for="num">Phone Number: </label>
-          <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits"
-            pattern="[0-9]{11}" id="num">
+            <label for="num">Phone Number: </label>
+            <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits"
+              pattern="[0-9]{11}" id="num">
 
-          <!--  Email Address -->
+            <!--  Email Address -->
 
-          <label for="email">Email Address: </label>
-          <input type="email" name="email" value="karim.adel@gmail.com" id="email">
-
-
-          <!--  Level -->
-
-          <label for="level">Level: </label>
-          <input type="number" value="2" id="level">
+            <label for="email">Email Address: </label>
+            <input type="email" name="email" value="karim.adel@gmail.com" id="email">
 
 
-           <!--  GPA -->
+            <!--  Level -->
 
-           <label for="gpa">GPA </label>
-           <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
-
-          
-
-          <!--  Department -->
-
-          <label for="dep">Department: </label>
-          <input type="text" name="dep" value="General">
-          <button class="assignDep" formaction=".\edit_department.html"> Assign Department </button>
-
-        </div>
-
-        <!--  Right Colimn Input -->
-        <div class="rightColumn">
+            <label for="level">Level: </label>
+            <input type="number" value="2" id="level">
 
 
-          <!-- National ID -->
-
-          <label for="natid">National ID: </label>
-          <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits"
-            id="natid">
-
-          <!-- Birth Date -->
-
-          <label for="birthDate">Date of Birth: </label>
-          <input type="date" name="birth" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="birthDate">
+            <!--  GPA -->
+            <label for="gpa">GPA </label>
+            <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
 
 
-          <!--  Landline Number -->
 
-          <label for="landline">Landline Number: </label>
-          <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits"
-            pattern="[0-9]{10}" id="landline">
+            <!--  Department -->
+            <label for="dep">Department: </label>
+            <input type="text" name="dep" value="General">
+            <button class="assignDep" formaction=".\edit_department.html"> Assign Department </button>
 
-
-          <!-- College ID -->
-
-          <label for="id">College ID: </label>
-          <input type="text" name="id" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id">
-          <br>
-
-          <!--  Gender -->
-
-          <label>Gender: </label>
-          <div class="male-gender">
-            <input type="radio" name="gender" id="male">
-            <label class="male" for="male">Male</label>
           </div>
 
-          <div class="female-gender">
-            <input type="radio" name="gender" id="female">
-            <label class="female" for="female">Female</label>
+          <!--  Right Colimn Input -->
+          <div class="rightColumn">
+            <!-- National ID -->
+
+            <label for="nationalID">National ID: </label>
+            <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits"
+              id="nationalID">
+
+            <!-- Birth Date -->
+
+            <label for="dob">Date of Birth: </label>
+            <input type="date" name="dob" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="dob">
+
+
+            <!--  Landline Number -->
+
+            <label for="landline">Landline Number: </label>
+            <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits"
+              pattern="[0-9]{10}" id="landline">
+
+
+            <!-- College ID -->
+
+            <label for="id">College ID: </label>
+            <input type="text" name="id" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id">
+            <br>
+
+            <!--  Gender -->
+
+            <label>Gender: </label>
+            <div class="male-gender">
+              <input type="radio" name="gender" id="male">
+              <label class="male" for="male">Male</label>
+            </div>
+
+            <div class="female-gender">
+              <input type="radio" name="gender" id="female">
+              <label class="female" for="female">Female</label>
+            </div>
+
+
+            <!--Status-->
+
+            <label> Status:</label>
+
+            <div class="active-status">
+              <input type="radio" name="status" id="active" checked>
+              <label class="active" for="active">Active</label>
+            </div>
+
+            <div class="inactive-status">
+              <input type="radio" name="status" id="inactive">
+              <label class="inactive" for="inactive">Inactive</label>
+            </div>
+
+
+
+            <!-- Save-->
           </div>
-
-
-          <!--Status-->
-
-          <label> Status:</label>
-
-          <div class="active-status">
-            <input type="radio" name="status" id="active" checked>
-            <label class="active" for="active">Active</label>
-          </div>
-
-          <div class="inactive-status">
-            <input type="radio" name="status" id="inactive">
-            <label class="inactive" for="inactive">Inactive</label>
-          </div>
-
-         
-
-          <!-- Save-->
         </div>
         <input class="submit" type="submit" value="Save">
 
