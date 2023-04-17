@@ -100,6 +100,11 @@ function storeData(){
     }
 }
 
+
+if(studentData['level'] != 3){
+    document.getElementById('edit-dep-button').style.display='none';
+}
+
 function reloadData(){
     var form = document.querySelector('form');
     form.fname.value = studentData['fname'];
@@ -145,3 +150,5 @@ function storeNewData(){
     const s = JSON.stringify(students);
     localStorage.setItem("students", s);
 }
+
+
