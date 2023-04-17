@@ -55,18 +55,20 @@
       </div>
 
       <!-- Form -->
-      <form action="#">
+      <form>
 
         <!-- Name  -->
         <div class="name-div">
           <div class="fname">
             <label for="fname">Student First Name:</label>
-            <input type="text" id="fname" name="fname" placeholder="" required>
+            <input type="text" id="fname" name="fname">
+            <span class="fname-error" aria-live="polite"></span>
           </div>
 
           <div class="lname">
             <label for="lname">Student Last Name:</label>
-            <input type="text" id="lname" name="lname" placeholder="" required>
+            <input type="text" id="lname" name="lname">
+            <span class="lname-error" aria-live="polite"></span>
           </div>
         </div>
 
@@ -75,6 +77,7 @@
         <div class="address-div">
           <label for="address">Student Address:</label>
           <input type="text" id="address" name="address">
+          <span class="address-error" aria-live="polite"></span>
         </div>
 
 
@@ -85,29 +88,28 @@
 
             <!-- Nationality -->
             <label for="nationality">Student Nationality:</label>
-            <input type="text" id="nationality" name="nationality" required>
+            <input type="text" id="nationality" name="nationality">
+            <span class="nationality-error" aria-live="polite"></span>
 
             <!-- Phone number -->
             <label for="phone">Phone Number:</label>
-            <input type="tel" pattern="[0-9]{11}" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone">
+            <span class="phone-error" aria-live="polite"></span>
 
             <!-- Email address -->
             <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="text" id="email" name="email">
+            <span class="email-error" aria-live="polite"></span>
 
             <!-- Level -->
             <label for="level">Level:</label>
-            <select name="level" id="level" required>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-
+            <input type="text" id="level" name="level">
+            <span class="level-error" aria-live="polite"></span>
 
             <!-- GPA -->
             <label for="gpa">GPA:</label>
-            <input type="number" id="gpa" name="gpa" required step="0.01" min="0" max="4">
+            <input type="text" id="gpa" name="gpa">
+            <span class="gpa-error" aria-live="polite"></span>
 
             <!-- Department -->
             <label for="department">Department:</label>
@@ -127,27 +129,33 @@
 
             <!-- National ID -->
             <label for="nationalID">National ID:</label>
-            <input type="text" id="nationalID" name="nationalID" required>
+            <input type="text" id="nationalID" name="nationalID">
+            <span class="nationalID-error" aria-live="polite"></span>
             <!--Add number patterns-->
 
             <!-- Date of Birth -->
             <label for="dob">Date of birth:</label>
-            <input type="date" id="dob" name="dob" placeholder="dd/mm/yy" required>
+            <input type="date" id="dob" name="dob">
+            <span class="dob-error" aria-live="politef"></span>
 
             <!-- Landline number -->
             <label for="landline">Landline Number:</label>
-            <input type="tel" pattern="[0-9]{8}" id="landline" name="landline" required>
+            <input type="tel" id="landline" name="landline">
+            <span class="landline-error" aria-live="polite"></span>
 
             <!-- Student ID -->
             <label for="id">College ID:</label>
-            <input type="text" id="id" name="id" required>
+            <input type="text" id="id" name="id" value="202">
+            <span class="id-error" aria-live="polite"></span>
 
             <!-- Gender -->
-            <label for="gender">Gender:</label>
+            <div class="gender-radio">
+            <p for="gender">Gender:</p>
             <div class="gender-div">
               <div class="male-gender">
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male" class="male">Male</label>
+                
               </div>
 
               <div class="female-gender">
@@ -169,6 +177,8 @@
                 <label for="inactive" class="inactive">Inactive</label>
               </div>
             </div>
+          </div>
+          <span id="gender-error" aria-live="polite"></span>
           </div>
           <!-- End of right side -->
         </div>
