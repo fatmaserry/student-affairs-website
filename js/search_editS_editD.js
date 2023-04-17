@@ -94,7 +94,7 @@ function storeData(){
             studentData['department'] = students[i]['department'];
             studentData['dob'] = students[i]['dob'];
             studentData['gender'] = students[i]['gender'];
-            studentData['status'] = students[i]['status'];
+            studentData['status_of_student'] = students[i]['status_of_student'];
         }
     }
 }
@@ -106,7 +106,7 @@ function reloadData(){
     form.num.value = studentData['phone'];
     form.email.value = studentData['email'];
     form.level.value = studentData['level'];
-    if(studentData['status']=='Active'){
+    if(studentData['status_of_student']=='Active'){
         form.active.checked = true;
     }
     else{
