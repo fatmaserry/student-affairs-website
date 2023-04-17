@@ -26,12 +26,6 @@
   transition: all 0.5s ease;
 }
 
-.editStudentForm {
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
 form {
   display: flex;
@@ -46,7 +40,7 @@ input {
   border-radius: 8px;
   border: none;
   width: 100%;
-  margin: 10px 20px 20px 0;
+  margin: 10px 20px 5px 0;
   height: 45px;
   cursor: pointer;
 }
@@ -76,10 +70,23 @@ input:focus {
   justify-content: space-between;
 }
 
+
+.editStudentForm form .name-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 form .name-div .fname,
 form .name-div .lname {
   width: 48%;
 }
+
+.field,.fname,
+.lname{
+  height: 112px;
+}
+
 .leftColumn {
   width: 48%;
 }
@@ -162,6 +169,10 @@ a:link {
   background-color: #293a7c;
 }
 
+.field{
+  margin: 0 0 30px 0;
+  }
+
 /* Media Query */
 @media only screen and (max-width: 1100px) {
   .name-div,
@@ -175,4 +186,25 @@ a:link {
   .rightColumn {
     width: 100%;
   }
+}
+
+
+input.invalid,
+.invalid{
+  border-color: fdd;
+  background-color: #fdd;
+}
+
+input:focus.invalid {
+  outline: none;
+}
+
+/*error message style*/
+.error {
+  width: 100%;
+  padding-bottom: 0;
+  font-size: 90%;
+  color: #FF0000;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
 }

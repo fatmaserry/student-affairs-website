@@ -57,111 +57,138 @@
       </header>
       
       <form>
+
+                    <!--First Name -->
         <div class="name-div">
           <div class="fname">
             <label for="fname">Student First Name:</label>
-            <input type="text" id="fname" name="fname" readonly>
+            <input type="text" id="fname" value="Ahmed" name="fname" readonly>
           </div>
 
+            <!--Last Name -->
           <div class="lname">
             <label for="lname">Student Last Name:</label>
-            <input type="text" id="lname" name="lname" readonly>
+            <input type="text" id="lname" value="Karim" name="lname" readonly>
           </div>
         </div>
 
+                    <!--Address -->
 
-        <label for="add">Student Address: </label>
-        <input type="text" name="address" value="Nasr St, Maadi" id="add">
+        <div class="field">
+        <label for="address">Student Address: </label>
+        <input type="text" name="address" value="Nasr St, Maadi" id="address">
+        <span class="address-error" aria-live="polite"></span>
+        </div>
 
 
         <div class="form-sides">
           <!--Left Colummn Input -->
           <div class="leftColumn">
-            <!--Phone Number -->
 
-            <label for="num">Phone Number: </label>
-            <input type="text" name="phone" value="01004598246" placeholder="Number should be 11 digits"
-              pattern="[0-9]{11}" id="num">
+            <!--Phone Number -->
+            <div class="field">
+            <label for="phone">Phone Number: </label>
+            <input type="text" name="phone" value="01004598246"  id="phone">
+            <span class="phone-error" aria-live="polite"></span>
+            </div>
+
 
             <!--  Email Address -->
-
+            <div class="field">
             <label for="email">Email Address: </label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" value="g@gmail.com" id="email">
+            <span class="email-error" aria-live="polite"></span>
+            </div>
 
 
             <!--  Level -->
-
+            <div class="field">
             <label for="level">Level: </label>
-            <input type="number" name="level" id="level">
+            <input type="number" name="level" value="2" id="level">
+            <span class="level-error" aria-live="polite"></span>
+            </div>
 
 
             <!--  GPA -->
+            <div class="field">
             <label for="gpa">GPA </label>
-            <input type="number" name="gpa" value="3.48" min="0" max="4" step="0.01" id="gpa">
+            <input type="number" name="gpa" value="3.48"  step="0.01" id="gpa">
+            <span class="gpa-error" aria-live="polite"></span>
+            </div>
+
+            <!--Status-->
+            <div class="field">
+              <label> Status:</label>
+              <div class="active-status">
+                <input type="radio" name="status" id="active" checked>
+                <label class="active" for="active">Active</label>
+              </div>
+  
+              <div class="inactive-status">
+                <input type="radio" name="status" id="inactive">
+                <label class="inactive" for="inactive">Inactive</label>
+              </div>
+              <span id="status-error" aria-live="polite"></span>
+              </div>
 
 
-
+              
             <!--  Department -->
+            <div class="field">
             <label for="dep">Department: </label>
             <input type="text" name="dep" value="General" readonly>
             <button class="assignDep" formaction=".\edit_department.html"> Assign Department </button>
+            </div>
 
           </div>
 
           <!--  Right Colimn Input -->
           <div class="rightColumn">
-            <!-- National ID -->
 
+            <!-- National ID -->
+            <div class="field">
             <label for="nationalID">National ID: </label>
-            <input type="text" name="natid" value="30304511234586" placeholder="NationalID should be 14 digits"
-              id="nationalID" readonly>
+            <input type="text" name="natid" value="30304511234586" id="nationalID" readonly>
+            </div>
 
             <!-- Birth Date -->
-
+            <div class="field">
             <label for="dob">Date of Birth: </label>
-            <input type="date" name="dob" value="2003-05-18" min="1995-01-01" max="2005-12-30" id="dob" readonly>
+            <input type="date" name="dob" value="2003-05-18" id="dob" readonly>
+            </div>
 
 
             <!--  Landline Number -->
-
+            <div class="field">
             <label for="landline">Landline Number: </label>
-            <input type="text" name="landline" value="0227698476" placeholder="Number should be 10 digits"
-              pattern="[0-9]{10}" id="landline">
+            <input type="text" name="landline" value="0227698476" id="landline">
+            <span class="landline-error" aria-live="polite"></span>
+            </div>
 
 
             <!-- College ID -->
-
+            <div class="field">
             <label for="id">College ID: </label>
-            <input type="text" name="id" placeholder="ID should be 8 digits" pattern="[0-9]{8}" id="id" readonly>
-            <br>
+            <input type="text" name="id" value="20211045"  id="id" readonly>
+            </div>
+
 
             <!--  Gender -->
+          <label>Gender: </label>
+          <div class="field">
+          <div class="male-gender">
+            <input type="radio" name="gender" id="male" checked>
+            <label class="male" for="male">Male</label>
+          </div>
 
-            <label>Gender: </label>
-            <div id="gender">
-              <!-- <input type="radio" name="gender" id="male" readonly>
-              <label class="male" for="male">Male</label> -->
-            </div>
-
-            <!-- <div class="female-gender">
-              <input type="radio" name="gender" id="female" readonly>
-              <label class="female" for="female">Female</label>
-            </div> -->
+          <div class="female-gender">
+            <input type="radio" name="gender" id="female">
+            <label class="female" for="female">Female</label>
+          </div>
+          </div>
 
 
-            <!--Status-->
-
-            <label> Status:</label>
-
-            <div class="active-status">
-              <input type="radio" name="status" id="active" checked>
-              <label class="active" for="active">Active</label>
-            </div>
-
-            <div class="inactive-status">
-              <input type="radio" name="status" id="inactive">
-              <label class="inactive" for="inactive">Inactive</label>
-            </div>
+            
 
 
 
@@ -210,7 +237,7 @@
   </footer>
 
 
-  <script>
+  <script src="js/editS.js">
     storeData();
     reloadData();
     storeNewData();
