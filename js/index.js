@@ -9,3 +9,4 @@ if (localStorage.students != null) {
 } else {
     students = [];
 }
+

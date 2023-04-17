@@ -1,12 +1,41 @@
+
+
 const userid=document.getElementById("userid");
 const password= document.getElementById("password");
 const form= document.getElementById("loginform");
+
+
 
 form.addEventListener('submit',e=>{
     e.preventDefault();
 
     validateInputs();
+    if((password.parentElement.classList.contains("success"))&&(userid.parentElement.classList.contains("success"))){
+    checkAccount();
+    if((password.parentElement.classList.contains("success"))&&(userid.parentElement.classList.contains("success"))){
+        location.replace("index.html");
+    }
+}
+    
 });
+
+const checkAccount=()=>{
+    const useridvalue=userid.value.trim();
+    const passwordvalue=password.value.trim();
+if(localStorage.getItem(String(useridvalue))== null){
+    seterror(userid,"Please enter correct user id");
+    seterror(password,"");
+}
+else{
+    setsuccess(userid);
+    if(localStorage.getItem(String(useridvalue))!=passwordvalue){
+        seterror(password,"Please enter correct password");
+    }
+    else{
+        setsuccess(password);
+    }
+}
+}
 
 const seterror= (element,message)=>{
     const inputcontrol=element.parentElement;
@@ -34,12 +63,15 @@ const validateInputs= ()=> {
         seterror(userid,"Please enter user id");
     }
     else{
-        if(/^\d*\.?\d*$/.test(useridvalue)){
+    if(/^\d*\.?\d*$/.test(useridvalue)){
         setsuccess(userid);
-    }
-    else{
+    }else{
         seterror(userid,"enter numbers for user id");
     }
+    if(useridvalue.length<6){
+        seterror(userid,"enter 6 digits for user id");
+    }
+    
 }
 
     if(passwordvalue === '') {
@@ -49,5 +81,9 @@ const validateInputs= ()=> {
     } else {
         setsuccess(password);
     }
+
+    
+    /*console.log(password.parentElement.classList);
+    console.log(userid.parentElement.classList);*/
 
 };

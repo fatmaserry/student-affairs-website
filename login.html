@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <title>Login | FCAI-CU</title>
     <link rel="stylesheet" href="stylesheets\login.css">
-  <script defer src="js\loginValidation.js"></script>
+  
+  <script src="js\createadminaccts.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
    <form action="/Student-affairs-website/index.html" method="post" class="loginform" id="loginform">
     <h1>Log In</h1>
         <div class="icon">
-            <img src="images/Login.png" width="100px" height="100px" alt="login icon"
+            <img src="images/Login.png"  alt="login icon"
                 class="lilcircle">
         </div>
         <div class="inputcontrol"> 
@@ -75,8 +76,10 @@
     </div>
   </footer>
 
-
-  <script src="js/login.js"></script>
+  <script src="js\loginValidation.js"></script>
+  <script>
+    console.log(localStorage.getItem("123456"));
+  </script>
 </body>
 
 </html>
