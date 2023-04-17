@@ -23,7 +23,7 @@ function showData() {
               <td>${students[i].level}</td>
               <td>${students[i].phone}</td>
               <td>${students[i].department}</td>
-              <td>${students[i].status}</td>
+              <td>${students[i].status_of_student}</td>
               <td class="status-edit">
                 <button name="popup-edit-status" onclick="showStatus(${i})" id="popup-buttton">
                   <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
