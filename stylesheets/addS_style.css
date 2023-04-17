@@ -1,11 +1,13 @@
 
 .add_student_form {
-  margin: 100px;
+  width: auto;
+  margin: 5%;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #faf2f7f2;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+  margin-bottom: 200px;
 }
 
 .header{
@@ -34,8 +36,8 @@
 form {
   display: flex;
   flex-direction: column;
-  width: 850px;
   margin: 40px 0;
+  width: 80%;
 }
 
 #add-student {
@@ -114,7 +116,8 @@ input[type="radio"] {
   width: 1rem;
 }
 
-#department {
+#department,
+#level {
   outline: none;
   padding: 10px;
   border-radius: 8px;
@@ -139,4 +142,21 @@ form .name-div .lname {
 select option {
   border: none;
   background-color: #faf2f7;
+}
+
+/* Media Query */
+@media only screen and (max-width: 1100px) {
+
+  .name-div,
+  .form-sides{
+    flex-direction: column;
+  }
+
+  .form-leftside,
+  form .name-div .fname,
+   form .name-div .lname,
+  .form-rightside{
+    width: 100%;
+  }
+
 }

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./stylesheets/view_style.css">
   <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
   <title>VIEW | FCAI-CU</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -23,58 +24,66 @@
         <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
         <h3>FCAI-CU Student Affairs</h3>
       </div>
-      <div class="nav-content">
-        <ul type="none">
-          <!-- <li><a href="login.html">Log In</a></li> -->
-          <li><a href="index.html">Home</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="add_student.html" class="add">Add Student</a></li>
-          <li><a href="view.html">View Students</a></li>
-        </ul>
+
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+      <div class="nav-media">
+        <div class="nav-content">
+          <ul type="none">
+            <!-- <li><a href="login.html">Log In</a></li> -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="add_student.html" class="add">Add Student</a></li>
+            <li><a href="view.html">View Students</a></li>
+          </ul>
+        </div>
+        <div>
+          <a href="login.html" class="sign">Sign Out</a>
+        </div>
       </div>
-      <div>
-        <a href="login.html" class="sign">Sign Out</a>
-      </div>
+
     </div>
   </nav>
 
 
-
-  <div class="container">
-    <div class="popup">
-      <div class="popup-content">
-        <div class="close-button">
+  <div class="back">
+    <div class="popup" id="popup">
+      <div class="popup-content" id="popup-content">
+        <div id="close" class="close-button" onclick="closePopup()">
           <i class="fa-solid fa-circle-xmark"></i>
         </div>
-        <h2>Student Status</h2>
-        <div>
-          Student Name:
-          <span id="student_name_popup"></span>
-        </div>
-        <div>
-          Student ID:
-          <span id="student_id"></span>
-        </div>
-        <div>
-          Student Status:
-          <span id="student_status_popup"></span>
-        </div>
+        <div id="main-pop">
+          <h2>Student Status</h2>
+          <div>
+            Student Name:
+            <span id="student_name_popup"></span>
+          </div>
+          <div>
+            Student ID:
+            <span id="student_id"></span>
+          </div>
+          <div>
+            Student Status:
+            <span id="student_status_popup"></span>
+          </div>
 
 
-        <label for="student-status-popup">Choose Status: </label>
-        <select name="student-status" id="student-status-popup">
-          <option value="Active">Active</option>
-          <option value="Inactive">Active</option>
-        </select>
+          <label for="student-status-popup">Choose Status: </label>
+          <select name="student-status" id="student-status-popup">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
 
-        <div class="save-status-div">
-          <input type="submit" value="Save" id="save-status">
+          <div class="save-status-div">
+            <input type="submit" value="Save" id="save-status">
+          </div>
         </div>
-
       </div>
     </div>
 
-    <div class="back">
+
       <h1>Students Data</h1>
       <div class="view_student_table">
         <table>
@@ -85,159 +94,14 @@
               <th>Level</th>
               <th>Mobile</th>
               <th>Nationality</th>
-              <th>National ID</th>
               <th>Department</th>
               <th>Status</th>
               <th>Edit</th>
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
-              <td>20220428</td>
-              <td>Fatma ashraf</td>
-              <td>2</td>
-              <td>0129209739</td>
-              <td>Egyptian</td>
-              <td>3030102514554</td>
-              <td>General</td>
-              <td>
-                Active
-              </td>
-              <td>
-                <button name="popup-edit-status" id="popup">
-                  <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>20220428</td>
-              <td>Fatma ashraf</td>
-              <td>2</td>
-              <td>0129209739</td>
-              <td>Egyptian</td>
-              <td>3030102514554</td>
-              <td>General</td>
-              <td>Active</td>
-              <td>
-                <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>20220428</td>
-              <td>Fatma ashraf</td>
-              <td>2</td>
-              <td>0129209739</td>
-              <td>Egyptian</td>
-              <td>3030102514554</td>
-              <td>General</td>
-              <td>Active</td>
-              <td>
-                <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>20220428</td>
-              <td>Fatma ashraf</td>
-              <td>2</td>
-              <td>0129209739</td>
-              <td>Egyptian</td>
-              <td>3030102514554</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
+          <tbody id="tbody">
 
-            <tr>
-              <td>20220428</td>
-              <td>Fatma ashraf</td>
-              <td>2</td>
-              <td>0129209739</td>
-              <td>Egyptian</td>
-              <td>3030102514554</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-
-            <tr>
-              <td>20210456</td>
-              <td>Belal ahmed</td>
-              <td>3</td>
-              <td>01559209739</td>
-              <td>Egyptian</td>
-              <td>3030102514555</td>
-              <td>Computer Science</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-
-            <tr>
-              <td>20220556</td>
-              <td>Youssef magdy eldaly</td>
-              <td>2</td>
-              <td>01559209799</td>
-              <td>Egyptian</td>
-              <td>3030102514552</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-            <tr>
-              <td>20211456</td>
-              <td>Zeyad ahmed</td>
-              <td>2</td>
-              <td>01559209739</td>
-              <td>Egyptian</td>
-              <td>3030102514552</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-            <tr>
-              <td>20210456</td>
-              <td>Youssef karam</td>
-              <td>2</td>
-              <td>01559209739</td>
-              <td>Egyptian</td>
-              <td>3030102514552</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-            <tr>
-              <td>20210456</td>
-              <td>Nour hatem</td>
-              <td>2</td>
-              <td>01559209739</td>
-              <td>Egyptian</td>
-              <td>3030102514552</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-            <tr>
-              <td>20210456</td>
-              <td>Nour hatem</td>
-              <td>2</td>
-              <td>01559209739</td>
-              <td>Egyptian</td>
-              <td>3030102514552</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
-            <tr>
-              <td>20210456</td>
-              <td>Nour hatem</td>
-              <td>2</td>
-              <td>01559209739</td>
-              <td>Egyptian</td>
-              <td>3030102514552</td>
-              <td>General</td>
-              <td>Active</td>
-              <td><i class="fa-solid fa-pen-to-square" id="edit-button"></i></td>
-            </tr>
           </tbody>
         </table>
 

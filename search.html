@@ -20,40 +20,47 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="cu-logo">
-                <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
-                <h3>FCAI-CU Student Affairs</h3>
-            </div>
+          <div class="cu-logo">
+            <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
+            <h3>FCAI-CU Student Affairs</h3>
+          </div>
+    
+          <input id="menu-toggle" type="checkbox" />
+          <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+          <div class="nav-media">
             <div class="nav-content">
-                <ul type="none">
-                    <!-- <li><a href="login.html">Log In</a></li> -->
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="search.html">Search</a></li>
-                    <li><a href="add_student.html" class="add">Add Student</a></li>
-                    <li><a href="view.html">View Students</a></li>
-                </ul>
+              <ul type="none">
+                <!-- <li><a href="login.html">Log In</a></li> -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="add_student.html" class="add">Add Student</a></li>
+                <li><a href="view.html">View Students</a></li>
+              </ul>
             </div>
             <div>
-                <a href="login.html" class="sign">Sign Out</a>
+              <a href="login.html" class="sign">Sign Out</a>
             </div>
+          </div>
+    
         </div>
-    </nav>
+      </nav>
 
 
     <div class="search-box">
         <h1>Search for a Student</h1>
         <div>
             <form action="" method="" class="search-bar">
-                <input type="text" placeholder="Enter student name">
+                <input type="text" placeholder="Enter student name" id="searchInput">
                 <!-- <input type="submit" value="Search"> -->
-                <button type="submit"><img src="images/search.png" alt=""></button>
+                <button type="submit" id="searchButton"><img src="images/search.png" alt=""></button>
             </form>
         </div>
 
-
+        <h1 class="title">Students Data</h1>
         <div class="table-box">
-            <table>
-                <caption>Students Data</caption>
+            <table id="studentsTable">
                 <thead>
                     <th>Name</th>
                     <th>ID</th>
@@ -62,7 +69,10 @@
                     <th>Data</th>
                     <th>Delete</th>
                 </thead>
-                <tbody>
+                <tbody id="tableBody">
+
+                </tbody>
+                <!-- <tbody>
                     <tr>
                         <td>Karim Adel Ahmed</td>
                         <td>20211344</td>
@@ -141,7 +151,6 @@
                         <td>Active</td>
                         <td>
                             <a href="edit_student.html">
-                                <!-- <i class="fas fa-edit"></i> -->
                                 <img src="images/edit.png" alt="edit data" class="edit-box">
                             </a>
                         </td>
@@ -151,8 +160,7 @@
                             </a>
                         </td>
                     </tr>
-
-                </tbody>
+                </tbody> -->
             </table>
         </div>
 
@@ -196,7 +204,7 @@
     </footer>
 
 
-    <script src="js/search.js"></script>
+    <script src="js/search_editS_editD.js"></script>
 </body>
 
 </html>
