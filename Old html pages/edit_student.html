@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
+  <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+  <link rel="stylesheet" href="./stylesheets/head_foot_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheets/editS_style.css">
+  <title>Edit Student Data | FCAI-CU</title>
+  <script src="js/search_editS_editD.js"></script>
+  </script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="cu-logo">
+        <img class="logo" src="images/Cairo_University_logo.png" width="50px" height="60px" alt="cu-logo" />
+        <h3>FCAI-CU Student Affairs</h3>
+      </div>
+
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+      <div class="nav-media">
+        <div class="nav-content">
+          <ul type="none">
+            <!-- <li><a href="login.html">Log In</a></li> -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="add_student.html" class="add">Add Student</a></li>
+            <li><a href="view.html">View Students</a></li>
+          </ul>
+        </div>
+        <div>
+          <a href="login.html" class="sign">Sign Out</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="editStudentForm">
+      <header>
+        <h1 class="header">Edit Student Data</h1>
+      </header>
+
+      <form>
+
+        <!--First Name -->
+        <div class="name-div">
+          <div class="fname">
+            <label for="fname">Student First Name:</label>
+            <input type="text" id="fname" value="Ahmed" name="fname" readonly>
+          </div>
+
+          <!--Last Name -->
+          <div class="lname">
+            <label for="lname">Student Last Name:</label>
+            <input type="text" id="lname" value="Karim" name="lname" readonly>
+          </div>
+        </div>
+
+        <!--Address -->
+
+        <div class="field">
+          <label for="address">Student Address: </label>
+          <input type="text" name="address" value="Nasr St, Maadi" id="address">
+          <span class="address-error" aria-live="polite"></span>
+        </div>
+
+
+        <div class="form-sides">
+          <!--Left Colummn Input -->
+          <div class="leftColumn">
+
+            <!--Phone Number -->
+            <div class="field">
+              <label for="phone">Phone Number: </label>
+              <input type="text" name="phone" value="01004598246" id="phone">
+              <span class="phone-error" aria-live="polite"></span>
+            </div>
+
+
+            <!--  Email Address -->
+            <div class="field">
+              <label for="email">Email Address: </label>
+              <input type="email" name="email" value="g@gmail.com" id="email">
+              <span class="email-error" aria-live="polite"></span>
+            </div>
+
+
+            <!--  Level -->
+            <div class="field">
+              <label for="level">Level: </label>
+              <input type="number" name="level" value="2" id="level">
+              <span class="level-error" aria-live="polite"></span>
+            </div>
+
+
+            <!--  GPA -->
+            <div class="field">
+              <label for="gpa">GPA </label>
+              <input type="number" name="gpa" value="3.48" step="0.01" id="gpa">
+              <span class="gpa-error" aria-live="polite"></span>
+            </div>
+
+            <!--Status-->
+            <div class="field">
+              <label> Status:</label>
+              <div class="active-status">
+                <input type="radio" name="status" id="active" checked>
+                <label class="active" for="active">Active</label>
+              </div>
+
+              <div class="inactive-status">
+                <input type="radio" name="status" id="inactive">
+                <label class="inactive" for="inactive">Inactive</label>
+              </div>
+              <span id="status-error" aria-live="polite"></span>
+            </div>
+
+
+
+            <!--  Department -->
+            <div class="field">
+              <label for="dep">Department: </label>
+              <input type="text" name="dep" id="dep-input" value="General" readonly>
+              <div id="set-dep">
+
+              </div>
+            </div>
+
+          </div>
+
+          <!--  Right Colimn Input -->
+          <div class="rightColumn">
+
+            <!-- National ID -->
+            <div class="field">
+              <label for="nationalID">National ID: </label>
+              <input type="text" name="natid" value="30304511234586" id="nationalID" readonly>
+            </div>
+
+            <!-- Birth Date -->
+            <div class="field">
+              <label for="dob">Date of Birth: </label>
+              <input type="date" name="dob" value="2003-05-18" id="dob" readonly>
+            </div>
+
+
+            <!--  Landline Number -->
+            <div class="field">
+              <label for="landline">Landline Number: </label>
+              <input type="text" name="landline" value="0227698476" id="landline">
+              <span class="landline-error" aria-live="polite"></span>
+            </div>
+
+
+            <!-- College ID -->
+            <div class="field">
+              <label for="id">College ID: </label>
+              <input type="text" name="id" value="20211045" id="id" readonly>
+            </div>
+
+
+            <!--  Gender -->
+            <label>Gender: </label>
+            <div class="field">
+              <div id="gender">
+
+              </div>
+            </div>
+
+            <!-- Save-->
+          </div>
+        </div>
+        <input id='save' class="submit" type="submit" value="Save" onclick="storeNewData()">
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div id="container">
+      <div>
+        <img class="footer-logo" src="images/Fcai-logo.png" alt="logo">
+      </div>
+
+      <div class="footer-content-1">
+        <ul type="none">
+          <li class="get-in-touch">CONTACT US</li>
+          <li>
+            <i class="fa-sharp fa-solid fa-phone" style="color: #ffffff;"></i>
+            <span><a href="tel:01289209739">01289209739</a></span>
+          </li>
+          <li>
+            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+            <span><a href="mailto:fatmaserry16@gmail.com">Send Mail</a></span>
+          </li>
+          <li>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-content-2">
+        <p class="about-us">About Us</p>
+        <p>Help Center</p>
+        <p>&copy; All Right Reserved, FCAI-CU Students.</p>
+      </div>
+
+
+    </div>
+  </footer>
+
+
+  <script>
+    storeData();
+    reloadData();
+    checkOnDepartment();
+    storeNewData();
+  </script>
+
+</body>
+
+</html>

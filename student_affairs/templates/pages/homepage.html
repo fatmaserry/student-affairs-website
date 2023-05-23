@@ -1,0 +1,36 @@
+{% extends 'demo.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href=" {% static 'stylesheets/homepage.css'%}">
+{% endblock %}
+
+
+{% block tittle %}
+<title>Web Page</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="main">
+    <div class="section">
+        <img src="{% static 'images/why-is-human-resources-important@2x-100-1024x543.jpg' %}" alt="">
+        <h1>Human Resources Website</h1>
+    </div>
+    <div>
+        <a href="index"><img src="{% static 'images/download.png' %}" alt="">
+            <h1>Student Affairs website</h1>
+        </a>
+
+    </div>
+    <div>
+        <img src="{% static 'images/Assessment-of-learning-outcomes-in-higher-education.jpg_516937700.jpg' %}" alt="">
+        <h1>Higher studies website</h1>
+    </div>
+    <div>
+        <img src="{% static 'images/infsoft-isometric-Tracking-Disposables-Laboratory-EN.jpg' %}" alt="">
+        <h1>Laboratory tracking website</h1>
+    </div>
+</div>
+
+{% endblock %}

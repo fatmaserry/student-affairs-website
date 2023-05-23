@@ -1,0 +1,12 @@
+localStorage.setItem("123456","password1");
+localStorage.setItem("123467","password2");
+localStorage.setItem("123458","password3");
+localStorage.setItem("123459","password4");
+localStorage.setItem("123460","password5");
+localStorage.setItem("123461","password6");
+localStorage.setItem("123461","password7");
+localStorage.setItem("123463","password8");
+localStorage.setItem("123464","password9");
+localStorage.setItem("123465","password10");
+localStorage.setItem("123466","password11");
+localStorage.setItem("123467","password12");
