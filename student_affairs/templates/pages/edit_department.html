@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'stylesheets/editD_style.css' %}">
+{% endblock %}
+
+
+{% block tittle %}
+    <title>Edit Department | FCAI-CU</title>
+{% endblock %}
+
+
+{% block content %}
+    <!-- Edit Department form -->
+
+    <div class="student-info">
+        <h1>Edit The Department of a student</h1>
+        <form id="dep-form">
+            <div class="info">
+                <label for="dep-name">Student Name: </label>
+                <input type="text" id="dep-name"
+                       value="{{ student.student_first_name }} {{ student.student_last_name }}" readonly>
+
+                <label for="dep-id">Student ID: </label>
+                <input type="text" id="dep-id" value="{{ student.student_id }}" readonly>
+
+                <label for="dep-set">Student Department: </label>
+                <input type="text" id="dep-set" value="{{ student.student_dep }}" readonly>
+
+            </div>
+            <div class="right-info">
+                <label for="dep-gpa">Student GPA: </label>
+                <input type="text" id="dep-gpa" value="{{ student.student_gpa }}" readonly>
+
+                <label for="Department-set">Choose Department: </label>
+                <select name="Department" id="Department-set">
+                    <option value="General">General</option>
+                    <option value="Computer science">Computer science</option>
+                    <option value="Artificial intellegence">Artificial intellegence</option>
+                    <option value="Information system">Information system</option>
+                    <option value="Information technology">Information technology</option>
+                    <option value="Decision support">Decision support</option>
+                </select>
+            </div>
+
+            <div class="Button">
+                <input type="submit" id="submit-edit" value="Assign" onclick="assignDepartment()">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+
+
+
+{% block script %}
+{% endblock %}

@@ -114,9 +114,8 @@
                             <input type="text" name="dep" id="dep-input" value="{{ student.student_dep }}" readonly>
                             <div id="set-dep">
                                 {% if student.student_level == 3 %}
-                                {% comment %} {% url 'edit_department' student.student_id %} {% endcomment %}
-                                    <a class="assignDep" href=''>Assign
-                                    Department
+                                    <a class="assignDep" href='edit_department/{{ student.student_id }}'>
+                                        Assign Department
                                     </a>
                                 {% endif %}
                             </div>
@@ -130,13 +129,15 @@
                         <!-- National ID -->
                         <div class="field">
                             <label for="nationalID">National ID: </label>
-                            <input type="text" name="natid" value="{{ student.student_naitonal_id }}" id="nationalID" readonly>
+                            <input type="text" name="natid" value="{{ student.student_naitonal_id }}" id="nationalID"
+                                   readonly>
                         </div>
 
                         <!-- Birth Date -->
                         <div class="field">
                             <label for="dob">Date of Birth: </label>
-                            <input type="date" name="dob" value="{{ student.student_dob|date:'Y-m-d'}}" id="dob" readonly>
+                            <input type="date" name="dob" value="{{ student.student_dob|date:'Y-m-d' }}" id="dob"
+                                   readonly>
                         </div>
 
 

@@ -1,6 +1,7 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.db.models import Q
 from .models import Student
+
 
 def search(request):
     search = Student.objects.all()
@@ -28,24 +29,27 @@ def delete_student(request):
             student.delete()
     return redirect('search')
 
+
 def edit_student(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
-    return render(request, 'pages/edit_student.html', context)   
+    return render(request, 'pages/edit_student.html', context)
 
-# def edit_department(request, studentID):
-#     student = Student.objects.get(student_id=studentID)
-#     context = {'student': student}
-#     return render(request, 'pages/edit_student.html', context)   
-            
+
+def edit_department(request, studentID):
+    student = Student.objects.get(student_id=studentID)
+    context = {'student': student}
+    return render(request, 'pages/edit_department.html', context)
+
 
 def view(request):
     context = {'students': Student.objects.all()}
     return render(request, 'pages/view.html', context)
 
+
 def home(request):
     return render(request, 'pages/homepage.html')
 
+
 def index(request):
     return render(request, 'pages/index.html')
-
