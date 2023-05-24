@@ -46,9 +46,15 @@
                     <img src="{% static 'images/edit.png' %}" alt='edit data' class='edit-box'>
                 </a></td>
                 <td>
-                    <button onclick='if(confirm("Are you sure you want to delete ${student.fname} ${student.lname}?"))deleteRow(this);' class='delete-button'>
-                        <img src="{% static 'images/delete.png' %}" alt='delete data' class='delete-box'>
-                    </button>
+                    <form method="POST" action="{% url 'delete_student' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="student_id" value="{{ student.id }}">
+                        <button type="button" onclick="confirmDelete('{{ student.id }}')">Delete</button>
+
+                        {% comment %} <button type="button" onclick="confirmDelete('{{ student.id }}')">
+                            <img src="{% static 'images/delete.png' %}" alt='delete data' class='delete-box'>
+                        </button> {% endcomment %}
+                    </form>
                 </td>
             </tr>
             {% endfor %}
@@ -61,6 +67,6 @@
 
 
 
-{% block script %} 
-<!-- <script src="{% static 'js/search_editS_editD.js' %}"></script> -->
+{% block script %}
+<script src="{% static 'js/search_editS_editD.js' %}"></script>
 {% endblock %}
