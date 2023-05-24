@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.db.models import Q
 from .models import Student
 
@@ -19,6 +19,14 @@ def search(request):
     context = {'students': search}
     return render(request, 'pages/search.html', context)
 
+
+def delete_student(request):
+    if request.method == 'POST':
+        student_id = request.POST.get('student_id')
+        if student_id:
+            student = Student.objects.get(id=student_id)
+            student.delete()
+    return redirect('search')
 
 def edit_student(request, studentID):
     student = Student.objects.get(student_id=studentID)

@@ -4,6 +4,33 @@
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'stylesheets/search_style.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheets/head_foot_style.css' %}">
+<script>
+    function confirmDelete(studentId) {
+        if (confirm("Are you sure you want to delete this student?")) {
+            // If user confirms, submit the form
+            var form = document.createElement("form");
+            form.method = "POST";
+            form.action = "{% url 'delete_student' %}";
+    
+            var csrf = document.createElement("input");
+            csrf.setAttribute("type", "hidden");
+            csrf.setAttribute("name", "csrfmiddlewaretoken");
+            csrf.setAttribute("value", "{{ csrf_token }}");
+            form.appendChild(csrf);
+    
+            var input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "student_id");
+            input.setAttribute("value", studentId);
+            form.appendChild(input);
+    
+            document.body.appendChild(form);
+            form.submit();
+        } else {
+            // If user cancels, do nothing
+        }
+    }
+</script>    
 {% endblock %}
 
 
@@ -46,9 +73,15 @@
                     <img src="{% static 'images/edit.png' %}" alt='edit data' class='edit-box'>
                 </a></td>
                 <td>
-                    <button onclick='if(confirm("Are you sure you want to delete ${student.fname} ${student.lname}?"))deleteRow(this);' class='delete-button'>
-                        <img src="{% static 'images/delete.png' %}" alt='delete data' class='delete-box'>
-                    </button>
+                    <form method="POST" action="{% url 'delete_student' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="student_id" value="{{ student.id }}">
+                        <button type="button" onclick="confirmDelete('{{ student.id }}')">Delete</button>
+
+                        {% comment %} <button type="button" onclick="confirmDelete('{{ student.id }}')">
+                            <img src="{% static 'images/delete.png' %}" alt='delete data' class='delete-box'>
+                        </button> {% endcomment %}
+                    </form>
                 </td>
             </tr>
             {% endfor %}
@@ -61,6 +94,6 @@
 
 
 
-{% block script %} 
-<!-- <script src="{% static 'js/search_editS_editD.js' %}"></script> -->
+{% block script %}
+<script src="{% static 'js/search_editS_editD.js' %}"></script>
 {% endblock %}
