@@ -42,7 +42,7 @@
                 <td>{{student.student_level}}</td>
                 <td>{{student.student_status}}</td>
                 <td>
-                <a href='edit_student.html?id=${student.id}' class='edit-student'>
+                <a href='{% url 'edit_student' student.student_id %}' class='edit-student'>
                     <img src="{% static 'images/edit.png' %}" alt='edit data' class='edit-box'>
                 </a></td>
                 <td>
