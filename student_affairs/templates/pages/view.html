@@ -18,6 +18,26 @@
           document.getElementById("student_status_popup").innerHTML = response.student_status;
           document.getElementById("student_name_popup").innerHTML = response.student_name;
           document.getElementById("student_id").innerHTML = response.student_id;
+
+          $('#save-status').click(function() {
+            var newStatus = $('#student-status-popup').val();
+            $.ajax({
+              url: '/update-student-status/',  // URL endpoint to update student status
+              method: 'POST',
+              data: {
+                student_id: studentId,
+                new_status: newStatus,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+              },
+              success: function(response) {
+                document.getElementById("popup").style.display = "none";
+                location.reload();  // reload the page to show updated data
+              },
+              error: function(xhr, status, error) {
+                alert("An error occurred. Please try again.");
+              }
+            });
+          });
         },
         error: function(xhr, status, error) {
           document.getElementById("student_status_popup").innerHTML = "Error";
@@ -121,5 +141,4 @@
 
 
 {% block script %} 
-{% comment %} <script src="{% static 'js/view.js' %}"></script> {% endcomment %}
 {% endblock %}

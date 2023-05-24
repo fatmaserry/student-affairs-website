@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.db.models import Q
 from .models import Student
@@ -31,9 +32,11 @@ def search(request):
             result = name.split(delimiter)
             first_name = result[0]
             last_name = result[1]
-            search = search.filter(student_first_name__icontains=first_name, student_last_name__icontains=last_name)
+            search = search.filter(
+                student_first_name__icontains=first_name, student_last_name__icontains=last_name)
         else:
-            search = search.filter(Q(student_first_name__icontains=name) | Q(student_last_name__icontains=name))
+            search = search.filter(Q(student_first_name__icontains=name) | Q(
+                student_last_name__icontains=name))
 
     context = {'students': search}
     return render(request, 'pages/search.html', context)
@@ -72,3 +75,20 @@ def home(request):
 
 def index(request):
     return render(request, 'pages/index.html')
+
+
+@csrf_exempt
+def update_student_status(request):
+    if request.method == 'POST':
+        student_id = request.POST.get('student_id')
+        new_status = request.POST.get('new_status')
+
+        # retrieve the student record from the database
+        student = Student.objects.get(id=student_id)
+
+        # update the student status field and save the record
+        student.student_status = new_status
+        student.save()
+
+        # return a successresponse in JSON format
+        return JsonResponse({'status': 'success'})
