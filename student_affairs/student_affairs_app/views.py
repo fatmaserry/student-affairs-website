@@ -22,7 +22,13 @@ def search(request):
 
 def edit_student(request, studentID):
     student = Student.objects.get(student_id=studentID)
-    return render(request, 'pages/edit_student.html', {student})     
+    context = {'student': student}
+    return render(request, 'pages/edit_student.html', context)   
+
+# def edit_department(request, studentID):
+#     student = Student.objects.get(student_id=studentID)
+#     context = {'student': student}
+#     return render(request, 'pages/edit_student.html', context)   
             
 
 def view(request):

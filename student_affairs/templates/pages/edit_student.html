@@ -114,7 +114,8 @@
                             <input type="text" name="dep" id="dep-input" value="{{ student.student_dep }}" readonly>
                             <div id="set-dep">
                                 {% if student.student_level == 3 %}
-                                    <a class="assignDep" href='{% url 'edit_department' student.student_id %}'>Assign
+                                {% comment %} {% url 'edit_department' student.student_id %} {% endcomment %}
+                                    <a class="assignDep" href=''>Assign
                                     Department
                                     </a>
                                 {% endif %}
