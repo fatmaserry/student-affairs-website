@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.db.models import Q
 from .models import Student
+from .forms import *
 
 def search(request):
     search = Student.objects.all()
@@ -34,4 +35,14 @@ def home(request):
 
 def index(request):
     return render(request, 'pages/index.html')
+
+def add_student(request):
+    if request.method == 'POST':
+        form = add_student_form(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    form=add_student_form()
+    return render(request,"pages/add_student.html",{'form':form})
+        
 
