@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'stylesheets/view_style.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheets/head_foot_style.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+{% endblock %}
+
+
+{% block tittle %}
+<title>VIEW | FCAI-CU</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="back">
+    <div class="popup" id="popup">
+      <div class="popup-content" id="popup-content">
+        <div id="close" class="close-button" onclick="closePopup()">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <div id="main-pop">
+          <h2>Student Status</h2>
+          <div>
+            Student Name:
+            <span id="student_name_popup"></span>
+          </div>
+          <div>
+            Student ID:
+            <span id="student_id"></span>
+          </div>
+          <div>
+            Student Status:
+            <span id="student_status_popup"></span>
+          </div>
+
+
+          <label for="student-status-popup">Choose Status: </label>
+          <select name="student-status" id="student-status-popup">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+
+          <div class="save-status-div">
+            <input type="submit" value="Save" id="save-status">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <h1>Students Data</h1>
+      <div class="view_student_table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Level</th>
+              <th>Mobile</th>
+              <th>Department</th>
+              <th>Status</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+
+
+          <tbody id="tbody">
+            {% for student in students %}
+            <tr>
+                <td>{{student.student_id}}</td>
+                <td>{{student.student_first_name}} {{student.student_last_name}}</td>
+                <td>{{student.student_level}}</td>
+                <td>{{student.student_phone}}</td>
+                <td>{{student.student_dep}}</td>
+                <td>{{student.student_status}}</td>
+                <td class="status-edit">
+                  <button name="popup-edit-status" onclick="showStatus()" id="popup-buttton">
+                    <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
+                  </button>
+                </td>  
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+{% block script %} 
+<!-- <script src="{% static 'js/view.js' %}"></script> -->
+{% endblock %}

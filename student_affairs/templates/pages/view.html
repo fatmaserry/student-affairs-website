@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -77,30 +76,23 @@
                 <td>{{student.student_phone}}</td>
                 <td>{{student.student_dep}}</td>
                 <td>{{student.student_status}}</td>
-
                 <td class="status-edit">
-                  <button name="popup-edit-status" onclick="showStatus({{ student|json_script }})" id="popup-buttton">
+                  <button name="popup-edit-status" onclick="showStatus()" id="popup-buttton">
                     <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
                   </button>
-                </td>
-                
+                </td>  
             </tr>
-
             {% endfor %}
           </tbody>
-
         </table>
-
-
       </div>
     </div>
   </div>
-
 {% endblock %}
 
 
 
 
 {% block script %} 
-<!-- <script src="{% static 'js/view.js' %}"></script> -->
+{% comment %} <script src="{% static 'js/view.js' %}"></script> {% endcomment %}
 {% endblock %}

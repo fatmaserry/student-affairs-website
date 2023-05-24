@@ -1,10 +1,5 @@
-// IMPORTANT!! LocalStorage Data
-// Key of array in LS (studnets)
-// Array of Students
-let students;
 
 // Edit Button
-
 function saveChange(i, new_status) {
   students[i].status_of_student = new_status;
   localStorage.students = JSON.stringify(students);
