@@ -13,4 +13,5 @@ urlpatterns = [
     path('delete-student/', views.delete_student, name='delete_student'),
     # path('<int:studentID>', views.edit_department, name='edit_department')
 
+
 ]

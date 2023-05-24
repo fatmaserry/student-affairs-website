@@ -2,163 +2,180 @@
 {% load static %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'stylesheets/editS_style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/editS_style.css' %}">
 {% endblock %}
 
 
 {% block tittle %}
-<title>Edit Student Data | FCAI-CU</title>
+    <title>Edit Student Data | FCAI-CU</title>
 {% endblock %}
 
 
 {% block content %}
-<div class="container">
-    <div class="editStudentForm">
-      <header>
-        <h1 class="header">Edit Student Data</h1>
-      </header>
+    <div class="container">
+        <div class="editStudentForm">
+            <header>
+                <h1 class="header">Edit Student Data</h1>
+            </header>
 
-      <form>
-        <!--First Name -->
-        <div class="name-div">
-          <div class="fname">
-            <label for="fname">Student First Name:</label>
-            <input type="text" id="fname" value="{{student.student_first_name}}" name="fname" readonly>
-          </div>
+            <form>
+                <!--First Name -->
+                <div class="name-div">
+                    <div class="fname">
+                        <label for="fname">Student First Name:</label>
+                        <input type="text" id="fname" value="{{ student.student_first_name }}" name="fname" readonly>
+                    </div>
 
-          <!--Last Name -->
-          <div class="lname">
-            <label for="lname">Student Last Name:</label>
-            <input type="text" id="lname" value="{{student.student_last_name}}" name="lname" readonly>
-          </div>
+                    <!--Last Name -->
+                    <div class="lname">
+                        <label for="lname">Student Last Name:</label>
+                        <input type="text" id="lname" value="{{ student.student_last_name }}" name="lname" readonly>
+                    </div>
+                </div>
+
+                <!--Address -->
+
+                <div class="field">
+                    <label for="address">Student Address: </label>
+                    <input type="text" name="address" value="{{ student.student_address }}" id="address">
+                    <span class="address-error" aria-live="polite"></span>
+                </div>
+
+
+                <div class="form-sides">
+                    <!--Left Colummn Input -->
+                    <div class="leftColumn">
+
+                        <!--Phone Number -->
+                        <div class="field">
+                            <label for="phone">Phone Number: </label>
+                            <input type="text" name="phone" value="{{ student.student_phone }}" id="phone">
+                            <span class="phone-error" aria-live="polite"></span>
+                        </div>
+
+
+                        <!--  Email Address -->
+                        <div class="field">
+                            <label for="email">Email Address: </label>
+                            <input type="email" name="email" value="{{ student.student_email }}" id="email">
+                            <span class="email-error" aria-live="polite"></span>
+                        </div>
+
+
+                        <!--  Level -->
+                        <div class="field">
+                            <label for="level">Level: </label>
+                            <input type="number" name="level" value="{{ student.student_level }}" id="level">
+                            <span class="level-error" aria-live="polite"></span>
+                        </div>
+
+
+                        <!--  GPA -->
+                        <div class="field">
+                            <label for="gpa">GPA </label>
+                            <input type="number" name="gpa" value="{{ student.student_gpa }}" step="0.01" id="gpa">
+                            <span class="gpa-error" aria-live="polite"></span>
+                        </div>
+
+
+                        {% if student.student_status == 'active' %}
+                            <!--Status-->
+                            <div class="field">
+                                <label> Status:</label>
+                                <div class="active-status">
+                                    <input type="radio" name="status" id="active" checked>
+                                    <label class="active" for="active">Active</label>
+                                </div>
+                                <div class="inactive-status">
+                                    <input type="radio" name="status" id="inactive">
+                                    <label class="inactive" for="inactive">Inactive</label>
+                                </div>
+                                <span id="status-error" aria-live="polite"></span>
+                            </div>
+                        {% else %}
+                            <div class="field">
+                                <label> Status:</label>
+                                <div class="active-status">
+                                    <input type="radio" name="status" id="active">
+                                    <label class="active" for="active">Active</label>
+                                </div>
+                                <div class="inactive-status">
+                                    <input type="radio" name="status" id="inactive" checked>
+                                    <label class="inactive" for="inactive">Inactive</label>
+                                </div>
+                                <span id="status-error" aria-live="polite"></span>
+                            </div>
+                        {% endif %}
+
+
+                        <!--  Department -->
+                        <div class="field">
+                            <label for="dep">Department: </label>
+                            <input type="text" name="dep" id="dep-input" value="{{ student.student_dep }}" readonly>
+                            <div id="set-dep">
+                                {% if student.student_level == 3 %}
+                                {% comment %} {% url 'edit_department' student.student_id %} {% endcomment %}
+                                    <a class="assignDep" href=''>Assign
+                                    Department
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--  Right Colimn Input -->
+                    <div class="rightColumn">
+
+                        <!-- National ID -->
+                        <div class="field">
+                            <label for="nationalID">National ID: </label>
+                            <input type="text" name="natid" value="{{ student.student_naitonal_id }}" id="nationalID" readonly>
+                        </div>
+
+                        <!-- Birth Date -->
+                        <div class="field">
+                            <label for="dob">Date of Birth: </label>
+                            <input type="date" name="dob" value="{{ student.student_dob|date:'Y-m-d'}}" id="dob" readonly>
+                        </div>
+
+
+                        <!--  Landline Number -->
+                        <div class="field">
+                            <label for="landline">Landline Number: </label>
+                            <input type="text" name="landline" value="{{ student.student_landline }}" id="landline">
+                            <span class="landline-error" aria-live="polite"></span>
+                        </div>
+
+
+                        <!-- College ID -->
+                        <div class="field">
+                            <label for="id">College ID: </label>
+                            <input type="text" name="id" value="{{ student.student_id }}" id="id" readonly>
+                        </div>
+
+
+                        <!--  Gender -->
+                        <label>Gender: </label>
+                        <div class="field">
+                            <div id="gender">
+                                {{ student.student_gender }}
+                            </div>
+                        </div>
+
+                        <!-- Save-->
+                    </div>
+                </div>
+                <input id='save' class="submit" type="submit" value="Save" onclick="storeNewData()">
+
+            </form>
         </div>
-
-        <!--Address -->
-
-        <div class="field">
-          <label for="address">Student Address: </label>
-          <input type="text" name="address" value="{{student.student_address}}" id="address">
-          <span class="address-error" aria-live="polite"></span>
-        </div>
-
-
-        <div class="form-sides">
-          <!--Left Colummn Input -->
-          <div class="leftColumn">
-
-            <!--Phone Number -->
-            <div class="field">
-              <label for="phone">Phone Number: </label>
-              <input type="text" name="phone" value="{{student.student_phone}}" id="phone">
-              <span class="phone-error" aria-live="polite"></span>
-            </div>
-
-
-            <!--  Email Address -->
-            <div class="field">
-              <label for="email">Email Address: </label>
-              <input type="email" name="email" value="{{student.student_email}}" id="email">
-              <span class="email-error" aria-live="polite"></span>
-            </div>
-
-
-            <!--  Level -->
-            <div class="field">
-              <label for="level">Level: </label>
-              <input type="number" name="level" value="{{student.student_level}}" id="level">
-              <span class="level-error" aria-live="polite"></span>
-            </div>
-
-
-            <!--  GPA -->
-            <div class="field">
-              <label for="gpa">GPA </label>
-              <input type="number" name="gpa" value="{{student.student_gpa}}" step="0.01" id="gpa">
-              <span class="gpa-error" aria-live="polite"></span>
-            </div>
-
-
-            {% if student.student_status == 'active'%}
-            <!--Status-->
-            <div class="field">
-              <label> Status:</label>
-              <div class="active-status">
-                <input type="radio" name="status" id="active" checked>
-                <label class="active" for="active">Active</label>
-              </div>
-            {% elif  %}
-              <div class="inactive-status">
-                <input type="radio" name="status" id="inactive">
-                <label class="inactive" for="inactive">Inactive</label>
-              </div>
-              <span id="status-error" aria-live="polite"></span>
-            </div>
-
-
-
-            <!--  Department -->
-            <div class="field">
-              <label for="dep">Department: </label>
-              <input type="text" name="dep" id="dep-input" value="General" readonly>
-              <div id="set-dep">
-
-              </div>
-            </div>
-
-          </div>
-
-          <!--  Right Colimn Input -->
-          <div class="rightColumn">
-
-            <!-- National ID -->
-            <div class="field">
-              <label for="nationalID">National ID: </label>
-              <input type="text" name="natid" value="30304511234586" id="nationalID" readonly>
-            </div>
-
-            <!-- Birth Date -->
-            <div class="field">
-              <label for="dob">Date of Birth: </label>
-              <input type="date" name="dob" value="2003-05-18" id="dob" readonly>
-            </div>
-
-
-            <!--  Landline Number -->
-            <div class="field">
-              <label for="landline">Landline Number: </label>
-              <input type="text" name="landline" value="0227698476" id="landline">
-              <span class="landline-error" aria-live="polite"></span>
-            </div>
-
-
-            <!-- College ID -->
-            <div class="field">
-              <label for="id">College ID: </label>
-              <input type="text" name="id" value="20211045" id="id" readonly>
-            </div>
-
-
-            <!--  Gender -->
-            <label>Gender: </label>
-            <div class="field">
-              <div id="gender">
-
-              </div>
-            </div>
-
-            <!-- Save-->
-          </div>
-        </div>
-        <input id='save' class="submit" type="submit" value="Save" onclick="storeNewData()">
-
-      </form>
     </div>
-  </div>
 {% endblock %}
 
 
 
 
-{% block script %} 
-<!-- <script src="{% static 'js/search_editS_editD.js' %}"></script> -->
+{% block script %}
+    <!-- <script src="{% static 'js/search_editS_editD.js' %}"></script> -->
 {% endblock %}
