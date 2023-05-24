@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.db.models import Q
 from .models import Student
+from django.http import HttpResponseRedirect
 
 
 def search(request):
@@ -40,6 +41,7 @@ def edit_department(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
     return render(request, 'pages/edit_department.html', context)
+    # return HttpResponseRedirect(reverse('pages/edit_department.html', context))
 
 
 def view(request):
