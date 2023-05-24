@@ -6,7 +6,9 @@ from django.http import HttpResponseRedirect
 
 def search(request):
     search = Student.objects.all()
-    name = request.GET.get('search_name')
+    name = None
+    if 'search_name' in request.GET:
+        name = request.GET.get('search_name')
 
     if name:
         delimiter = " "
