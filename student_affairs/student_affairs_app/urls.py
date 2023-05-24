@@ -12,6 +12,4 @@ urlpatterns = [
     path('<int:studentID>', views.edit_student, name='edit_student'),
     path('delete-student/', views.delete_student, name='delete_student'),
     # path('<int:studentID>', views.edit_department, name='edit_department')
-
-
 ]
