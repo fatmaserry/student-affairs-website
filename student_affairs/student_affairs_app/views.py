@@ -20,7 +20,8 @@ def get_student_data(request):
     except Student.DoesNotExist:
         return JsonResponse({'error': 'Student not found'})
 
-
+def login(request):
+    return render(request,'pages/login.html')
 
 def get_student_data(request):
     student_id = request.GET.get('student_id')

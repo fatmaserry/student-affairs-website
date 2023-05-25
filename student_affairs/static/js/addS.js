@@ -64,6 +64,10 @@ const dobError = dob.nextElementSibling;
 const genderError = document.getElementById("gender-error");
 const statusError = document.getElementById("status-error");
 
+
+
+
+
 // This defines what happens when the user types in the field
 email.addEventListener("input", () => {
   const isValidEmail = emailRegExp.test(email.value);
@@ -241,9 +245,11 @@ class Student {
 }
 
 // Add Student Button
-/*const add_student_button = document.querySelector("#add-student");
-add_student_button.onsubmit = (e) => {*/
+const add_student_button = document.querySelector("#add-student");
+add_student_button.onsubmit = (e) => {
 
+  const csrf= document.getElementsByName('csfrmiddlewaretoken')
+console.log(csrf)
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -439,7 +445,7 @@ form.addEventListener("submit", (e) => {
     'input[name ="status"]:checked'
   );
 
- /* if (!flag) {
+  if (!flag) {
     return;
   }
 
@@ -468,7 +474,7 @@ form.addEventListener("submit", (e) => {
 
   // push the array as string to LocalStorage
   localStorage.setItem("students", s);
-});*/
+});
 
 function isEmpty(field) {
   const fieldError = field.nextElementSibling;
@@ -505,4 +511,4 @@ function setNoError(field) {
   field.className = "valid";
   fieldError.textContent = "";
   fieldError.className = "error";
-}})
+}}
