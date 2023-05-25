@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static './stylesheets/addS_style.css'%}">
+  {% endblock %}
+
+
+{% block title%}
+  <title>FCAI-CU Add Student</title>
+
+  {% endblock %}
+    <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+    rel="stylesheet">
+ 
+
+{% block content%}
+<body>
+
+  <div class="container">
+    <div class="add_student_form">
+      <!-- Header of Form -->
+      <div class="header">
+        <h1>Register New Student</h1>
+      </div>
+
+      <!-- Form -->
+      <form>
+
+        <!-- Name  -->
+        <div class="name-div">
+          <div class="fname">
+            <label for="fname">Student First Name:</label>
+            <input type="text" id="fname" name="fname">
+            <span class="fname-error" aria-live="polite"></span>
+          </div>
+
+          <div class="lname">
+            <label for="lname">Student Last Name:</label>
+            <input type="text" id="lname" name="lname">
+            <span class="lname-error" aria-live="polite"></span>
+          </div>
+        </div>
+
+
+        <!-- Address -->
+        <div class="field">
+          <label for="address">Student Address:</label>
+          <input type="text" id="address" name="address">
+          <span class="address-error" aria-live="polite"></span>
+        </div>
+
+
+        <!-- Two Sides below -->
+        <div class="form-sides">
+          <!-- Left side -->
+          <div class="form-leftside">
+
+            <!-- Phone number -->
+            <div class="field">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone">
+              <span class="phone-error" aria-live="polite"></span>
+            </div>
+            <!-- Email address -->
+            <div class="field">
+              <label for="email">Email Address:</label>
+              <input type="text" id="email" name="email">
+              <span class="email-error" aria-live="polite"></span>
+            </div>
+            <!-- Level -->
+            <div class="field">
+              <label for="level">Level:</label>
+              <input type="text" id="level" name="level">
+              <span class="level-error" aria-live="polite"></span>
+            </div>
+            <!-- GPA -->
+            <div class="field">
+              <label for="gpa">GPA:</label>
+              <input type="text" id="gpa" name="gpa">
+              <span class="gpa-error" aria-live="polite"></span>
+            </div>
+            <!-- Department -->
+            <div class="field">
+              <label for="department">Department:</label>
+              <select name="department" id="department" required>
+                <option value="General">General</option>
+                <option value="Computer science">Computer science</option>
+                <option value="Artificial intelligence">Artificial intellegence</option>
+                <option value="Information system">Information system</option>
+                <option value="Information technology">Information technology</option>
+                <option value="Decision support">Decision support</option>
+              </select>
+              <span id="dep-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Status -->
+            <div id="field">
+              <p for="status">Status:</p>
+              <div class="gender-div">
+                <div class="male-gender">
+                  <input type="radio" id="active" name="status" value="Active">
+                  <label for="active" class="active">Active</label>
+                </div>
+
+                <div class="female-gender">
+                  <input type="radio" id="inactive" name="status" value="Inactive">
+                  <label for="inactive" class="inactive">Inactive</label>
+                </div>
+              </div>
+              <span id="status-error" aria-live="polite"></span>
+            </div>
+            
+          </div>
+          <!-- End of left side -->
+
+          <!-- Right Side -->
+          <div class="form-rightside">
+
+            <!-- National ID -->
+            <div class="field">
+              <label for="nationalID">National ID:</label>
+              <input type="text" id="nationalID" name="nationalID">
+              <span class="nationalID-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="field">
+              <label for="dob">Date of birth:</label>
+              <input type="date" id="dob" name="dob">
+              <span class="dob-error" aria-live="polite"></span>
+            </div>
+            <!-- Landline number -->
+            <div class="field">
+              <label for="landline">Landline Number:</label>
+              <input type="tel" id="landline" name="landline">
+              <span class="landline-error" aria-live="polite"></span>
+            </div>
+            <!-- Student ID -->
+            <div class="field">
+              <label for="id">College ID:</label>
+              <div id="id-div" class="id-div">
+              <input type="text" id="id-prefix" name="id" value="20" readonly>
+              <input type="text" id="id" name="id">
+              </div>
+              <span id="id-error" class="id-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Gender -->
+            <div class="field">
+              <p for="gender">Gender:</p>
+              <div class="gender-div">
+                <div class="male-gender">
+                  <input type="radio" value="Male" id="male" name="gender" >
+                  <label for="male" class="male">Male</label>
+
+                </div>
+
+                <div class="female-gender">
+                  <input type="radio" value="Female" id="female" name="gender" >
+                  <label for="female" class="female">Female</label>
+                </div>
+              </div>
+              <span id="gender-error" aria-live="polite"></span>
+            </div>
+
+
+          </div>
+          <!-- End of right side -->
+        </div>
+        <!-- End of sides -->
+
+        <!-- Add Student button -->
+        <input type="submit" id="add-student" value="Add Student">
+      </form>
+
+    </div>
+  </div>
+  <script src="{%static 'js/addS.js'%}"></script>
+
+  {% endblock %}

@@ -18,7 +18,8 @@
                 <h1 class="header">Edit Student Data</h1>
             </header>
 
-            <form>
+            <form action="" method='POST'>
+                {% csrf_token %}
                 <!--First Name -->
                 <div class="name-div">
                     <div class="fname">
@@ -37,7 +38,7 @@
 
                 <div class="field">
                     <label for="address">Student Address: </label>
-                    <input type="text" name="address" value="{{ student.student_address }}" id="address">
+                    <input type="text" name="address" value="{{ student.student_address }}" id="address" required>
                     <span class="address-error" aria-live="polite"></span>
                 </div>
 
@@ -49,7 +50,7 @@
                         <!--Phone Number -->
                         <div class="field">
                             <label for="phone">Phone Number: </label>
-                            <input type="text" name="phone" value="{{ student.student_phone }}" id="phone">
+                            <input type="text" name="phone" value="{{ student.student_phone }}" id="phone" required>
                             <span class="phone-error" aria-live="polite"></span>
                         </div>
 
@@ -57,7 +58,7 @@
                         <!--  Email Address -->
                         <div class="field">
                             <label for="email">Email Address: </label>
-                            <input type="email" name="email" value="{{ student.student_email }}" id="email">
+                            <input type="email" name="email" value="{{ student.student_email }}" id="email" required>
                             <span class="email-error" aria-live="polite"></span>
                         </div>
 
@@ -110,17 +111,20 @@
 
                         <!--  Department -->
                         <div class="field">
-                            <label for="dep">Department: </label>
+                            <label for="dep-input">Department: </label>
                             <input type="text" name="dep" id="dep-input" value="{{ student.student_dep }}" readonly>
-                            <div id="set-dep">
-                                {% if student.student_level == 3 %}
+
+                            {% if student.student_level == 3 %}
+                                <div id="set-dep">
+
                                     <a class="assignDep" href='edit_department/{{ student.student_id }}'>
                                         Assign Department
                                     </a>
-                                {% endif %}
-                            </div>
-                        </div>
+                                </div>
+                            {% endif %}
 
+
+                        </div>
                     </div>
 
                     <!--  Right Colimn Input -->
@@ -167,7 +171,7 @@
                         <!-- Save-->
                     </div>
                 </div>
-                <input id='save' class="submit" type="submit" value="Save" onclick="storeNewData()">
+                <input id='save' class="submit" type="submit" value="Save">
 
             </form>
         </div>
@@ -178,5 +182,4 @@
 
 
 {% block script %}
-    <!-- <script src="{% static 'js/search_editS_editD.js' %}"></script> -->
 {% endblock %}

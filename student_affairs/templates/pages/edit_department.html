@@ -16,7 +16,8 @@
 
     <div class="student-info">
         <h1>Edit The Department of a student</h1>
-        <form id="dep-form">
+        <form id="dep-form" method="post">
+            {% csrf_token %}
             <div class="info">
                 <label for="dep-name">Student Name: </label>
                 <input type="text" id="dep-name"
@@ -36,11 +37,11 @@
                 <label for="Department-set">Choose Department: </label>
                 <select name="Department" id="Department-set">
                     <option value="General">General</option>
-                    <option value="Computer science">Computer science</option>
-                    <option value="Artificial intellegence">Artificial intellegence</option>
-                    <option value="Information system">Information system</option>
-                    <option value="Information technology">Information technology</option>
-                    <option value="Decision support">Decision support</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Information System">Information System</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Decision Support">Decision Support</option>
                 </select>
             </div>
 
