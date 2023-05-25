@@ -1,4 +1,3 @@
-
 // Edit Button
 function saveChange(i, new_status) {
   students[i].status_of_student = new_status;

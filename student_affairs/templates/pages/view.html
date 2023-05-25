@@ -4,7 +4,34 @@
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'stylesheets/view_style.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheets/head_foot_style.css' %}">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.student-button').click(function() {
+      document.getElementById("popup").style.display = "flex";
+      var studentId = $(this).data('student-id');
+      $.ajax({
+        url: '/get-student-data/',  // URL endpoint to fetch student data
+        method: 'GET',
+        data: { student_id: studentId },
+        success: function(response) {
+          document.getElementById("student_status_popup").innerHTML = response.student_status;
+          document.getElementById("student_name_popup").innerHTML = response.student_name;
+          document.getElementById("student_id").innerHTML = response.student_id;
+        },
+        error: function(xhr, status, error) {
+          document.getElementById("student_status_popup").innerHTML = "Error";
+          document.getElementById("student_name_popup").innerHTML= "Error";
+          document.getElementById("student_status_popup").innerHTML = "Error";
+        }
+      });
+    });
+  });
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
 {% endblock %}
 
 
@@ -77,7 +104,7 @@
                 <td>{{student.student_dep}}</td>
                 <td>{{student.student_status}}</td>
                 <td class="status-edit">
-                  <button name="popup-edit-status" onclick="showStatus()" id="popup-buttton">
+                  <button name="popup-edit-status" class="student-button" data-student-id="{{ student.id }}" id="popup-buttton">
                     <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
                   </button>
                 </td>  

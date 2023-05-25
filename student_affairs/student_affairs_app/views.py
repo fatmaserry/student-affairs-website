@@ -1,7 +1,22 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.db.models import Q
 from .models import Student
-from django.http import HttpResponseRedirect
+
+
+def get_student_data(request):
+    student_id = request.GET.get('student_id')
+    try:
+        student = Student.objects.get(id=student_id)
+        # Prepare the data to be sent back to the client
+        data = {
+            'student_id': student.student_id,
+            'student_status': student.student_status,
+            'student_name': student.student_first_name,
+        }
+        return JsonResponse(data)
+    except Student.DoesNotExist:
+        return JsonResponse({'error': 'Student not found'})
 
 
 def search(request):
