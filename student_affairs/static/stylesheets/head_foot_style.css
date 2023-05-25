@@ -28,8 +28,14 @@ body {
   margin: 0 auto;
   min-height: 100vh;
 }
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:active { text-decoration: none; }
 
 
+.nav-tittle{
+  color: white;
+}
 /* Hamburger icon */
 .menu-button-container {
   display: none;

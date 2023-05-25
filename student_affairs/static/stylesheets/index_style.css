@@ -20,30 +20,7 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 /*styling swiper*/
-.swiper {
-    width: 90%;
-    height: 400px;
-    margin: 40px auto;
-  }
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 900px;
-  }
-  .swiper-button-next{
-    color:rgb(211, 208, 208);
-
-  } 
-  .swiper-button-prev{
-    color:rgb(211, 208, 208);
-
-  } 
-
-  
 /*content slide has the text*/
 .content{
     width:45%;
