@@ -30,8 +30,24 @@
                 csrfmiddlewaretoken: '{{ csrf_token }}'
               },
               success: function(response) {
-                document.getElementById("popup").style.display = "none";
-                location.reload();  // reload the page to show updated data
+                saved_message = `
+                  <div class="sa">
+                  <div class="sa-success">
+                  <div class="sa-success-tip"></div>
+                  <div class="sa-success-long"></div>
+                  <div class="sa-success-placeholder"></div>
+                  <div class="sa-success-fix"></div>
+                  </div>
+                  </div>
+                  <h1>Saved!<h1>
+                  <button id="ok">OK</button>
+                  `
+                  document.getElementById('main-pop').innerHTML = saved_message;
+                  
+                  document.getElementById('ok').onclick = function() {
+                      document.getElementById('popup').style.display = 'none';
+                      location.reload();
+                  };
               },
               error: function(xhr, status, error) {
                 alert("An error occurred. Please try again.");
