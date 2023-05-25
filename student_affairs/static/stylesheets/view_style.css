@@ -27,7 +27,9 @@ h1 {
   border-radius: 4px;
 }
 
-#student-status-popup {
+.choose-status {
+  padding: 4px 8px;
+  border-radius: 25px;
   padding: 10px;
   border-radius: 22px;
   background-color: #d8f3f9;
@@ -46,7 +48,7 @@ h1 {
 }
 
 #save-status {
-  margin: 0;
+  margin: 8px;
   cursor: pointer;
   font-size: 19px;
   border: none;
@@ -308,6 +310,8 @@ tbody{
    overflow: hidden;
 }
 td {
+  position: relative;
+  text-align: center;
   font-size: 20px;
   padding: 16px;
   color: #272626;
@@ -317,10 +321,6 @@ td {
 tbody tr:hover {
   background-color: rgba(39, 38, 38, 0.2);
   border-bottom: 1px, solid, #272626;
-}
-
-tbody td {
-  position: relative;
 }
 
 tbody td:hover::before {
