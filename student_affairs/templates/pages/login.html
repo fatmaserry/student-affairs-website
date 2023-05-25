@@ -1,19 +1,21 @@
-{% extends 'demo.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'stylesheets/login.css' %}">
-{% endblock %}
+  <link rel="stylesheet" href="{% static 'stylesheets/login.css'%}">
+  {% endblock %}
 
 
 {% block tittle %}
-<title>FCAI-CU | Login</title>
+  <title>FCAI-CU Login</title>
 {% endblock %}
-  
+
  
 
 {% block content%}
-<form action="/Student-affairs-website/index.html" method="post" class="loginform" id="loginform">
+
+
+<form action = "" method = "POST" class="loginform" id="loginform">
     {% csrf_token %}
     <h1>Log In</h1>
         <div class="icon">
@@ -21,52 +23,25 @@
                 class="lilcircle">
         </div>
         <div class="inputcontrol"> 
-          <input type="text" class="input" placeholder=" " id="userid" name="userid" >
-            <label for="userid" class="formlabel">User ID</label>
+          <input type="text" class="input" placeholder=" " id="username" name="username" > <!-- edited -->
+            <label for="userid" class="formlabel">Username</label>
             <div class="error"></div>
 
         </div>
         <div class="inputcontrol">
-            <input class="input" placeholder=" " type="password" id="password" name="password" >
+            <input class="input" placeholder=" " type="password" id="password" name="password" > <!-- edited -->
             <label for="password"class="formlabel">Password</label>
             <div class="error"></div>
         </div>
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
         <button type="submit">Log In</button>
-</form>
-
-<!-- Footer -->
-<footer>
-  <div id="container">
-    <div>
-      <img class="footer-logo" src="{% static 'images/Fcai-logo.png' %}" alt="logo">
-    </div>
-
-    <div class="footer-content-1">
-      <ul type="none">
-        <li class="get-in-touch">CONTACT US</li>
-        <li>
-          <i class="fa-sharp fa-solid fa-phone" style="color: #ffffff;"></i>
-          <span><a href="tel:01289209739">01289209739</a></span>
-        </li>
-        <li>
-          <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
-          <span><a href="mailto:fatmaserry16@gmail.com">Send Mail</a></span>
-        </li>
-        <li>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-whatsapp"></i>
-        </li>
-      </ul>
-    </div>
-    <div class="footer-content-2">
-      <p class="about-us">About Us</p>
-      <p>Help Center</p>
-      <p>&copy; All Right Reserved, FCAI-CU Students.</p>
-    </div>
-
-
-  </div>
-</footer>
+    </form>
+ 
 
 {% endblock %}
