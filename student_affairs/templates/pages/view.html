@@ -39,7 +39,7 @@
                   <div class="sa-success-fix"></div>
                   </div>
                   </div>
-                  <h1>Saved!<h1>
+                  <h1 style="font-size:30px;">Saved!<h1>
                   <button id="ok">OK</button>
                   `
                   document.getElementById('main-pop').innerHTML = saved_message;
@@ -101,9 +101,10 @@
 
 
           <label for="student-status-popup">Choose Status: </label>
-          <select name="student-status" id="student-status-popup" class="choose-status">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
+          <select name="student-status" id="student-status-popup" class="choose-status" 
+               style="padding:4px 8px;border-radius:25px;font-size: 14px;">
+            <option style="padding:4px;font-size: 14px;" value="Active">Active</option>
+            <option  style="padding:4px;font-size: 14px;"value="Inactive">Inactive</option>
           </select>
 
           <div class="save-status-div">

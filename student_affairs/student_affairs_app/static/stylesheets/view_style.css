@@ -28,8 +28,6 @@ h1 {
 }
 
 .choose-status {
-  padding: 4px 8px;
-  border-radius: 25px;
   padding: 10px;
   border-radius: 22px;
   background-color: #d8f3f9;
@@ -37,8 +35,11 @@ h1 {
 
 .popup-content * {
   margin-bottom: 17px;
+  font-size: 18px;
 }
-
+.popup-content h2{
+  font-size: 29px;
+}
 .save-status-div {
   margin-top: 20px;
   display: grid;
