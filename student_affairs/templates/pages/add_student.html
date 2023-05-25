@@ -2,23 +2,18 @@
 {% load static %}
 
 {% block stylesheet %}
-  <link rel="stylesheet" href="{% static './stylesheets/addS_style.css'%}">
+  <link rel="stylesheet" href="{% static 'stylesheets/addS_style.css'%}">
   {% endblock %}
 
 
 {% block title%}
   <title>FCAI-CU Add Student</title>
 
-  {% endblock %}
-    <link rel="icon" type="image/png" href="images/Fcai-logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
-    rel="stylesheet">
+{% endblock %}
+  
  
 
 {% block content%}
-<body>
 
   <div class="container">
     <div class="add_student_form">
@@ -179,6 +174,6 @@
 
     </div>
   </div>
-  <script src="{%static 'js/addS.js'%}"></script>
+  
 
   {% endblock %}
