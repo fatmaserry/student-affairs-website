@@ -35,8 +35,7 @@ def search(request):
             search = search.filter(
                 student_first_name__icontains=first_name, student_last_name__icontains=last_name)
         else:
-            search = search.filter(Q(student_first_name__icontains=name) | Q(
-                student_last_name__icontains=name))
+            search = search.filter(Q(student_first_name__icontains=name))
 
     context = {'students': search}
     return render(request, 'pages/search.html', context)
@@ -54,14 +53,43 @@ def delete_student(request):
 def edit_student(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
+    if request.method == 'POST':
+        address = request.POST.get('address')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        level = int(request.POST.get('level'))
+        gpa = float(request.POST.get('gpa'))
+        status = request.POST.get('status')
+        if status == 'on':
+            status = 'active'
+        else:
+            status = 'inactive'
+        department = request.POST.get('dep')
+        landline = request.POST.get('landline')
+
+        student.student_address = address
+        student.student_phone = phone
+        student.student_email = email
+        student.student_dep = department
+        student.student_landline = landline
+        student.student_status = status
+        student.student_gpa = gpa
+        student.student_level = level
+        student.save()
+        return redirect('search')
     return render(request, 'pages/edit_student.html', context)
 
 
 def edit_department(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
+    if request.method == 'POST':
+        department = request.POST.get('Department')
+        student.student_dep = department
+        student.save()
+        return redirect('edit_student', studentID)
+
     return render(request, 'pages/edit_department.html', context)
-    # return HttpResponseRedirect(reverse('pages/edit_department.html', context))
 
 
 def view(request):
