@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse,redirect
+from django.http import JsonResponse
 from django.db.models import Q
 from .models import Student
 from .forms import *
