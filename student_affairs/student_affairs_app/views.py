@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse,redirect
+from django.http import JsonResponse
 from django.db.models import Q
 from .models import Student
 from .forms import *
@@ -122,13 +122,50 @@ def index(request):
     return render(request, 'pages/index.html')
 
 def add_student(request):
-    if request.method == 'POST':
-        form = add_student_form(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    form=add_student_form()
-    return render(request,"pages/add_student.html",{'form':form})
+    if request.method=='POST':
+        print("post")
+        # Student name
+        fname = request.POST.get('fname')
+        print(fname)
+        lname = request.POST.get('lname')
+        print(lname)
+        # Address
+        address = request.POST.get('address')
+
+        # Phone and email
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+
+        # Level and GPA
+        level = request.POST.get('level')
+        gpa = request.POST.get('gpa')
+
+        # Department and status
+        department = request.POST.get('department')
+        status = request.POST.get('status')
+
+        # National ID, DOB, landline, and ID
+        nationalID = request.POST.get('nationalID')
+        dob = request.POST.get('dob')
+        landline = request.POST.get('landline')
+        id_prefix = request.POST.get('id-prefix')
+        id_number = request.POST.get('id')
+
+        # Gender
+        gender = request.POST.get('gender')
+        newStudent= Student(student_first_name=fname,student_id="20"+id_number,
+        student_last_name=lname,
+        student_address=address,
+        student_phone=phone,
+        student_email=email,
+        student_level=level,
+        student_dep=department,
+        student_gender=gender,
+        student_status=status,
+        student_naitonal_id=nationalID,student_landline=landline,
+        student_dob=dob,student_gpa=gpa)
+        newStudent.save()
+    return render(request,"pages/add_student.html")
         
 
 

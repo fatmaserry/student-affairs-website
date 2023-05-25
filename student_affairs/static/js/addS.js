@@ -428,7 +428,7 @@ form.addEventListener("submit", (e) => {
     'input[name ="status"]:checked'
   );
 
-  if (!flag) {
+ /* if (!flag) {
     return;
   }
 
@@ -457,7 +457,7 @@ form.addEventListener("submit", (e) => {
 
   // push the array as string to LocalStorage
   localStorage.setItem("students", s);
-});
+});*/
 
 function isEmpty(field) {
   const fieldError = field.nextElementSibling;
@@ -494,4 +494,4 @@ function setNoError(field) {
   field.className = "valid";
   fieldError.textContent = "";
   fieldError.className = "error";
-}
+}})
