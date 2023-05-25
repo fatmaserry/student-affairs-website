@@ -129,7 +129,10 @@ def add_student(request):
             return redirect('success')
     form=add_student_form()
     return render(request,"pages/add_student.html",{'form':form})
-        
+       
+    
+def login(request):
+    return render(request, 'pages/login.html')
 
 
 @csrf_exempt
