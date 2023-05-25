@@ -20,5 +20,7 @@ urlpatterns = [
     path('get-student-data/', views.get_student_data, name='get_student_data'),
     path('update-student-status/', views.update_student_status,
          name='update_student_status'),
+    path('login/', views.login, name='login'),
+
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
