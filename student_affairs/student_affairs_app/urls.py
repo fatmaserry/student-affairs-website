@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -16,4 +18,5 @@ urlpatterns = [
     path('get-student-data/', views.get_student_data, name='get_student_data'),
     path('update-student-status/', views.update_student_status,
          name='update_student_status'),
-]
+    
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
