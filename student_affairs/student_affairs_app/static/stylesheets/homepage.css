@@ -17,7 +17,6 @@ a {
 }
 
 .main {
-    flex-wrap: wrap;
     color: #D3E0EA;
     width: auto;
     display: flex;
@@ -41,7 +40,7 @@ img {
 }
 
 /* Media Query */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .section {
         width: 93%;
     }
