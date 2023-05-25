@@ -3,8 +3,71 @@
 
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'stylesheets/view_style.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheets/head_foot_style.css' %}">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.student-button').click(function() {
+      document.getElementById("popup").style.display = "flex";
+      var studentId = $(this).data('student-id');
+      $.ajax({
+        url: '/get-student-data/',  // URL endpoint to fetch student data
+        method: 'GET',
+        data: { student_id: studentId },
+        success: function(response) {
+          document.getElementById("student_status_popup").innerHTML = response.student_status;
+          document.getElementById("student_name_popup").innerHTML = response.student_name;
+          document.getElementById("student_id").innerHTML = response.student_id;
+
+          $('#save-status').click(function() {
+            var newStatus = $('#student-status-popup').val();
+            $.ajax({
+              url: '/update-student-status/',  // URL endpoint to update student status
+              method: 'POST',
+              data: {
+                student_id: studentId,
+                new_status: newStatus,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+              },
+              success: function(response) {
+                saved_message = `
+                  <div class="sa">
+                  <div class="sa-success">
+                  <div class="sa-success-tip"></div>
+                  <div class="sa-success-long"></div>
+                  <div class="sa-success-placeholder"></div>
+                  <div class="sa-success-fix"></div>
+                  </div>
+                  </div>
+                  <h1>Saved!<h1>
+                  <button id="ok">OK</button>
+                  `
+                  document.getElementById('main-pop').innerHTML = saved_message;
+                  
+                  document.getElementById('ok').onclick = function() {
+                      document.getElementById('popup').style.display = 'none';
+                      location.reload();
+                  };
+              },
+              error: function(xhr, status, error) {
+                alert("An error occurred. Please try again.");
+              }
+            });
+          });
+        },
+        error: function(xhr, status, error) {
+          document.getElementById("student_status_popup").innerHTML = "Error";
+          document.getElementById("student_name_popup").innerHTML= "Error";
+          document.getElementById("student_status_popup").innerHTML = "Error";
+        }
+      });
+    });
+  });
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
 {% endblock %}
 
 
@@ -77,7 +140,7 @@
                 <td>{{student.student_dep}}</td>
                 <td>{{student.student_status}}</td>
                 <td class="status-edit">
-                  <button name="popup-edit-status" onclick="showStatus()" id="popup-buttton">
+                  <button name="popup-edit-status" class="student-button" data-student-id="{{ student.id }}" id="popup-buttton">
                     <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
                   </button>
                 </td>  
@@ -94,5 +157,4 @@
 
 
 {% block script %} 
-{% comment %} <script src="{% static 'js/view.js' %}"></script> {% endcomment %}
 {% endblock %}

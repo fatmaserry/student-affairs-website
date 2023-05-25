@@ -308,6 +308,7 @@ tbody{
    overflow: hidden;
 }
 td {
+  text-align: center;
   font-size: 20px;
   padding: 16px;
   color: #272626;
