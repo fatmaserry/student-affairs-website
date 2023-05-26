@@ -4,6 +4,8 @@ from django.http import JsonResponse
 from django.db.models import Q
 from .models import Student
 from .forms import *
+from django.contrib.auth import authenticate
+from django.contrib import messages
 
 
 def get_student_data(request):
@@ -179,7 +181,7 @@ def loginpage(request):  # added
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            login(request, user)
+            login(request)
             return redirect('index')
         else:   
             messages.error(request, 'Invalid username or password.')
