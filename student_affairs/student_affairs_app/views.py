@@ -124,7 +124,7 @@ def index(request):
 
 def add_student(request):
     if request.method=='POST':
-        print("post")
+       
         # Student name
         fname = request.POST.get('fname')
         print(fname)

@@ -142,24 +142,12 @@ level.addEventListener("input", () => {
 
 id.addEventListener("input", () => {
   const isValidId = idRegExp.test(id.value);
-  console.log(idPrefix.value);
-  console.log(id.value);
   studentId = idPrefix.value + id.value;
-  console.log(studentId);
-  let isRepeatedId = false;
-  students.forEach((student) => {
-    if (student.id == studentId) {
-      isRepeatedId = true;
-    }
-  });
+ 
 
   if (!isValidId) {
     id.className = "invalid";
-  } else if (isRepeatedId) {
-    id.className = "invalid";
-    idError.textContent = "This ID already Exists";
-    idError.className = "error";
-  } else {
+  }  else {
     id.className = "valid";
     idError.textContent = "";
     idError.className = "error";
@@ -245,14 +233,16 @@ class Student {
 }
 
 // Add Student Button
-const add_student_button = document.querySelector("#add-student");
+const add_student_button = document.getElementById("add-student");
 add_student_button.onsubmit = (e) => {
-
-  const csrf= document.getElementsByName('csfrmiddlewaretoken')
-console.log(csrf)
+ 
+console.log("submit");
+console.log("screaming into the void pls help");
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  console.log("submit");
+  console.log("screaming into the void pls help");
   var flag = true;
 
   if (!isEmpty(fname)) {
@@ -446,7 +436,7 @@ form.addEventListener("submit", (e) => {
   );
 
   if (!flag) {
-    return;
+   return;
   }
 
   const new_student = new Student(

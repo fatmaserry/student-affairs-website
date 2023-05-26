@@ -241,12 +241,15 @@ class Student {
 }
 
 // Add Student Button
-/*const add_student_button = document.querySelector("#add-student");
-add_student_button.onsubmit = (e) => {*/
+//const add_student_button = document.querySelector("#add-student");
+//add_student_button.onsubmit = (e) => {
+
+  
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  console.log("submitted");
   var flag = true;
 
   if (!isEmpty(fname)) {
@@ -439,8 +442,9 @@ form.addEventListener("submit", (e) => {
     'input[name ="status"]:checked'
   );
 
-  if (!flag) {
-    return;
+  if (flag==true) {
+    console.log("all good");
+    form.submit();
   }
 
   const new_student = new Student(
@@ -468,13 +472,14 @@ form.addEventListener("submit", (e) => {
 
   // push the array as string to LocalStorage
   localStorage.setItem("students", s);
+  
 });
 
 function isEmpty(field) {
   const fieldError = field.nextElementSibling;
   if (field.value.length === 0) {
     field.className = "invalid";
-    fieldError.textContent = "Cann't be Empty!";
+    fieldError.textContent = "Can't be Empty!";
     fieldError.className = "error";
     return true;
   } else {
@@ -500,9 +505,10 @@ function validateName(name) {
   return true;
 }
 
-function setNoError(field) {
+function setNoError(field){
   const fieldError = field.nextElementSibling;
   field.className = "valid";
   fieldError.textContent = "";
   fieldError.className = "error";
+
 }
