@@ -5,7 +5,10 @@ from django.db.models import Q
 from .models import Student
 from .forms import *
 from django.contrib.auth import authenticate
+from django.contrib import messages  
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from .models import Admin
 
 
 def get_student_data(request):
@@ -170,22 +173,32 @@ def add_student(request):
         newStudent.save()
     return render(request,"pages/add_student.html")
         
-    
+  
+def authenticate_admin(request, username=None, password=None):
+    try:
+        admin = Admin.objects.get(admin_username=username)
+    except Admin.DoesNotExist:
+        return None
 
-def loginpage(request):  # added
+    if admin.admin_password == password:
+        return admin
+    else:
+        return None
+
+def loginpage(request):
     if request.method == 'POST':
-
-        username =  request.POST.get('username')
+        username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(request, username=username, password=password)
+        # Authenticate the admin user
+        user = authenticate_admin(request, username=username, password=password)
 
         if user is not None:
-            login(request)
+            # Log in the admin user and redirect to the admin dashboard
+            login(request, user)
             return redirect('index')
-        else:   
+        else:
             messages.error(request, 'Invalid username or password.')
-            # return render(request, 'pages/login.html')
 
     return render(request, 'pages/login.html')
 
