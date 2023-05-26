@@ -195,7 +195,7 @@ def loginpage(request):
 
         if user is not None:
             # Log in the admin user and redirect to the admin dashboard
-            login(request, user)
+            login(request)
             return redirect('index')
         else:
             messages.error(request, 'Invalid username or password.')
