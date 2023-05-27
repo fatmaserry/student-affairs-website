@@ -125,6 +125,7 @@ button:hover{
 }
 
 .inputcontrol .error {
+  display: none;
   color: #d00202;
   font-size: 10px;
   height: 13px;
