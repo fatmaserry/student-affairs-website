@@ -83,10 +83,6 @@ def edit_student(request, studentID):
         level = int(request.POST.get('level'))
         gpa = float(request.POST.get('gpa'))
         status = request.POST.get('status')
-        if status == 'on':
-            status = 'active'
-        else:
-            status = 'inactive'
         department = request.POST.get('dep')
         landline = request.POST.get('landline')
 

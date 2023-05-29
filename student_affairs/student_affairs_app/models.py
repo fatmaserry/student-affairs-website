@@ -18,8 +18,8 @@ class Student(models.Model):
     ]
 
     status = [
-        ('Active', 'active'),
-        ('Inactive', 'inactive'),
+        ('Active', 'Active'),
+        ('Inactive', 'Inactive'),
     ]
 
     gender = [
