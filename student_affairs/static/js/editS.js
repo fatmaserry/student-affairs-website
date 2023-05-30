@@ -1,37 +1,8 @@
-// IMPORTANT!! LocalStorage Data
-// Key of array in LS (studnets)
-// Array of Students  
-//let students;
-
-// Check if there is data in LS
-//if (localStorage.students != null) {
-  //  students = JSON.parse(localStorage.students)
-//} else {
-  //  students = [];
-//}
-
 
 //Edit Student JS
-
-class Student {
-    constructor( address,phone, landline, email, level, gpa, dep, status) {
-        this.address = address;
-        this.phone = phone;
-        this.landline = landline;
-        this.email = email;
-        this.level = level;
-        this.gpa = gpa;
-        this.department = dep;
-        this.status = status;
-    }
-}
-
 const email = document.getElementById("email");
 const emailError = email.nextElementSibling;
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-
-
 
 const address = document.getElementById("address");
 const addressError = address.nextElementSibling;
@@ -150,13 +121,10 @@ address.addEventListener("input", () => {
     if (!isEmpty(address)) {
         setNoError(address);
     }
-    // add elseeeeee!!!!!
 });
 
 
 // Save Edit Student Button
-
-
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
     var flag = true;

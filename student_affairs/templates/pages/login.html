@@ -35,12 +35,17 @@
         {% if messages %}
         <ul class="messages">
         {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
         </ul>
         {% endif %}
         <button type="submit">Log In</button>
     </form>
  
+{% comment %} {% block script %} 
+<script src="{% static 'js/loginValidation.js' %}"></script>
+{% endblock %} {% endcomment %}
 
 {% endblock %}
+
+

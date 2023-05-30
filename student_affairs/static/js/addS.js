@@ -195,7 +195,6 @@ address.addEventListener("input", () => {
   if (!isEmpty(address)) {
     setNoError(address);
   }
-  // add elseeeeee!!!!!
 });
 
 // Class Student Information

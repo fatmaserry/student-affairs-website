@@ -18,8 +18,8 @@ class Student(models.Model):
     ]
 
     status = [
-        ('Active', 'active'),
-        ('Inactive', 'inactive'),
+        ('Active', 'Active'),
+        ('Inactive', 'Inactive'),
     ]
 
     gender = [
@@ -49,6 +49,7 @@ class Student(models.Model):
 class Admin(models.Model):
     def __str__(self):
         return self.admin_username
-
+    
+    last_login = models.DateTimeField(auto_now=True)
     admin_username = models.CharField(max_length=20)
     admin_password = models.CharField(max_length=12)
