@@ -6,6 +6,8 @@ from .models import Student
 from .forms import *
 from django.contrib.auth import authenticate
 from django.contrib import messages
+from django.core.exceptions import *
+from django.db import IntegrityError
 
 
 def get_student_data(request):
@@ -126,7 +128,7 @@ def index(request):
 
 def add_student(request):
     if request.method=='POST':
-       
+       try:
         # Student name
         fname = request.POST.get('fname')
         print(fname)
@@ -168,6 +170,10 @@ def add_student(request):
         student_naitonal_id=nationalID,student_landline=landline,
         student_dob=dob,student_gpa=gpa)
         newStudent.save()
+       except IntegrityError :
+           div_message = "Student must be unique"
+           div_class = "error message"
+           return render(request,"pages/add_student.html", {'div_message': div_message, 'div_class': div_class})
     return render(request,"pages/add_student.html")
         
     

@@ -31,6 +31,7 @@
       <form method ="POST" action="\add_student">
         {% csrf_token %}
 
+<div id="my-div" class="{{ div_class }}" style="font-size: 24px;">{{ div_message }}</div>
         <!-- Name  -->
         <div class="name-div">
           <div class="fname">
@@ -189,8 +190,11 @@
         </div>
         <!-- End of sides -->
 
-        <!-- Add Student button -->
+        <!-- Add Student button --><!-- template.html -->
+
         <input type="submit" id="add-student" value="Add Student">
+      
+      
       </form>
 
     </div>

@@ -1,6 +1,8 @@
 // IMPORTANT!! LocalStorage Data
 // Key of array in LS (studnets)
 // Array of Students
+//my chANGES
+//pls sow me damn u
 let students;
 
 // Check if there is data in LS
@@ -143,11 +145,11 @@ id.addEventListener("input", () => {
   studentId = idPrefix.value + id.value;
   console.log(studentId);
   let isRepeatedId = false;
-  students.forEach((student) => {
+  /*students.forEach((student) => {
     if (student.id == studentId) {
       isRepeatedId = true;
     }
-  });
+  });*/
 
   if (!isValidId) {
     id.className = "invalid";
@@ -465,13 +467,13 @@ form.addEventListener("submit", (e) => {
   );
 
   // push new_student to the main array students
-  students.push(new_student);
+  /*students.push(new_student);
 
   // from array to string
   const s = JSON.stringify(students);
 
   // push the array as string to LocalStorage
-  localStorage.setItem("students", s);
+  localStorage.setItem("students", s);*/
   
 });
 

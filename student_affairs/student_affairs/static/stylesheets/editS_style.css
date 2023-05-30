@@ -1,0 +1,223 @@
+.header {
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  color: #000127;
+  border-bottom: 6px solid #000127;
+  transition: all 0.3s ease-out;
+}
+
+.editStudentForm {
+  width: auto;
+  margin: 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #faf2f7f2;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom: 200px;
+}
+
+.header:hover {
+  border-radius: 8px;
+  background-color: #000127;
+  color: white;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  width: 80%;
+}
+
+input {
+  background-color: rgba(57, 57, 57, 0.07);
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  margin: 10px 20px 5px 0;
+  height: 45px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  margin: 20px 5px;
+  margin-left: 0;
+  accent-color: #272626;
+  height: 1rem;
+  width: 1rem;
+  display: inline;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+.name-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form-sides {
+  display: flex;
+  justify-content: space-between;
+}
+
+.editStudentForm form .name-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+form .name-div .fname,
+form .name-div .lname {
+  width: 48%;
+}
+
+.field,
+.fname,
+.lname {
+  height: 117px;
+}
+
+.leftColumn {
+  width: 48%;
+}
+
+.rightColumn {
+  width: 48%;
+}
+
+label {
+  display: block;
+}
+
+a:link {
+  text-decoration: none;
+  padding: 6px;
+}
+
+#dep{
+
+  margin-bottom: 15px;
+}
+
+.male-gender,
+.female-gender {
+  display: inline;
+  align-items: center;
+  height: inherit;
+}
+
+.female,
+.male {
+  display: inline;
+}
+
+.male {
+  margin-right: 40px;
+}
+
+.active-status,
+.inactive-status {
+  display: inline;
+  align-items: center;
+  height: inherit;
+}
+
+.active,
+.inactive {
+  display: inline;
+}
+
+.active {
+  margin-right: 40px;
+}
+
+.assignDep {
+  background-color: #000127;
+  color: #faf2f7;
+  border: 3px solid transparent;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  height: 40px;
+  width: 160px;
+  font-size: 16px;
+}
+
+.assignDep:hover {
+  background-color: #293a7c;
+  border: 3px solid #293a7c;
+  color: #faf2f7;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: #000127;
+  color: #faf2f7;
+  border: 3px solid transparent;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  height: 58px;
+  font-size: 25px;
+}
+
+.submit:hover {
+  background-color: #293a7c;
+}
+
+#gender {
+  background-color: rgba(57, 57, 57, 0.07);
+  padding: 10px 0;
+  padding-left: 9px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 7px;
+}
+
+/* Media Query */
+@media only screen and (max-width: 900px) {
+  .name-div,
+  .form-sides {
+    flex-direction: column;
+  }
+
+  .leftColumn,
+  form .name-div .fname,
+  form .name-div .lname,
+  .rightColumn {
+    width: 100%;
+  }
+  .rightColumn {
+    margin-top: 21px;
+  }
+}
+
+input.invalid,
+.invalid {
+  border-color: fdd;
+  background-color: #fdd;
+}
+
+input:focus.invalid {
+  outline: none;
+}
+
+
+/*error message style*/
+.error {
+  width: 100%;
+  padding-bottom: 0;
+  font-size: 90%;
+  color: #ff0000;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}

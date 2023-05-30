@@ -1,6 +1,7 @@
 // IMPORTANT!! LocalStorage Data
 // Key of array in LS (studnets)
 // Array of Students
+// fhygkj./k;/ljhgfjchxhkuilj;ihlugkfxdxgfhjkuil;olukj
 let students;
 
 // Check if there is data in LS
