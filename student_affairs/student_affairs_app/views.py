@@ -13,34 +13,17 @@ from .models import Admin
 
 def get_student_data(request):
     student_id = request.GET.get('student_id')
-    try:
-        student = Student.objects.get(id=student_id)
-        # Prepare the data to be sent back to the client
-        data = {
+    student = Student.objects.get(id=student_id)
+    # Prepare the data to be sent back to the client
+    data = {
             'student_id': student.student_id,
             'student_status': student.student_status,
             'student_name': student.student_first_name,
-        }
-        return JsonResponse(data)
-    except Student.DoesNotExist:
-        return JsonResponse({'error': 'Student not found'})
+    }
+    return JsonResponse(data)
 
 def login(request):
     return render(request,'pages/login.html')
-
-def get_student_data(request):
-    student_id = request.GET.get('student_id')
-    try:
-        student = Student.objects.get(id=student_id)
-        # Prepare the data to be sent back to the client
-        data = {
-            'student_id': student.student_id,
-            'student_status': student.student_status,
-            'student_name': student.student_first_name,
-        }
-        return JsonResponse(data)
-    except Student.DoesNotExist:
-        return JsonResponse({'error': 'Student not found'})
 
 
 def search(request):
@@ -211,22 +194,5 @@ def update_student_status(request):
         # update the student status field and save the record
         student.student_status = new_status
         student.save()
-
-        # return a successresponse in JSON format
-        return JsonResponse({'status': 'success'})
-
-@csrf_exempt
-def update_student_status(request):
-    if request.method == 'POST':
-        student_id = request.POST.get('student_id')
-        new_status = request.POST.get('new_status')
-
-        # retrieve the student record from the database
-        student = Student.objects.get(id=student_id)
-
-        # update the student status field and save the record
-        student.student_status = new_status
-        student.save()
-
-        # return a successresponse in JSON format
-        return JsonResponse({'status': 'success'})
+        
+        return JsonResponse({'status': new_status})
