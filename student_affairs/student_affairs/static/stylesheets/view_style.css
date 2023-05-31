@@ -1,6 +1,3 @@
-/* body {
-  background: linear-gradient(45deg, #faf2f7, #f1e5f3);
-} */
 
 h1 {
   margin-bottom: 10px;
@@ -8,6 +5,9 @@ h1 {
   align-items: center;
   flex-direction: column;
   color: #02033b;
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 /* Old Color of nav and footer */
@@ -382,10 +382,44 @@ tr:nth-child(even) {
   border-radius: 20px;
 }
 
+.student-button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.filter-buttons{
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.filter-button{
+    border: none;
+    color: #eeeeee;
+    background-color: #ea5455;
+    padding: 12px 36px;
+    margin: 0 15px;
+    font-size: 16px;
+    border-radius: 7px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+}
+.filter-button:hover{
+  background-color: #ea5454be;
+}
 /* Media Query */
 @media only screen and (max-width: 900px) {
   .view_student_table{
     max-height: 900px;
     width: 90%;
+  }
+  .filter-buttons{
+    flex-direction: column;
+  }
+  .filter-button{
+    margin: 15px 0;
   }
 }

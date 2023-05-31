@@ -71,14 +71,14 @@
                 <td>{{student.student_status}}</td>
                 <td>
                 <a href='{% url 'edit_student' student.student_id %}' class='edit-student'>
-                    <img src="{% static 'images/edit.png' %}" alt='edit data' class='edit-box'>
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a></td>
                 <td>
                     <form method="POST" action="{% url 'delete_student' %}">
                         {% csrf_token %}
                         <input type="hidden" name="student_id" value="{{ student.id }}">
                         <button type="button" class="delete-button" onclick="confirmDelete('{{ student.id }}')">
-                            <img src="{% static 'images/delete.png' %}" alt='delete data' class='delete-box'>
+                            <i class="fa-solid fa-trash-can"></i>
                         </button>
 
                         {% comment %} <button type="button" onclick="confirmDelete('{{ student.id }}')">

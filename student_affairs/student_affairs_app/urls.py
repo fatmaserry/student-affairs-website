@@ -10,6 +10,8 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('index/search/', views.search, name='search'),
     path('view', views.search, name='view'),
+    path('filter_students/', views.filter_students, name='filter_students'),
+    path('filter_students/get-student-data/', views.get_student_data, name='get_student_data'),
     path('edit_student/<int:studentID>',
          views.edit_student, name='edit_student'),
     path('add_student',views.add_student,name='add_student'),

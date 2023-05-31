@@ -9,6 +9,42 @@ from django.contrib.auth import authenticate, login
 from .models import Admin
 from django.core.exceptions import *
 from django.db import IntegrityError
+from django.http import HttpResponse
+
+
+# filter student in view page
+def filter_students(request):
+    status = request.GET.get('status')
+
+    if status == 'Active':
+        students = Student.objects.filter(student_status='Active')
+    elif status == 'Inactive':
+        students = Student.objects.filter(student_status='Inactive')
+    else:
+        students = Student.objects.all()
+
+    rows = ""
+    for student in students:
+        row = f"""
+            <tr>
+                <td>{student.student_id}</td>
+                <td>{student.student_first_name} {student.student_last_name}</td>
+                <td>{student.student_level}</td>
+                <td>{student.student_phone}</td>
+                <td>{student.student_dep}</td>
+                <td class="status-column">{student.student_status}</td>
+                <td class="status-edit">
+                    <button name="popup-edit-status" class="student-button" data-student-id="{student.id}" id="popup-button">
+                        <i class="fa-solid fa-pen-to-square" id="edit-button"></i>
+                    </button>
+                </td>  
+            </tr>
+        """
+        rows += row
+
+    return HttpResponse(rows)
+
+
 
 def get_student_data(request):
     student_id = request.GET.get('student_id')
@@ -20,6 +56,7 @@ def get_student_data(request):
             'student_name': student.student_first_name,
     }
     return JsonResponse(data)
+
 
 def login(request):
     return render(request,'pages/login.html')

@@ -6,7 +6,36 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
-    $('.student-button').click(function() {
+    // Handle the Active button click event
+    $('#active-button').click(function() {
+      filterStudents('Active');
+    });
+  
+    // Handle the Inactive button click event
+    $('#inactive-button').click(function() {
+      filterStudents('Inactive');
+    });
+  
+    // Handle the View All button click event
+    $('#view-all-button').click(function() {
+      filterStudents('all');
+    });
+  
+    // Function to handle filtering based on status
+    function filterStudents(status) {
+      $.ajax({
+        url: '/filter_students/',
+        type: 'GET',
+        data: { status: status },
+        dataType: 'html',
+        success: function(data) {
+          // Update the table with the filtered student data
+          $('tbody').html(data);
+        }
+      });
+    }
+
+    $(document).on('click', '.student-button', function() {
       document.getElementById("popup").style.display = "flex";
       var row = $(this);
       var studentId = row.data('student-id');
@@ -15,12 +44,14 @@
         method: 'GET',
         data: { student_id: studentId },
         success: function(response) {
+          
           $('#student_status_popup').html(response.student_status);
           $('#student_name_popup').html(response.student_name);
           $('#student_id').html(response.student_id);
+        
 
-        // Unbind previous click event handler for save-status button
-        $('#save-status').off('click').on('click', function() {
+          // Unbind previous click event handler for save-status button
+          $('#save-status').off('click').on('click', function() {
             var newStatus = $('#student-status-popup').val();
             $.ajax({
               url: '/update-student-status/', 
@@ -33,27 +64,28 @@
               success: function(response) {
                 // Update the status value in the table dynamically
                 row.closest('tr').find('.status-column').html(response.status);
-                
+    
                 var prev_html_popup = $('#main-pop').html();
                 saved_message = `
                   <div class="sa">
-                  <div class="sa-success">
-                  <div class="sa-success-tip"></div>
-                  <div class="sa-success-long"></div>
-                  <div class="sa-success-placeholder"></div>
-                  <div class="sa-success-fix"></div>
-                  </div>
+                    <div class="sa-success">
+                      <div class="sa-success-tip"></div>
+                      <div class="sa-success-long"></div>
+                      <div class="sa-success-placeholder"></div>
+                      <div class="sa-success-fix"></div>
+                    </div>
                   </div>
                   <h1 style="font-size:30px;">Saved!<h1>
                   <button id="ok">OK</button>
-                  `;
-                  $('#main-pop').html(saved_message);
-                  
-                  $('#ok').click(function() {
-                    $('#popup').hide();
-                    $('#main-pop').html(prev_html_popup);
-                  });
-                  
+                `;
+                $('#main-pop').html(saved_message);
+                
+                $('#ok').click(function() {
+                  $('#popup').hide();
+                  $('#main-pop').html(prev_html_popup);
+                  filterStudents(newStatus);
+                });
+
               },
               error: function() {
                 alert("An error occurred. Please try again.");
@@ -67,7 +99,7 @@
       });
     });
   });
-
+  
   function closePopup() {
     document.getElementById("popup").style.display = "none";
   }
@@ -120,6 +152,15 @@
 
 
       <h1>Students Data</h1>
+
+      {% comment %} Filter button {% endcomment %}
+      <div class="filter-buttons">
+        <button id="active-button" class="filter-button">Active</button>
+        <button id="inactive-button" class="filter-button">Inactive</button>
+        <button id="view-all-button" class="filter-button">View All</button>
+      </div>
+    
+      {% comment %} Table of students {% endcomment %}
       <div class="view_student_table">
         <table>
           <thead>
