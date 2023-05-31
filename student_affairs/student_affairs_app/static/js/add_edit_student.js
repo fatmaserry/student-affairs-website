@@ -151,6 +151,26 @@ level.addEventListener("input", () => {
 
   if (isValidLevel) {
     setNoError(level);
+    if (fname.hasAttribute("readonly")) {
+      const setDep = document.getElementById("set-dep");
+      const setDep2 = document.getElementById("set-dep2");
+      if (level.value >= 3) {
+        let studentId = Number(id.value);
+        let studentLevel = level.value;
+        setDep.innerHTML = "";
+        const editDepartmentUrl =
+          "/edit_student/edit_department/" + studentId + "/" + studentLevel;
+        const link = document.createElement("a");
+        link.setAttribute("href", editDepartmentUrl);
+        link.setAttribute("class", "assignDep");
+        link.textContent = "Assign Department";
+        setDep.appendChild(link);
+        setDep.style.display = "block";
+        setDep2.style.display = "none";
+      } else {
+        setDep.style.display = "none";
+      }
+    }
   } else {
     level.className = "invalid";
     levelError.textContent = "Not valid level! From 1 to 4";
@@ -368,10 +388,11 @@ form.addEventListener("submit", (e) => {
   }
 
   if (dep.value == "General" && Number(level.value) > 2) {
-    depError.textContent = "Can't be General, level is greater than 2";
-    depError.className = "error";
-
-    flag = false;
+    if (depError != null) {
+      depError.textContent = "Can't be General, level is greater than 2";
+      depError.className = "error";
+      flag = false;
+    }
   } else if (Number(level.value) <= 2 && dep.value != "General") {
     if (depError != null) {
       depError.textContent =

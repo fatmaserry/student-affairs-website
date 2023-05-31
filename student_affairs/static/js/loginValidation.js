@@ -1,7 +1,10 @@
 
-var userid=document.getElementById("username");
-var password= document.getElementById("password");
-var form= document.getElementById("loginform");
+
+const userid=document.getElementById("userid");
+const password= document.getElementById("password");
+const form= document.getElementById("loginform");
+
+
 
 form.addEventListener('submit',e=>{
     e.preventDefault();

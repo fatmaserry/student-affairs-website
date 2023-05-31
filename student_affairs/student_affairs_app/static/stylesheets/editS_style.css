@@ -221,3 +221,7 @@ input:focus.invalid {
   border-radius: 0 0 5px 5px;
   box-sizing: border-box;
 }
+
+#set-dep {
+  display: none;
+}

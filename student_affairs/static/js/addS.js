@@ -1,3 +1,16 @@
+// IMPORTANT!! LocalStorage Data
+// Key of array in LS (studnets)
+// Array of Students
+//my chANGES
+let students;
+
+// Check if there is data in LS
+if (localStorage.students != null) {
+  students = JSON.parse(localStorage.students);
+} else {
+  students = [];
+}
+
 //Add Student JS
 const email = document.getElementById("email");
 const emailError = email.nextElementSibling;
@@ -5,70 +18,52 @@ const emailRegExp =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const fname = document.getElementById("fname");
-let fnameError;
-if (!fname.hasAttribute("readonly")) {
-  fnameError = fname.nextElementSibling;
-}
+const fnameError = fname.nextElementSibling;
 
 const lname = document.getElementById("lname");
+const lnameError = lname.nextElementSibling;
 const nameRegExp = /^[a-zA-Z]+$/;
-let lnameError;
-if (!lname.hasAttribute("readonly")) {
-  lnameError = lname.nextElementSibling;
-}
 
 const address = document.getElementById("address");
-let addressError = address.nextElementSibling;
+const addressError = address.nextElementSibling;
 
 const idPrefix = document.getElementById("id-prefix");
 const id = document.getElementById("id");
-const idRegExp = /^([0-9]{6})$/;
 let studentId;
-let idError;
-if (!id.hasAttribute("readonly")) {
-  idError = document.getElementById("id-div").nextElementSibling;
-}
+const idError = document.getElementById("id-div").nextElementSibling;
+const idRegExp = /^([0-9]{6})$/;
 
 const nationalID = document.getElementById("nationalID");
+const nationalIdError = nationalID.nextElementSibling;
 const nationalIdRegExp =
   /^([0-9]{1})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{2})[-. ]?([0-9]{3})$/;
-let nationalIdError;
-if (!nationalID.hasAttribute("readonly")) {
-  nationalIdError = nationalID.nextElementSibling;
-}
 
 const phone = document.getElementById("phone");
 phone.placeholder = "ex:01113653431";
-let phoneError = phone.nextElementSibling;
+const phoneError = phone.nextElementSibling;
 const phoneRegExp = /^\+?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
 const landline = document.getElementById("landline");
 landline.placeholder = "ex:2037453659";
-let landlineError = landline.nextElementSibling;
+const landlineError = landline.nextElementSibling;
 const landlineRegExp = /^\+?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
 
 const level = document.getElementById("level");
-const previousLevel = level.value;
-let levelError = level.nextElementSibling;
+const levelError = level.nextElementSibling;
 const levelRegExp = /^([1-4]{1})$/;
 
 const gpa = document.getElementById("gpa");
-let gpaError = gpa.nextElementSibling;
-const gpaRegExp = /^(?:[0-3](?:\.[0-9]{1,2})?|4(?:\.00?)?)$/;
+const gpaError = gpa.nextElementSibling;
+const gpaRegExp = /^([0-4]{1})\.?([0-9]{1})?([0-9]{1})?$/;
 
-const dep = document.getElementById("dep-input");
-let depError;
-if (!dep.hasAttribute("readonly")) {
-  depError = document.getElementById("dep-error");
-}
+const dep = document.getElementById("department");
+const depError = document.getElementById("dep-error");
 
 const dob = document.getElementById("dob");
-let dobError = dob.nextElementSibling;
+const dobError = dob.nextElementSibling;
 
-const genderM = document.getElementById("male");
-const genderF = document.getElementById("female");
-let genderError = document.getElementById("gender-error");
-let statusError = document.getElementById("status-error");
+const genderError = document.getElementById("gender-error");
+const statusError = document.getElementById("status-error");
 
 // This defines what happens when the user types in the field
 email.addEventListener("input", () => {
@@ -78,8 +73,6 @@ email.addEventListener("input", () => {
     setNoError(email);
   } else {
     email.className = "invalid";
-    emailError.textContent = "Not a valid Email. ex: yousefeldaly@gmail.com!";
-    emailError.className = "error";
   }
 });
 
@@ -90,8 +83,6 @@ fname.addEventListener("input", () => {
     setNoError(fname);
   } else {
     fname.className = "invalid";
-    fnameError.textContent = "Cann't have numbers of special charachters!";
-    fnameError.className = "error";
   }
 });
 
@@ -102,8 +93,6 @@ lname.addEventListener("input", () => {
     setNoError(lname);
   } else {
     lname.className = "invalid";
-    lnameError.textContent = "Cann't have numbers of special charachters!";
-    lnameError.className = "error";
   }
 });
 
@@ -114,8 +103,6 @@ phone.addEventListener("input", () => {
     setNoError(phone);
   } else {
     phone.className = "invalid";
-    phoneError.textContent = "Should be 11 numbers ex:01113653431";
-    phoneError.className = "error";
   }
 });
 
@@ -127,9 +114,6 @@ landline.addEventListener("input", () => {
     setNoError(landline);
   } else {
     landline.className = "invalid";
-    landlineError.textContent =
-      "Not a valid format ex: 0237451264 (10 numbers)";
-    landlineError.className = "error";
   }
 });
 
@@ -140,9 +124,6 @@ nationalID.addEventListener("input", () => {
     setNoError(nationalID);
   } else {
     nationalID.className = "invalid";
-    nationalIdError.textContent =
-      "Not a valid ID ex: 30305032100056 (14 numbers)";
-    nationalIdError.className = "error";
   }
 });
 
@@ -151,40 +132,29 @@ level.addEventListener("input", () => {
 
   if (isValidLevel) {
     setNoError(level);
-    if (fname.hasAttribute("readonly")) {
-      const setDep = document.getElementById("set-dep");
-      const setDep2 = document.getElementById("set-dep2");
-      if (level.value >= 3) {
-        let studentId = Number(id.value);
-        let studentLevel = level.value;
-        setDep.innerHTML = "";
-        const editDepartmentUrl =
-          "/edit_student/edit_department/" + studentId + "/" + studentLevel;
-        const link = document.createElement("a");
-        link.setAttribute("href", editDepartmentUrl);
-        link.setAttribute("class", "assignDep");
-        link.textContent = "Assign Department";
-        setDep.appendChild(link);
-        setDep.style.display = "block";
-        setDep2.style.display = "none";
-      } else {
-        setDep.style.display = "none";
-      }
-    }
   } else {
     level.className = "invalid";
-    levelError.textContent = "Not valid level! From 1 to 4";
-    levelError.className = "error";
   }
 });
 
 id.addEventListener("input", () => {
   const isValidId = idRegExp.test(id.value);
+  console.log(idPrefix.value);
+  console.log(id.value);
   studentId = idPrefix.value + id.value;
+  console.log(studentId);
+  let isRepeatedId = false;
+  /*students.forEach((student) => {
+    if (student.id == studentId) {
+      isRepeatedId = true;
+    }
+  });*/
 
   if (!isValidId) {
     id.className = "invalid";
-    idError.textContent = "(8 Numbers) Ex: 20220527";
+  } else if (isRepeatedId) {
+    id.className = "invalid";
+    idError.textContent = "This ID already Exists";
     idError.className = "error";
   } else {
     id.className = "valid";
@@ -195,17 +165,20 @@ id.addEventListener("input", () => {
 
 gpa.addEventListener("input", () => {
   const isValidGpa = gpaRegExp.test(gpa.value);
-
-  const gpaNum = parseFloat(gpa.value);
+  const firstDigitNum = Number(gpa.value[0]);
+  const afterDotDigitNum = Number(gpa.value[2]);
+  const lastDigitNum = Number(gpa.value[3]);
 
   if (isValidGpa) {
     setNoError(gpa);
   } else {
-    if (gpaNum > 4) {
-      gpa.className = "invalid";
-      gpaError.textContent = "GPA can't be greater than 4";
-      gpaError.className = "error";
-    }
+    gpa.className = "invalid";
+  }
+
+  if (firstDigitNum == 4 && (afterDotDigitNum > 0 || lastDigitNum > 0)) {
+    gpa.className = "invalid";
+    gpaError.textContent = "GPA can't be greater than 4";
+    gpaError.className = "error";
   }
 });
 
@@ -233,14 +206,53 @@ address.addEventListener("input", () => {
   // add elseeeeee!!!!!
 });
 
+// Class Student Information
+class Student {
+  constructor(
+    fname,
+    lname,
+    address,
+    id,
+    nationalID,
+    phone,
+    landline,
+    email,
+    level,
+    gpa,
+    dep,
+    dob,
+    gender,
+    status
+  ) {
+    this.fname = fname;
+    this.lname = lname;
+    this.address = address;
+    this.id = id;
+    this.nationalID = nationalID;
+    this.phone = phone;
+    this.landline = landline;
+    this.email = email;
+    this.level = level;
+    this.gpa = gpa;
+    this.department = dep;
+    this.dob = dob;
+    this.gender = gender;
+    this.status_of_student = status;
+  }
+}
+
 // Add Student Button
-/*const add_student_button = document.querySelector("#add-student");
-add_student_button.onsubmit = (e) => {*/
+//const add_student_button = document.querySelector("#add-student");
+//add_student_button.onsubmit = (e) => {
+
+  
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  console.log("submitted");
   var flag = true;
+
   if (!isEmpty(fname)) {
     if (!validateName(fname)) {
       flag = false;
@@ -267,7 +279,7 @@ form.addEventListener("submit", (e) => {
     if (!isValidnationalId) {
       nationalID.className = "invalid";
       nationalIdError.textContent =
-        "Not a valid ID ex: 30305032100056 (14 numbers)";
+        "Not a valid ID ex: 30305032100056 (14 number)";
       nationalIdError.className = "error";
       flag = false;
     } else {
@@ -297,8 +309,7 @@ form.addEventListener("submit", (e) => {
 
     if (!isValidLandline) {
       landline.className = "invalid";
-      landlineError.textContent =
-        "Not a valid format ex: 0237451264 (10 numbers)";
+      landlineError.textContent = "Not a valid format ex: 0237451264";
       landlineError.className = "error";
       flag = false;
     } else {
@@ -354,14 +365,16 @@ form.addEventListener("submit", (e) => {
   } else {
     const isValidId = idRegExp.test(id.value);
     let isRepeatedId = false;
-
-    if (!isValidId) {
-      if (idError != null) {
-        id.className = "invalid";
-        idError.textContent = "Not valid ID Ex:20220527";
-        idError.className = "error";
-        flag = false;
+    students.forEach((student) => {
+      if (student.id == studentId) {
+        isRepeatedId = true;
       }
+    });
+    if (!isValidId) {
+      id.className = "invalid";
+      idError.textContent = "Not valid ID ex:20220527";
+      idError.className = "error";
+      flag = false;
     } else if (isRepeatedId) {
       id.className = "invalid";
       idError.textContent = "This ID already Exists";
@@ -388,37 +401,27 @@ form.addEventListener("submit", (e) => {
   }
 
   if (dep.value == "General" && Number(level.value) > 2) {
-    if (depError != null) {
-      depError.textContent = "Can't be General, level is greater than 2";
-      depError.className = "error";
-      flag = false;
-    }
-  } else if (Number(level.value) <= 2 && dep.value != "General") {
-    if (depError != null) {
-      depError.textContent =
-        "Department should be General, level is not compatible";
-      depError.className = "error";
-    } else {
-      levelError.textContent =
-        "Department is not General can't have this level!";
-      levelError.className = "error";
-    }
+    depError.textContent = "Can't be General, level is greater than 2";
+    depError.className = "error";
+    flag = false;
+  } else if (Number(level.value) == 1 && dep.value != "General") {
+    depError.textContent = "Department should be General, level is 1";
+    depError.className = "error";
+  } else {
+    depError.textContent = "";
+    depError.className = "error";
+  }
+
+  if (
+    !document.getElementById("male").checked &&
+    !document.getElementById("female").checked
+  ) {
+    genderError.textContent = "Must Select a Gender!";
+    genderError.className = "error";
     flag = false;
   } else {
-    if (depError != null) {
-      depError.textContent = "";
-      depError.className = "error";
-    }
-  }
-  if (genderM != null && genderF != null) {
-    if (!genderM.checked && !genderF.getElementById("female").checked) {
-      genderError.textContent = "Must Select a Gender!";
-      genderError.className = "error";
-      flag = false;
-    } else {
-      genderError.textContent = "";
-      genderError.className = "error";
-    }
+    genderError.textContent = "";
+    genderError.className = "error";
   }
 
   if (
@@ -440,17 +443,44 @@ form.addEventListener("submit", (e) => {
     'input[name ="status"]:checked'
   );
 
-  if (flag == true) {
-    console.log("All good");
+  if (flag==true) {
+    console.log("all good");
     form.submit();
   }
+
+  const new_student = new Student(
+    fname.value,
+    lname.value,
+    address.value,
+    studentId,
+    nationalID.value,
+    phone.value,
+    landline.value,
+    email.value,
+    level.value,
+    gpa.value,
+    dep.value,
+    dob.value,
+    gender.value,
+    status_of_student.value
+  );
+
+  // push new_student to the main array students
+  /*students.push(new_student);
+
+  // from array to string
+  const s = JSON.stringify(students);
+
+  // push the array as string to LocalStorage
+  localStorage.setItem("students", s);*/
+  
 });
 
 function isEmpty(field) {
   const fieldError = field.nextElementSibling;
   if (field.value.length === 0) {
     field.className = "invalid";
-    fieldError.textContent = "Cann't be Empty!";
+    fieldError.textContent = "Can't be Empty!";
     fieldError.className = "error";
     return true;
   } else {
@@ -470,19 +500,17 @@ function validateName(name) {
     return false;
   } else {
     name.className = "valid";
-    if (nameError != null) {
-      nameError.textContent = "";
-      nameError.className = "error";
-    }
+    nameError.textContent = "";
+    nameError.className = "error";
   }
   return true;
 }
 
-function setNoError(field) {
+function setNoError(field){
   const fieldError = field.nextElementSibling;
-  if (fieldError != null) {
-    field.className = "valid";
-    fieldError.textContent = "";
-    fieldError.className = "error";
-  }
+  field.className = "valid";
+  fieldError.textContent = "";
+  fieldError.className = "error";
+
 }
+//zgdfyguhlij;ojiuhygfhhgjkuli;lukgjkhuli;o'p[o;ilk]

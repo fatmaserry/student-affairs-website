@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.db.models import Q
@@ -13,6 +14,16 @@ from .models import Admin
 from django.core.exceptions import *
 from django.db import IntegrityError
 
+
+
+# def edit_department(request, student_id):
+#     student = get_object_or_404(Student, pk=student_id)
+#     if request.method == 'POST':
+#         department = request.POST.get('department')
+#         student.student_dep = department
+#         student.save()
+#         return redirect('student_detail', student_id=student_id)
+#     return render(request, 'edit_department.html', {'student': student})
 
 def get_student_data(request):
     student_id = request.GET.get('student_id')
@@ -83,6 +94,19 @@ def edit_student(request, studentID):
         student.save()
         return redirect('search')
     return render(request, 'pages/edit_student.html', context)
+
+
+def edit_department(request, studentID, studentLevel):
+    student = Student.objects.get(student_id=studentID)
+    context = {'student': student}
+    if request.method == 'POST':
+        department = request.POST.get('Department')
+        student.student_dep = department
+        student.student_level = studentLevel
+        student.save()
+        return redirect('edit_student', studentID)
+
+    return render(request, 'pages/edit_department.html', context)
 
 
 def edit_department(request, studentID):

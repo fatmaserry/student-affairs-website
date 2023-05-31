@@ -125,7 +125,6 @@ button:hover{
 }
 
 .inputcontrol .error {
-  display: none;
   color: #d00202;
   font-size: 10px;
   height: 13px;
@@ -141,39 +140,3 @@ button:hover{
 
 
 
-.messages {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.messages li {
-  margin: 0px 0;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.success {
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-  color: #155724;
-}
-
-.info {
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-  color: #0c5460;
-}
-
-.warning {
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-  color: #856404;
-}
-
-.error {
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-  color: #721c24;
-}

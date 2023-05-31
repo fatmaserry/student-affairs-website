@@ -158,9 +158,17 @@
               value="{{ student.student_dep }}"
               readonly
             />
-
-            {% if student.student_level == 3 %}
             <div id="set-dep">
+              <a
+                class="assignDep"
+                href="edit_department/{{ student.student_id }}"
+              >
+                Assign Department
+              </a>
+            </div>
+
+            {% if student.student_level >= 3 %}
+            <div id="set-dep2">
               <a
                 class="assignDep"
                 href="edit_department/{{ student.student_id }}"
