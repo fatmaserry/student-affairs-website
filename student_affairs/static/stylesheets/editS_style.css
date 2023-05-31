@@ -155,8 +155,8 @@ a:link {
 #set-dep,
 #set-dep2{
   margin-top: 11px;
+  display: unset;
 }
-
 .assignDep:hover {
   background-color: #293a7c;
   border: 3px solid #293a7c;
@@ -225,8 +225,4 @@ input:focus.invalid {
   color: #ff0000;
   border-radius: 0 0 5px 5px;
   box-sizing: border-box;
-}
-
-#set-dep {
-  display: none;
 }

@@ -154,6 +154,7 @@ a:link {
 #set-dep,
 #set-dep2{
   margin-top: 11px;
+  display: unset;
 }
 
 .assignDep:hover {

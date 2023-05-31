@@ -134,6 +134,7 @@ select {
 #set-dep,
 #set-dep2{
   padding-top: 15px;
+  display: unset;
 }
 
 .add_student_form form .name-div {
