@@ -266,7 +266,6 @@ article h1{
     transform-origin: bottom bottom;
     background-color: #000129;
     text-align: center;
-    font-weight: 100;
     text-shadow: 1px 1px #090909;
     color: #D3E0EA;
     transition: all 0.3s ease;
@@ -348,7 +347,7 @@ article h1{
 
     .departments-fcai #dep:hover .cardcontent p,
     .departments-fcai #dep:hover:hover .cardcontent a {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     #depts {

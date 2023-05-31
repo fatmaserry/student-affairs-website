@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 body{
 background-image: url("../images/Cairo_University_medium.jpg");
 background-size:cover;
 backdrop-filter: blur(4px);
+font-family: 'Nunito', sans-serif;
+font-weight: 500;
 }
 
 #loginform{
@@ -19,7 +22,6 @@ backdrop-filter: blur(4px);
 
 #loginform h1{
   font-size: 25px;
-  font-weight: 300;
   text-align: center;
   margin: 15px;
   padding: 5px;
@@ -31,8 +33,7 @@ backdrop-filter: blur(4px);
 #loginform h1:hover{
   background-color: #000129;
   color: #f1eded;
-  letter-spacing: 2px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   border-radius: 3px;
 }
 
@@ -91,7 +92,6 @@ button:hover{
 {
  transform:translateY(-20px);
   color:#565656;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .inputcontrol
@@ -101,8 +101,6 @@ button:hover{
   text-align: center;
   margin:10px;
 }
-
-
 
 .inputcontrol.success input{
   background-color: transparent;
@@ -138,5 +136,12 @@ button:hover{
   color:#41644A;
 }
 
-
+li.error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+  list-style: none;
+  padding: 7px 6px;
+  border-radius: 4px;
+}
 

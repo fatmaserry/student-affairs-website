@@ -3,7 +3,7 @@
 
 {% block stylesheet %}
   <link rel="stylesheet" href="{% static 'stylesheets/login.css'%}">
-  {% endblock %}
+{% endblock %}
 
 
 {% block tittle %}
@@ -13,10 +13,9 @@
 
 
 {% block content%}
-
 <form action = "" method = "POST" class="loginform" id="loginform">
     {% csrf_token %}
-    <h1>Log In</h1>
+    <h1>Welcome to FCAI-CU</h1>
         <div class="icon">
             <img src="{% static 'images/login.png' %}"  alt="login icon"
                 class="lilcircle">
@@ -24,22 +23,22 @@
         <div class="inputcontrol"> 
           <input type="text" class="input" placeholder=" " id="username" name="username" > <!-- edited -->
             <label for="userid" class="formlabel">Username</label>
-            <div class="error"></div>
+            {% comment %} <div class="error"></div> {% endcomment %}
 
         </div>
         <div class="inputcontrol">
             <input class="input" placeholder=" " type="password" id="password" name="password" > <!-- edited -->
             <label for="password"class="formlabel">Password</label>
-            <div class="error"></div>
+            {% comment %} <div class="error"></div> {% endcomment %}
         </div>
         {% if messages %}
         <ul class="messages">
         {% for message in messages %}
-            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <li class="error">{{ message }}</li>
         {% endfor %}
         </ul>
         {% endif %}
-        <button type="submit">Log In</button>
+        <button type="submit">Login</button>
     </form>
  
 {% comment %} {% block script %} 

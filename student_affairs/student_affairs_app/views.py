@@ -1,29 +1,14 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.db.models import Q
 from .models import Student
 from .forms import *
-
 from django.contrib import messages  
 from django.contrib.auth import authenticate, login
-
 from .models import Admin
-
 from django.core.exceptions import *
 from django.db import IntegrityError
-
-
-
-# def edit_department(request, student_id):
-#     student = get_object_or_404(Student, pk=student_id)
-#     if request.method == 'POST':
-#         department = request.POST.get('department')
-#         student.student_dep = department
-#         student.save()
-#         return redirect('student_detail', student_id=student_id)
-#     return render(request, 'edit_department.html', {'student': student})
 
 def get_student_data(request):
     student_id = request.GET.get('student_id')
@@ -96,7 +81,7 @@ def edit_student(request, studentID):
     return render(request, 'pages/edit_student.html', context)
 
 
-#youssef
+# yousef 
 def edit_department1(request, studentID, studentLevel):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
@@ -206,7 +191,6 @@ def loginpage(request):
         user = authenticate_admin(request, username=username, password=password)
 
         if user is not None:
-            # Log in the admin user and redirect to the admin dashboard
             login(request)
             return redirect('index')
         else:
