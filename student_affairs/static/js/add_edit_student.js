@@ -164,10 +164,12 @@ level.addEventListener("input", () => {
         link.setAttribute("href", editDepartmentUrl);
         link.setAttribute("class", "assignDep");
         link.textContent = "Assign Department";
+
         setDep.appendChild(link);
         setDep.style.display = "block";
         setDep2.style.display = "none";
       } else {
+        setDep2.style.display = "none";
         setDep.style.display = "none";
       }
     }
@@ -233,9 +235,6 @@ address.addEventListener("input", () => {
   // add elseeeeee!!!!!
 });
 
-// Add Student Button
-/*const add_student_button = document.querySelector("#add-student");
-add_student_button.onsubmit = (e) => {*/
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
@@ -411,7 +410,7 @@ form.addEventListener("submit", (e) => {
     }
   }
   if (genderM != null && genderF != null) {
-    if (!genderM.checked && !genderF.getElementById("female").checked) {
+    if (!genderM.checked && !genderF.checked) {
       genderError.textContent = "Must Select a Gender!";
       genderError.className = "error";
       flag = false;

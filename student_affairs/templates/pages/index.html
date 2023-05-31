@@ -6,26 +6,9 @@
 <link rel="stylesheet" href="{% static 'stylesheets/index_style.css' %}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <style>
-    .swiper {
-      width: 90%;
-      height: 400px;
-      margin: 40px auto;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 900px;
-    }
-    .swiper-button-next {
-      color: rgb(211, 208, 208);
-    }
-    .swiper-button-prev {
-      color: rgb(211, 208, 208);
-    }
+  .swiper-slide {
+    display: flex;
+}
 </style>
 {% endblock %}
 
@@ -38,188 +21,260 @@
 {% block content %}
 <!-- Slider main container -->
 <div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide" id="cuhistory">
-        <div class="with-backdrop"></div>
-        <div class="content">
-          <h1>University History</h1>
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+
+    <div class="swiper-slide" id="fcaislide">
+      <div class="with-backdrop"></div>
+      <div class="content">
+        
+        <div class="title">
+          <div class="main-fcai-imgs">
+          <img src="{% static 'images/Fcai-logo.png' %}" alt="fcai-main-img" />
+        </div>
+          <h1>
+            Welcome to Faculty of Computer Science and Artificial
+            Intelligence!
+          </h1>
+        </div>
+        <div class="article">
+          <article>
+            Computer Science is the academic discipline concerned with
+            computing. The intellectual processes of the discipline
+            combinetheory, abstraction, and design. Problems are solved in a
+            distinctive manner, with an overall goal of identifying and
+            applying recurring conceptual principles. Although these
+            intellectual processes derive from other disciplines, a computer
+            scientist’s perspective offers a unique and important voice in a
+            community of learning such as a liberal-arts college.
+          </article>
+        </div>
+        <a href="http://newecom.fci.cu.edu.eg/#/">Learn More</a>
+      </div>
+    </div>
+
+    <div class="swiper-slide" id="cuhistory">
+      <div class="with-backdrop"></div>
+      <div class="content">
+        <h1>University History</h1>
         <article>
-          Founded in 1908 by a committee of private citizens with royal patronage in 1908 and became a state institution under King Fuad I in 1925.<br>
-          It was renamed a after the 1952 Egyptian Revolution.Its early founding and location made it a model for later universities throughout the Arab world. It was taken over as a state university in 1925 and became Cairo University in 1954.
-          Significant contributions were made by Princess Fatma Ismail. In the early 1900s, she donated land to the university as a part of her fundraising campaign for the establishment of Egypt's first formal university
-          It is the second oldest institution of higher education in Egypt 
+          Founded in 1908 by a committee of private citizens with royal
+          patronage in 1908 and became a state institution under King Fuad I
+          in 1925.
+          It was renamed a after the 1952 Egyptian Revolution.Its early
+          founding and location made it a model for later universities
+          throughout the Arab world. It was taken over as a state university
+          in 1925 and became Cairo University in 1954. Significant
+          contributions were made by Princess Fatma Ismail. In the early
+          1900s, she donated land to the university as a part of her
+          fundraising campaign for the establishment of Egypt's first formal
+          university It is the second oldest institution of higher education
+          in Egypt
         </article>
         <a href="https://en.wikipedia.org/wiki/Cairo_University">Learn More</a>
       </div>
-      </div>
-      
-      
-      
-      <div class="swiper-slide" id="cunow">
+    </div>
+
+    <div class="swiper-slide" id="cunow">
       <div class="with-backdrop"></div>
       <div class="content">
         <h1>Cairo University Today</h1>
         <article>
-           currently enrolls approximately 155,000 students in 20 faculties and 3 institutions.
-          It counts three Nobel Laureates among its graduates and is one of the 50 largest institutions of higher education in the world by enrollment.
-        one of the top universities in Africa.
-          
-          <h2>Nobel laureates</h2>
-          
-        Naguib Mahfouz, Nobel Prize for Literature in 1988 <br>
-        Yasser Arafat, Nobel Peace Prize in 1994 <br>
-        Mohamed ElBaradei, Nobel Peace Prize in 2005
-      
-      </article>
-      <a href="https://cu.edu.eg/Home">Learn More</a>
+          currently enrolls approximately 155,000 students in 20 faculties
+          and 3 institutions. It counts three Nobel Laureates among its
+          graduates and is one of the 50 largest institutions of higher
+          education in the world by enrollment. one of the top universities
+          in Africa.
+
+          <h1>Nobel laureates</h1>
+
+          Naguib Mahfouz, Nobel Prize for Literature in 1988
+          Yasser Arafat, Nobel Peace Prize in 1994
+          Mohamed ElBaradei, Nobel Peace Prize in 2005
+        </article>
+        <a href="https://cu.edu.eg/Home">Learn More</a>
       </div>
-    
     </div>
     <div class="swiper-slide" id="cuevent">
-        <div class="with-backdrop"></div>
-        <div class="content">
-          <h1>Recent Events</h1>
-          <div>
-          <h2>Iftar</h2>
-              <article>
-                Under the auspices of the university administration and the supervision of the college administration, and in cooperation with the Youth Welfare Department, the college students union organizes the largest iftar for students in the history of the college
-        The main courtyard of the college is decorated with a Ramadan lantern designed by the college students through the iftar tables of more than five hundred fasting students.
-        With fasting meals, Coptic students participate in the celebrated event in an atmosphere of love and fun. Only in guarded Egypt are the two fasts synchronized and those who fast are united in the love of their college.
-              </article></div>
-              <a href="https://m.facebook.com/cu.edu.eg/posts/">Learn More</a>
-            </div>
-            </div>
-        
-            <div class="swiper-slide" id="fcaislide">
-              <div class="with-backdrop"></div>
-              <div class="content">
-              <div class="main-fcai-imgs">
-                <img src="{% static 'images/Fcai-logo.png' %}" alt="fcai-main-img" />
-              </div>
-              <div class="title">
-              <h1>
-                  Welcome to Faculty of Computer Science <br>and Artificial Intelligence!
-                </h1></div>
-                <div class="article">
-              <article>
-                Computer Science is the academic discipline concerned with computing.
-                  The intellectual processes of the discipline combinetheory,
-                  abstraction, and design. Problems are solved in a distinctive manner,
-                  with an overall goal of identifying and applying recurring conceptual
-                  principles. Although these intellectual processes derive from other
-                  disciplines, a computer scientist’s perspective offers a unique and
-                  important voice in a community of learning such as a liberal-arts
-                  college.
-              </article></div>
-              <a href="http://newecom.fci.cu.edu.eg/#/">Learn More</a>
-            </div>
-            </div>
-  </div>
-  
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-  
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <script>
-        const swiper = new Swiper('.swiper', {
-          // Optional parameters
-         
-          loop: true,
-  
-          // If we need pagination
-          pagination: {
-            el: '.swiper-pagination',
-          },
-  
-          // Navigation arrows
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-  
-          // And if we need scrollbar
-          scrollbar: {
-            el: '.swiper-scrollbar',
-          },
-        });
-        </script>
-
-    <div class="container">
-      <div class="main-fcai">
-        
+      <div class="with-backdrop"></div>
+      <div class="content">
+        <h1>Recent Events</h1>
+        <div>
+          <h1>Iftar</h1>
+          <article>
+            Under the auspices of the university administration and the
+            supervision of the college administration, and in cooperation
+            with the Youth Welfare Department, the college students union
+            organizes the largest iftar for students in the history of the
+            college The main courtyard of the college is decorated with a
+            Ramadan lantern designed by the college students through the
+            iftar tables of more than five hundred fasting students. With
+            fasting meals, Coptic students participate in the celebrated
+            event in an atmosphere of love and fun.
+          </article>
+        </div>
+        <a href="https://m.facebook.com/cu.edu.eg/posts/">Learn More</a>
       </div>
-  
-  
-      <!-- Departments -->
-      <div class="second-fcai">
-        <h1 id="depts">Our Departments</h1>
-        <div class="departments-fcai">
-          
-          <div class="OR">
-            <h4>Decision Support</h4>
+    </div>
+
+    
+  </div>
+
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".swiper", {
+    loop: true,
+    
+    autoplay: {
+      delay: 2000,
+    }, 
+    
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+</script>
+
+<div class="container">
+
+  <!-- Departments -->
+  <div class="second-fcai">
+    <h1 id="depts">Our Departments</h1>
+
+
+    <div class="departments-fcai">
+      <div class="dep-section">
+        <div class="OR" id="dep">
+
+          <div class="dep-content">
+            <h1>Decision Support</h1>
+            <img src="{% static 'images/decision_support.png' %}" alt="">
+          </div>
           <div class="cardcontent">
             <p>
-              An operations research analyst often collects information and performs statistical analysis to help organizations run more efficiently.
-              Computer science degrees enable you to apply computing and advanced mathematics in business and may enhance your employment prospects for an operations research analyst job
+              An operations research analyst often collects information and
+              performs statistical analysis to help organizations run more
+              efficiently. Computer science degrees enable you to apply
+              computing and advanced mathematics in business and may enhance
+              your employment prospects for an operations research analyst
+              job.
             </p>
-            <a href="https://www.indeed.com/career-advice/finding-a-job/operations-research-analyst-degree">Learn More</a>
+            <a href="https://www.indeed.com/career-advice/finding-a-job/operations-research-analyst-degree">Learn
+              More</a>
           </div>
+        </div>
+
+        <div class="CS" id="dep">
+          <div class="dep-content">
+            <h1>Computer Science</h1>
+            <img src="{% static 'images/computer_science.png' %}" alt="">
           </div>
-  
-          <div class="CS">
-            <h4>Computer Science</h4>
-            <div class="cardcontent">
-              <p>
-                Computer science is the study of computation, automation, and information.Computer science spans theoretical disciplines (such as algorithms, theory of computation, information theory, and automation) to practical disciplines (including the design and implementation of hardware and software).
-              </p>
-              <a href="https://en.wikipedia.org/wiki/Computer_science">Learn More</a>
-            </div>
-          </div>
-  
-          <div class="IT">
-            <h4>Information Technology</h4>
-            <div class="cardcontent">
+          <div class="cardcontent">
             <p>
-              An information technology bachelor's degree develops targeted skills in network design, network administration, and programming. Many programs also emphasize IT theory and its practical applications, along with cybersecurity and information security concepts.
+              Computer science is the study of computation, automation, and
+              information.Computer science spans theoretical disciplines
+              (such as algorithms, theory of computation, information
+              theory, and automation) to practical disciplines (including
+              the design and implementation of hardware and software).
             </p>
-            <a href="https://www.davenport.edu/academics/areas/technology/bachelor-science-computer-information-systems#:~:text=What%20is%20a%20computer%20information,and%20management%2C%20programming%20and%20cybersecurity.">Learn More</a>
-          </div>
-          </div>
-  
-          <div class="IS">
-            <h4>Information Systems</h4>
-            <div class="cardcontent">
-            <p>
-              computer information systems applies practical knowledge and methods to a broad base of computer information technologies to meet the digital information needs of organizations. Applications include systems analysis and management, programming and cybersecurity.
-            </p>
-            <a href="https://www.computerscience.org/degrees/bachelors-information-technology/#:~:text=An%20information%20technology%20bachelor's%20degree,cybersecurity%20and%20information%20security%20concepts.">Learn More</a>
-            </div>
-          </div>
-  
-          <div class="AI">
-            <h4>Artificial Intelligence</h4>
-            <div class="cardcontent">
-             <p>
-            concerned with the understanding and development of intelligent software and hardware systems
-            The degree curriculum includes artificial intelligence theory, methodologies, and applications infused throughout the program. You’ll also learn about applications that are reliant on artificial intelligence technologies, such as robotics, autonomous systems, intelligent control and smart systems and devices.   
-          </p>
-          <a href="https://science.iupui.edu/academics/degrees-and-programs/_degrees/artificial-intelligence-bs-iupui-aiscibs.html#:~:text=The%20degree%20curriculum%20includes%20artificial,and%20smart%20systems%20and%20devices.">Learn More</a>
-            </div>
+            <a href="https://en.wikipedia.org/wiki/Computer_science">Learn More</a>
           </div>
         </div>
       </div>
-    </div>
 
+      <div class="dep-section">
+        <div class="IT" id="dep">
+          <div class="dep-content">
+            <h1>Information Technology</h1>
+            <img src="{% static 'images/information_technology.png' %}" alt="">
+          </div>
+          
+          <div class="cardcontent">
+            <p>
+              An information technology bachelor's degree develops targeted
+              skills in network design, network administration, and
+              programming. Many programs also emphasize IT theory and its
+              practical applications, along with cybersecurity and
+              information security concepts.
+            </p>
+            <a
+              href="https://www.davenport.edu/academics/areas/technology/bachelor-science-computer-information-systems#:~:text=What%20is%20a%20computer%20information,and%20management%2C%20programming%20and%20cybersecurity.">Learn
+              More</a>
+          </div>
+        </div>
+        <div class="IS" id="dep">
+          <div class="dep-content">
+            <h1>Information Systems</h1>
+            <img src="{% static 'images/information_system.png' %}" alt="">
+          </div>
+          
+          <div class="cardcontent">
+            <p>
+              Computer information systems applies practical knowledge and
+              methods to a broad base of computer information technologies
+              to meet the digital information needs of organizations.
+              Applications include systems analysis and management,
+              programming and cybersecurity.
+            </p>
+            <a
+              href="https://www.computerscience.org/degrees/bachelors-information-technology/#:~:text=An%20information%20technology%20bachelor's%20degree,cybersecurity%20and%20information%20security%20concepts.">Learn
+              More</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="dep-section">
+        <div class="AI" id="dep">
+          <div class="dep-content">
+            <h1>Artificial Intelligence</h1>
+            <img src="{% static 'images/artificial_intellegence.png' %}" alt="">
+          </div>
+          <div class="cardcontent">
+            <p>
+              Concerned with the understanding and development of intelligent
+              software and hardware systems The degree curriculum includes
+              artificial intelligence theory, methodologies, and applications
+              infused throughout the program. You’ll also learn about
+              applications that are reliant on artificial intelligence
+              technologies, such as robotics, autonomous systems, intelligent
+              control and smart systems and devices.
+            </p>
+            <a
+              href="https://science.iupui.edu/academics/degrees-and-programs/_degrees/artificial-intelligence-bs-iupui-aiscibs.html#:~:text=The%20degree%20curriculum%20includes%20artificial,and%20smart%20systems%20and%20devices.">Learn
+              More</a>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+</div>
 {% endblock %}
 

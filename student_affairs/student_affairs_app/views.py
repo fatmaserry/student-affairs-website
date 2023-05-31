@@ -96,7 +96,8 @@ def edit_student(request, studentID):
     return render(request, 'pages/edit_student.html', context)
 
 
-def edit_department(request, studentID, studentLevel):
+#youssef
+def edit_department1(request, studentID, studentLevel):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
     if request.method == 'POST':
@@ -109,7 +110,8 @@ def edit_department(request, studentID, studentLevel):
     return render(request, 'pages/edit_department.html', context)
 
 
-def edit_department(request, studentID):
+# belal
+def edit_department2(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
     if request.method == 'POST':

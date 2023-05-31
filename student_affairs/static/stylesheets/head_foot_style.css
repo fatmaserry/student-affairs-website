@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
 :root {
   --nav_main_color: #000129;
   --nav_second_color: #D3E0EA;
 }
-
-/* Old Color */
-/* #272626 */
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,20 +21,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Nunito', sans-serif;
 }
 .container {
   width: 80%;
   margin: 0 auto;
   min-height: 100vh;
 }
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:active { text-decoration: none; }
 
 
-.nav-tittle{
-  color: white;
-}
 /* Hamburger icon */
 .menu-button-container {
   display: none;

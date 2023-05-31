@@ -1,5 +1,4 @@
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,290 +7,369 @@
 
 /*no underline on links*/
 
-a:link { text-decoration: none; }
+a:link {
+    text-decoration: none;
+}
 
 
-a:visited { text-decoration: none; }
+a:visited {
+    text-decoration: none;
+}
 
 
-a:hover { text-decoration: none; }
+a:hover {
+    text-decoration: none;
+}
 
 
-a:active { text-decoration: none; }
+a:active {
+    text-decoration: none;
+}
 
-/*styling swiper*/
+.title{
+    display: flex;
+    align-items: center;
+}
 
+.title h1{
+    margin-left: 30px;
+}
 /*content slide has the text*/
-.content{
-    width:45%;
+.content {
+    width: 45%;
     height: 100%;
     background-color: #000129;
     text-align: left;
     font-size: 14px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 100;
     text-shadow: 1px 1px #090909;
-    overflow: auto;
+    overflow: hidden;
     padding: 2.5em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: flex-start;
+    font-weight: 300;
 }
 
 /*link hover animation*/
-.content a{
-color: #faf2f7;
-  transition: all 0.3s ease;
-  height: 35px;
-  font-size: 16px;
-  width: fit-content;
-  background-color: transparent;
-  /*border-bottom: 3px solid #faf2f7;*/
-  margin: 20px 20px;
-  
-}
-.content a:hover{
-    margin:10px 20px;
-    padding:10px 10px;
-   /* background-color:#e4e4e4 ;*/
-  border: 2px solid #e4e4e4;
-  color: #e4e4e4;
-  text-shadow: 0px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  
+.content a {
+    color: #D3E0EA;
+    font-size: 16px;
+    padding: 6px 10px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
-.content article{
-margin-top: 20px;
-margin-bottom: 5px;
-margin-left: 10px;
-margin-right: 10px;
-padding: 10px 10px;
- color: #faf2f7;
-text-shadow: 1px 1px #090909;
-}
-
-
-/*all headings have animation*/
-.content h1{
-    color:#faf2f7;
-    transition: all 0.3s ease-out;
-    margin: 10px 10px;
-    height: 60px;
-}
-.content h1:hover{
-    width:fit-content;
+.content a:hover {
+    border: 1px solid #D3E0EA;
+    color: #D3E0EA;
+    padding: 6px 15px;
     letter-spacing: 2px;
-  transition: all 0.5s ease;
-  border-bottom: 6px solid #faf2f7;;
+    transition: all 0.3s ease;
+
 }
-.content h2{
-    color:#faf2f7;;
+
+.content article {
+    margin-top: 9px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding: 10px 10px;
+    color: #faf2f7;
+    text-shadow: 1px 1px #090909;
+    line-height: 19px;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+article h1{
+    margin: 0;
+    margin-top: 37px;
+    font-family: 'Nunito', sans-serif;
+}
+/*all headings have animation*/
+.content h1 {
+    color: #faf2f7;
     transition: all 0.3s ease-out;
-    margin: 10px 10px;
 }
-.content h2:hover{
-    width:fit-content;
+
+.content h1:hover {
+    width: fit-content;
     letter-spacing: 2px;
     transition: all 0.5s ease;
-    
+}
+
+.content h2 {
+    color: #faf2f7;
+    transition: all 0.3s ease-out;
+    margin: 10px 10px;
+}
+
+.content h2:hover {
+    width: fit-content;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
 }
 
 /* styling div with background image*/
-.with-backdrop{
-    background-size:100% auto;
+.with-backdrop {
+    background-size: 100% auto;
     background-repeat: no-repeat;
     backdrop-filter: blur(16px);
-    width:55%;
+    width: 55%;
     height: 100%;
 
 }
+
 /*background images*/
-#cuhistory .with-backdrop{
+#cuhistory .with-backdrop {
     background-image: url(../images/44c3cfdb086552e6e8f0b21679ae647e.jpg);
-   
+
 }
 
-#cuevent .with-backdrop{
+#cuevent .with-backdrop {
     background-image: url(../images/341054287_644392080848119_3116862062710716036_n.jpg);
-    
+
 }
 
-#cunow  .with-backdrop{
+#cunow .with-backdrop {
     background-image: url(../images/OM34l1EtkU4L229.jpg);
-    
+
 }
 
-#fcaislide .with-backdrop{
+#fcaislide .with-backdrop {
     background-image: url(../images/5c6be7eeb5b68.jpg);
 }
 
-#cunow .content{
-   font-size: 14px;
-   
+#cunow .content {
+    font-size: 14px;
 }
-#cunow h1{
-    font-size: 125%;
-    height: 45px;
+#cunow h1 {
+    height: 39px;
 }
-#cunow h2{
+#cunow h2 {
     font-size: 105%;
 }
 
-
-/*layout of faculty slide*/
-#fcaislide .content{
+.swiper-slide, swiper-slide {
     display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: flex-start;
 }
-#fcaislide img{
+
+#fcaislide img {
     height: 100px;
 }
-#fcaislide .main-fcai-imgs{
+
+#fcaislide .main-fcai-imgs {
     align-self: flex-start;
 }
-#fcaislide h1{
-    font-size: 17px;
+
+#fcaislide h1 {
+    font-size: 21px;
     width: fit-content;
     flex-shrink: 2;
-   
 }
-#fcaislide .article{
-    /* align-self: flex-end; */
+
+#fcaislide .article {
     font-size: 14px;
 }
-.main-fcai-imgs{
+
+.main-fcai-imgs {
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.swiper-slide{
+
+.swiper {
+    width: 90%;
+    height: 400px;
+    margin: 40px auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    height: 900px;
     display: flex;
 }
 
+.swiper-button-next {
+    color: rgb(211, 208, 208);
+}
 
-/*styling departments section of page*/
-.departments-fcai{
-    display: flex;
-    justify-content: space-between;
-    height: 300px;
-    width: 100%;
-    
+.swiper-button-prev {
+    color: rgb(211, 208, 208);
 }
 
 /*animation of heading our depts*/
-#depts{
-    margin: 50px 50px;
-    padding: 10px;
-    color:#faf2f7;
+#depts {
+    color: #D3E0EA;
     transition: all 0.3s ease-out;
-    
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 9px;
+    background-color: #000129;
 }
-#depts:hover{
-    width:fit-content;
+
+#depts:hover {
     letter-spacing: 2px;
     transition: all 0.5s ease;
 }
 
 /*background images of div of each dept*/
-.AI,.CS,.IS,.IT,.OR{
+.AI,
+.CS,
+.IS,
+.IT,
+.OR {
     background-size: 100% 100%;
-    width:19%;
+    width: 30%;
+    height: 63%;
 }
 
-.CS{
-    background-image: url(../images/computer_science.png);
-    
-}  
-.IT{
-    background-image: url(../images/information_technology.png);
-    
-}  
-.OR{
-    background-image: url(../images/decision_support.png);
-    
-}  
-.IS{
-    background-image: url(../images/information_system.png);
-    
-} 
-.AI{
-    background-image: url(../images/artificial_intellegence.png);
-    
-}
 
 /*heading animation for dept name*/
-.departments-fcai h4{
-    color:#faf2f7;
-    transition: all 0.3s ease-out;
+.departments-fcai h1 {
+    color: #faf2f7;
+    transition: all 0.2s ease-out;
     margin: 10px 10px;
 }
-.departments-fcai h4:hover{
-    width:fit-content;
+
+.departments-fcai h1:hover {
+    width: fit-content;
     letter-spacing: 0.75px;
-  transition: all 0.5s ease;
-  border-bottom: 3px solid #faf2f7;;
+    border-bottom: 3px solid #faf2f7;
+    ;
 }
 
 /*text abt dept slides up animation*/
-.departments-fcai .cardcontent{
-    display:hidden;
-    color:transparent
+.departments-fcai .cardcontent {
+    display: hidden;
+    color: transparent;
+    height: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: height 0.3s ease;
+    position: absolute;
+    top: 55px;
 }
 
-.departments-fcai .cardcontent:hover{
-transform:translateY(-50px);
-background-color: #000129;
-text-align: left;
-    font-size: 14px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.departments-fcai .dep-section .dep-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.departments-fcai #dep:hover .cardcontent {
+    height: 100%;
+    transform: translateY(-50px);
+    background-color: #000129;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 100;
     text-shadow: 1px 1px #090909;
-    color: #faf2f7;
-    transition: all 0.5s ease;
-    display: flex;
-    flex-wrap: wrap;
+    color: #D3E0EA;
+    transition: height 0.3s ease;
+    width: inherit;
 }
 
-.departments-fcai .cardcontent p{
-    margin:10px 10px;
-    padding:10px 10px;
+.departments-fcai #dep:hover .cardcontent p {
+    display: block;
 }
-/*link hidden till card hovered on has animation*/
-.departments-fcai .cardcontent:hover a{
-    color: #faf2f7;
-    /*border-bottom: 3px solid #faf2f7;*/
-    transition: all 0.3s ease;
-    height: 35px;
-    font-size: 16px;
-    width: fit-content;
-    background-color: transparent;
+
+.departments-fcai .cardcontent p {
+    text-align: center;
     margin: 10px 10px;
-    
-}
-.departments-fcai .cardcontent a{
-    display:hidden;
-    color:transparent
+    padding: 10px 10px;
+    font-size: 16px;
+    display: none;
 }
 
-.departments-fcai .cardcontent a:hover{
-    background-color:transparent;
-    border: 2px solid #e4e4e4;
-    color: #e4e4e4;
-    text-shadow: 0px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/*link hidden till card hovered on has animation*/
+.departments-fcai #dep:hover:hover .cardcontent a {
+    color: #D3E0EA;
+    font-size: 16px;
+    padding: 6px 10px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.departments-fcai .cardcontent a {
+    color: transparent;
+    display: none;
+}
+
+.departments-fcai .cardcontent a:hover {
+    border: 1px solid #D3E0EA;
+    color: #D3E0EA;
+    padding: 6px 15px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.dep-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin: 20px 10px;
+    position: relative;
+}
+
+.departments-fcai {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dep-section .dep-content h1 {
+    font-size: 20px;
 }
 
 
 @media only screen and (max-width: 900px) {
-
-    .departments-fcai{
+    .departments-fcai {
         flex-direction: column;
     }
-    .AI,.CS,.IS,.IT,.OR{
+
+    #dep {
         width: 100%;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .dep-section {
+        flex-direction: column;
+        position: unset;
+    }
+
+    .departments-fcai #dep:hover .cardcontent p,
+    .departments-fcai #dep:hover:hover .cardcontent a {
+        font-size: 13px;
+    }
+
+    #depts {
+        text-align: center;
+    }
+
+    .swiper {
+        height: 295px;
+    }
+
+    .swiper-slide {
+        flex-direction: column;
+    }
+
+    .with-backdrop {
+        width: 100%;
+    }
+
+    .content{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1030px) {
+
+    .departments-fcai #dep:hover .cardcontent p,
+    .departments-fcai #dep:hover:hover .cardcontent a {
+        font-size: 12px;
     }
 }
