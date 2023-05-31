@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     align-self: auto;
+    font-family: 'Nunito', sans-serif;
 }
 
 /*no underline on links*/
@@ -45,7 +46,8 @@ a:active {
     text-shadow: 1px 1px #090909;
     overflow: hidden;
     padding: 2.5em;
-    font-weight: 300;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
 }
 
 /*link hover animation*/
@@ -242,14 +244,15 @@ article h1{
 .departments-fcai .cardcontent {
     display: hidden;
     color: transparent;
-    height: 0;
+    transform: scaleY(0);
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: height 0.3s ease;
+    transition: all 0.3s ease;
+    transform-origin: bottom top;
     position: absolute;
-    top: 55px;
+    top: 0;
 }
 
 .departments-fcai .dep-section .dep-content {
@@ -259,37 +262,40 @@ article h1{
 
 .departments-fcai #dep:hover .cardcontent {
     height: 100%;
-    transform: translateY(-50px);
+    transform: scaleY(1);
+    transform-origin: bottom bottom;
     background-color: #000129;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 100;
     text-shadow: 1px 1px #090909;
     color: #D3E0EA;
-    transition: height 0.3s ease;
+    transition: all 0.3s ease;
     width: inherit;
 }
-
 .departments-fcai #dep:hover .cardcontent p {
     display: block;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
 }
 
 .departments-fcai .cardcontent p {
     text-align: center;
     margin: 10px 10px;
     padding: 10px 10px;
-    font-size: 16px;
+    font-size: 17px;
     display: none;
 }
 
 /*link hidden till card hovered on has animation*/
 .departments-fcai #dep:hover:hover .cardcontent a {
     color: #D3E0EA;
-    font-size: 16px;
+    font-size: 17px;
     padding: 6px 10px;
     margin: 10px 0;
     transition: all 0.3s ease;
     display: block;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
 }
 
 .departments-fcai .cardcontent a {
@@ -342,7 +348,7 @@ article h1{
 
     .departments-fcai #dep:hover .cardcontent p,
     .departments-fcai #dep:hover:hover .cardcontent a {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     #depts {
@@ -370,6 +376,6 @@ article h1{
 
     .departments-fcai #dep:hover .cardcontent p,
     .departments-fcai #dep:hover:hover .cardcontent a {
-        font-size: 12px;
+        font-size: 13px;
     }
 }

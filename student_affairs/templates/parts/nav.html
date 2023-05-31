@@ -22,8 +22,8 @@
           </ul>
         </div>
         <div>
-          <span style = "margin-right: 20px;" class="hello-msg">Welcome, {{request.user}}</span>
-          <a href="{% url 'login' %}" class="sign">Sign Out</a>
+          {% comment %} <span style = "margin-right: 20px;" class="hello-msg">Welcome, {{request.user}} </span> {% endcomment %}
+          <a href="{% url 'login' %}" class="sign" style="padding: 10px 20px">Sign Out</a>
         </div>
       </div>
 

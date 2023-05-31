@@ -152,6 +152,10 @@ a:link {
   font-size: 16px;
 }
 
+#set-dep,
+#set-dep2{
+  margin-top: 11px;
+}
 .assignDep:hover {
   background-color: #293a7c;
   border: 3px solid #293a7c;
