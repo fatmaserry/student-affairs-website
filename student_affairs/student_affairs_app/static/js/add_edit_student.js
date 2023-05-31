@@ -165,14 +165,15 @@ level.addEventListener("input", () => {
         link.setAttribute("class", "assignDep");
         link.textContent = "Assign Department";
 
-
         setDep.appendChild(link);
         setDep.style.display = "block";
         setDep.style.paddingTop = "15px";
         setDep2.style.paddingTop = "15px";
-        setDep2.style.display = "none";
+        if (setDep2 != null){
+        setDep2.style.display = "none";}
       } else {
-        setDep2.style.display = "none";
+        if (setDep2){
+        setDep2.style.display = "none";}
         setDep.style.display = "none";
       }
     }
