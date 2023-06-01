@@ -231,7 +231,7 @@ def loginpage(request):
             login(request)
             return redirect('index')
         else:
-            messages.error(request, 'Invalid username or password.')
+            messages.error(request, 'Invalid username or password')
 
     return render(request, 'pages/login.html')
 
