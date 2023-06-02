@@ -45,11 +45,11 @@ def filter_students(request):
     return HttpResponse(rows)
 
 
-
+# get student data in AJAX call in view page
+# to display on student status popup box
 def get_student_data(request):
     student_id = request.GET.get('student_id')
     student = Student.objects.get(id=student_id)
-    # Prepare the data to be sent back to the client
     data = {
             'student_id': student.student_id,
             'student_status': student.student_status,
@@ -58,10 +58,12 @@ def get_student_data(request):
     return JsonResponse(data)
 
 
+# login page
 def login(request):
     return render(request,'pages/login.html')
 
 
+# search for a student in search page
 def search(request):
     search = Student.objects.all()
     name = None
@@ -83,6 +85,7 @@ def search(request):
     return render(request, 'pages/search.html', context)
 
 
+# delete student in search page
 def delete_student(request):
     if request.method == 'POST':
         student_id = request.POST.get('student_id')
@@ -92,6 +95,7 @@ def delete_student(request):
     return redirect('search')
 
 
+# edit student page
 def edit_student(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
@@ -118,7 +122,8 @@ def edit_student(request, studentID):
     return render(request, 'pages/edit_student.html', context)
 
 
-# yousef 
+# edit department page
+# if the change is on department and level
 def edit_department1(request, studentID, studentLevel):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
@@ -132,7 +137,8 @@ def edit_department1(request, studentID, studentLevel):
     return render(request, 'pages/edit_department.html', context)
 
 
-# belal
+# edit department page 
+# if the change is on department only
 def edit_department2(request, studentID):
     student = Student.objects.get(student_id=studentID)
     context = {'student': student}
@@ -145,18 +151,23 @@ def edit_department2(request, studentID):
     return render(request, 'pages/edit_department.html', context)
 
 
+# view page
 def view(request):
     context = {'students': Student.objects.all()}
     return render(request, 'pages/view.html', context)
 
 
+# first page with four projects
 def home(request):
     return render(request, 'pages/homepage.html')
 
 
+# index page 
 def index(request):
     return render(request, 'pages/index.html')
 
+
+# add student page
 def add_student(request):
     if request.method=='POST':
        try:
@@ -208,6 +219,7 @@ def add_student(request):
     return render(request,"pages/add_student.html")
         
   
+# authentication for admin login
 def authenticate_admin(request, username=None, password=None):
     try:
         admin = Admin.objects.get(admin_username=username)
@@ -219,6 +231,7 @@ def authenticate_admin(request, username=None, password=None):
     else:
         return None
 
+# login page verification
 def loginpage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -236,17 +249,13 @@ def loginpage(request):
     return render(request, 'pages/login.html')
 
 
+# update student status in view page
 @csrf_exempt
 def update_student_status(request):
     if request.method == 'POST':
         student_id = request.POST.get('student_id')
         new_status = request.POST.get('new_status')
-
-        # retrieve the student record from the database
         student = Student.objects.get(id=student_id)
-
-        # update the student status field and save the record
         student.student_status = new_status
         student.save()
-        
         return JsonResponse({'status': new_status})
