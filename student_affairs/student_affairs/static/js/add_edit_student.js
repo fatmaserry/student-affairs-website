@@ -396,7 +396,8 @@ form.addEventListener("submit", (e) => {
 
   if (dep.value == "General" && Number(level.value) > 2) {
     if (depError != null) {
-      depError.textContent = "Can't be General, level is greater than 2";
+      depError.textContent =
+        "Department should be General, level is not compatible";
       depError.className = "error";
       flag = false;
     }

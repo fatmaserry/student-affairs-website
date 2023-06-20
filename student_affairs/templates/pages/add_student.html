@@ -25,7 +25,9 @@
       <form method="POST" action="\add_student">
         {% csrf_token %}
 
-<div id="my-div" class="{{ div_class }}" style="font-size: 24px;">{{ div_message }}</div>
+        <div id="my-div" class="{{ div_class }}" style="font-size: 24px">
+          {{ div_message }}
+        </div>
         <!-- Name  -->
         <div class="name-div">
           <div class="fname">
