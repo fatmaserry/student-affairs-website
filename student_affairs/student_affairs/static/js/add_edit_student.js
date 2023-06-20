@@ -395,12 +395,10 @@ form.addEventListener("submit", (e) => {
   }
 
   if (dep.value == "General" && Number(level.value) > 2) {
-    if (depError != null) {
-      depError.textContent =
-        "Department should be General, level is not compatible";
-      depError.className = "error";
-      flag = false;
-    }
+    levelError.textContent =
+      "Department shouldn't be General, level is not compatible";
+    levelError.className = "error";
+    flag = false;
   } else if (Number(level.value) <= 2 && dep.value != "General") {
     if (depError != null) {
       depError.textContent =

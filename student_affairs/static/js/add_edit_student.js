@@ -167,11 +167,14 @@ level.addEventListener("input", () => {
 
         setDep.appendChild(link);
         setDep.style.display = "block";
-        if (setDep2 != null){
-        setDep2.style.display = "none";}
+        if (setDep2 != null) {
+          setDep2.style.display = "none";
+        }
       } else {
-        if (setDep2 != null){
-        setDep2.style.display = "none";}
+        console.log("display none!");
+        if (setDep2 != null) {
+          setDep2.style.display = "none";
+        }
         setDep.style.display = "none";
       }
     }
@@ -392,11 +395,10 @@ form.addEventListener("submit", (e) => {
   }
 
   if (dep.value == "General" && Number(level.value) > 2) {
-    if (depError != null) {
-      depError.textContent = "Can't be General, level is greater than 2";
-      depError.className = "error";
-      flag = false;
-    }
+    levelError.textContent =
+      "Department shouldn't be General, level is not compatible";
+    levelError.className = "error";
+    flag = false;
   } else if (Number(level.value) <= 2 && dep.value != "General") {
     if (depError != null) {
       depError.textContent =
