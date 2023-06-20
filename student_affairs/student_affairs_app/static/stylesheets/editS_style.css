@@ -103,7 +103,7 @@ a:link {
   padding: 6px;
 }
 
-#dep{
+#dep {
 
   margin-bottom: 15px;
 }
@@ -140,6 +140,23 @@ a:link {
   margin-right: 40px;
 }
 
+.delete-button {
+  background-color: #ea5455;
+  color: #faf2f7;
+  border: 3px solid transparent;
+  margin-top: 4px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  height: 40px;
+  width: 160px;
+  font-size: 16px;
+}
+
+.delete-button:hover {
+  background-color: #ea5454be;
+  cursor: pointer;
+}
+
 .assignDep {
   background-color: #000127;
   color: #faf2f7;
@@ -151,8 +168,9 @@ a:link {
   width: 160px;
   font-size: 16px;
 }
+
 #set-dep,
-#set-dep2{
+#set-dep2 {
   display: unset;
 }
 
@@ -189,6 +207,7 @@ a:link {
 
 /* Media Query */
 @media only screen and (max-width: 900px) {
+
   .name-div,
   .form-sides {
     flex-direction: column;
@@ -200,6 +219,7 @@ a:link {
   .rightColumn {
     width: 100%;
   }
+
   .rightColumn {
     margin-top: 21px;
   }
