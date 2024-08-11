@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.loginpage, name='login'),
     path('index/', views.index, name='index'),
     path('view', views.view, name='view'),
     path('search/', views.search, name='search'),
@@ -24,7 +24,6 @@ urlpatterns = [
     path('get-student-data/', views.get_student_data, name='get_student_data'),
     path('update-student-status/', views.update_student_status,
          name='update_student_status'),
-    path('login/', views.loginpage, name='login'),
 
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

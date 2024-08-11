@@ -35,6 +35,42 @@ the table viewing all students.
 8. Website should have a well-designed navigation bar to go through all pages and  
 a home page.
 ---
+## Running the Project Locally
+
+## Follow these steps to clone and run the Django project locally:
+
+1. Clone the Repository
+Clone the repository to your local machine using the following command:
+git clone https://github.com/fatmaashraf1/Student-Affairs-Website.git
+
+Navigate into the project directory:
+cd student_affairs
+
+2. Set Up a Virtual Environment (Optional but Recommended)
+Create a virtual environment to isolate your project dependencies:
+python3 -m venv venv
+
+Activate the virtual environment:
+macOS/Linux:
+source venv/bin/activate
+Windows:
+.\venv\Scripts\activate
+
+3. Install the Required Dependencies
+Install the project dependencies listed in the requirements.txt file:
+pip install -r requirements.txt
+
+4. Apply Database Migrations
+Run the following command to apply migrations and set up the database:
+python3 manage.py migrate
+
+5. Run the Development Server
+Start the Django development server:
+python3 manage.py runserver
+
+Open your web browser and go to http://127.0.0.1:8000/ to view the website.
+
+---
 ## Authors
 * **Fatma Elzahraa Ashraf** - [fatmaashraf1](https://github.com/fatmaashraf1)  
 * **Yousef Magdy Eldaly** - [YousefEldaly](https://github.com/YousefEldaly)  

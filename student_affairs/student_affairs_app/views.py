@@ -157,9 +157,8 @@ def view(request):
     return render(request, 'pages/view.html', context)
 
 
-# first page with four projects
 def home(request):
-    return render(request, 'pages/homepage.html')
+    return render(request, 'pages/login.html')
 
 
 # index page 
