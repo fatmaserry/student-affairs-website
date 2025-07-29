@@ -41,7 +41,7 @@ a home page.
 
 1. Clone the Repository
 Clone the repository to your local machine using the following command:
-git clone https://github.com/fatmaashraf1/Student-Affairs-Website.git
+git clone https://github.com/fatmaashraf1/student-affairs-platform.git
 
 Navigate into the project directory:
 cd student_affairs
@@ -72,7 +72,7 @@ Open your web browser and go to http://127.0.0.1:8000/ to view the website.
 
 ---
 ## Authors
-* **Fatma Elzahraa Ashraf** - [fatmaashraf1](https://github.com/fatmaashraf1)  
+* **Fatma Elzahraa Serry** - [fatmaashraf1](https://github.com/fatmaashraf1)  
 * **Yousef Magdy Eldaly** - [YousefEldaly](https://github.com/YousefEldaly)  
 * **Yousef Karam** - [callmejoee](https://github.com/callmejoee)  
 * **Noor Hatem** - [noorshehab](https://github.com/noorshehab)
