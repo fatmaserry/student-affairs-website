@@ -1,4 +1,4 @@
-# Student Affairs Website  
+# Student Affairs Platform  
 ## Description
 * The project is built mainly for "IS231" course project submittion.  
 * Project requirements are declared by "IS231" course instructor.  
